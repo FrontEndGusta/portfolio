@@ -17,8 +17,7 @@ export const PopoversContainer = styled.div`
 }
 
 .nav .btn-bubble,
-.nav .btn-favorite,
-.nav .btn-info{
+.nav .btn-favorite{
   position: relative;
   display: grid;
   place-items: center;
@@ -33,8 +32,7 @@ export const PopoversContainer = styled.div`
 }
 
 .nav .btn-bubble::before,
-.nav .btn-favorite::before,
-.nav .btn-info::before {
+.nav .btn-favorite::before {
   content: attr(data-tooltip);
   position: absolute;
   top: 50%;
@@ -51,8 +49,7 @@ export const PopoversContainer = styled.div`
 }
 
 .nav .btn-bubble:hover::before,
-.nav .btn-favorite:hover::before,
-.nav .btn-info:hover::before {
+.nav .btn-favorite:hover::before {
   opacity: 1;
   visibility: visible;
   translate: 0 -50%;

@@ -10,5 +10,6 @@ export default {
         text: '#333',
         text_popover: '#FFFFFF',
         svg: '#090C08',
+        filter: 100,
     }
 }

@@ -1,9 +1,18 @@
-import React, { useContext } from "react";
-import {BiArrowToBottom} from 'react-icons/bi'
+import React, { useContext, useRef } from "react";
+import { BiArrowToBottom, BiChevronsDown } from "react-icons/bi";
 import { SessionOneContainer } from "./styles";
 import TypeWriter from "../TypeWriter";
 import image from "../../assets/avatar.jpeg";
+import SectionTwo from "../SectionTwo";
 export const SectionOne: React.FC = () => {
+  const sectionTwoRef = useRef<HTMLDivElement | null>(null);
+
+  const handleScrollToSectionTwo = () => {
+    // Role suavemente para a SectionTwo
+    if (sectionTwoRef.current) {
+      sectionTwoRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <>
       <SessionOneContainer>
@@ -14,14 +23,19 @@ export const SectionOne: React.FC = () => {
             </h2>
             <h3>Desenvolvedor Front-End</h3>
             <div className="containerBtn">
-            <button className="cv">Download CV <BiArrowToBottom /></button>
-            <button className="contact">Contato</button>
+              <button className="cv">
+                Download CV <BiArrowToBottom />
+              </button>
+              <button className="contact">Contato</button>
             </div>
           </div>
           <img src={image} alt="Avatar" />
+          <div className="arr" onClick={handleScrollToSectionTwo}>
+            <BiChevronsDown />
+          </div>
         </section>
-        <section></section>
       </SessionOneContainer>
+      <SectionTwo sectionTwoRef={sectionTwoRef} />
     </>
   );
 };

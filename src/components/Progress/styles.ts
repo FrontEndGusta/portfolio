@@ -9,7 +9,7 @@ progress {
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
-  height: 4px;
+  height: 2px;
   border: none;
   background: transparent;
 }
