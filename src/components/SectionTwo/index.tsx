@@ -26,10 +26,10 @@ const SectionTwo: React.FC<SectionTwoProps> = ({ sectionTwoRef }) => {
       <SessionTwoContainer ref={sectionTwoRef}>
         <section className="about">
           <div className="carrousel">
-            {/* <CarouselTwo /> */}
+            <CarouselTwo />
           </div>
           <h2>Experiências</h2>
-          <div className="containerCards">
+          {/* <div className="containerCards">
             <Card
               title="Portal Minha Senha"
               imageUrl={image1}
@@ -37,7 +37,7 @@ const SectionTwo: React.FC<SectionTwoProps> = ({ sectionTwoRef }) => {
               icons={icons}
               onViewMoreClick={openModal}
             />
-          </div>
+          </div> */}
           <div></div>
         </section>
       </SessionTwoContainer>
