@@ -26,7 +26,7 @@ const SectionTwo: React.FC<SectionTwoProps> = ({ sectionTwoRef }) => {
       <SessionTwoContainer ref={sectionTwoRef}>
         <section className="about">
           <div className="carrousel">
-            <CarouselTwo />
+            {/* <CarouselTwo /> */}
           </div>
           <h2>Experiências</h2>
           <div className="containerCards">
