@@ -8,16 +8,16 @@ interface ThemeSwitchProps {
 
 export const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ toggleTheme }) => {
   const isChecked = false;
-  const { title } = useContext(ThemeContext);
+  const theme = useContext(ThemeContext);
 
   return (
     <ThemeSwitchContainer>
-      <label className={`theme-switch ${isChecked ? "night" : "light"}`}>
+       <label className={`theme-switch ${isChecked ? "night" : "light"}`}>
         <input
           type="checkbox"
           className="theme-switch__checkbox"
           onChange={toggleTheme}
-          checked={title === "dark"}
+          checked={theme && theme.title === "dark"} // Access 'title' from the theme
         />
         <div className="theme-switch__container">
           <div className="theme-switch__clouds"></div>
