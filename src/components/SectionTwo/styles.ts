@@ -7,6 +7,7 @@ export const SessionTwoContainer = styled.div`
 }
 .about h2{
   margin-top: 50px;
+  color: ${props => props.theme.colors.primary};
 }
 .containerCards{
     display: flex;

@@ -27,7 +27,7 @@ export const ContainerCarouselTwo = styled.div`
   .skills h2{
     letter-spacing: 1.5px;
     font-weight: 700;
-    margin:15px 0
+    margin:15px 0;
   }
   .skills p{
     letter-spacing: 1.5px;
@@ -35,6 +35,7 @@ export const ContainerCarouselTwo = styled.div`
     opacity: .9;
     margin-bottom: 15px;
     line-height: 25px;
+    color: ${props => props.theme.colors.primary};
   }
   .image6{
     filter: ${props => props.theme.colors.filter};

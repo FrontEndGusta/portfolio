@@ -30,7 +30,7 @@ const modalOpenAnimation = keyframes`
 //   }
 
 export const ModalVideoContainer = styled.div`
-  /* Estilize o modal externo aqui, por exemplo, com um fundo semi-transparente e centralizado na tela */
+
   position: fixed;
   top: 0;
   left: 0;
@@ -109,7 +109,7 @@ export const ButtonContainer = styled.div`
   margin-top: 20px;
   button {
     /* Estilize os botões conforme necessário */
-  
+    border: 2px solid #090C08;
     cursor: pointer;
     
     &:hover {

@@ -57,6 +57,7 @@ export const CardContainer = styled.div`
     overflow: auto; /* Adiciona uma barra de rolagem quando necessário */
     max-height: 90%; /* Define a altura máxima antes da barra de rolagem aparecer */
     padding: 1px;
+    color: ${props => props.theme.colors.primary};
   }
   .more p::-webkit-scrollbar {
     width: 5px; /* Largura da barra de rolagem vertical */

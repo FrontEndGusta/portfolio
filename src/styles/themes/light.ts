@@ -7,7 +7,6 @@ export default {
         background: '#FFFFFF',
         background_popover: '#090C08',
         h1: '#090C08',
-        text: '#333',
         text_popover: '#FFFFFF',
         svg: '#090C08',
         filter: 100,

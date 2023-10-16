@@ -57,6 +57,7 @@ export const SessionOneContainer = styled.div`
     font-weight: 400;
     width: 80%;
     letter-spacing: 1.5px;
+    color: ${props => props.theme.colors.primary};
   }
 
   .containerBtn {

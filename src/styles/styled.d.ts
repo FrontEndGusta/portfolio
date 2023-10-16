@@ -10,7 +10,6 @@ declare module 'styled-components' {
       background: string;
       background_popover: string;
       text_popover: string;
-      text: string;
       h1: string;
       svg: string;
       filter: number;

@@ -7,7 +7,6 @@ export default {
         background: '#090C08',
         background_popover: '#FFFFFF',
         h1: '#f5f5f5',
-        text: '#F7EDE2',
         text_popover: '#090C08',
         svg: '#FFFFFF',
         filter: 'invert(100%)', // Corrigido: definição da string de filtro
