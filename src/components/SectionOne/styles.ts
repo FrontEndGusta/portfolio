@@ -38,9 +38,6 @@ export const SessionOneContainer = styled.div`
       justify-content: center;
       margin-bottom: 40px;
     }
-    .banner h2 {
-      font-size: 2.3em ;
-    }
   }
 
   .banner::before {

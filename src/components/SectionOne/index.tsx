@@ -22,7 +22,7 @@ export const SectionOne: React.FC = () => {
             <h3>Desenvolvedor Front-End</h3>
             <div className="containerBtn">
               <button className="cv">
-                Download CV <BiArrowToBottom />
+                Baixar CV <BiArrowToBottom />
               </button>
               <button className="contact">Contato</button>
             </div>

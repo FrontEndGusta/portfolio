@@ -8,7 +8,14 @@ export const TypeWriterContainer = styled.div`
     width: 100%;
   }
   .typewriter h2 {
-    font-size: 3.5em;
+    width: 100%;
+    font-size: 3em;
+  }
+
+  @media (width <= 620px) {
+    .typewriter h2 {
+      font-size: 2em;
+    }
   }
 
   .writer::after {
@@ -26,6 +33,5 @@ export const TypeWriterContainer = styled.div`
         opacity: 0;
       }
     }
-   
   }
 `;
