@@ -1,10 +1,11 @@
-import CarouselTwo from "../CarouselTwo";
 import React, { useState } from "react";
 import { SessionTwoContainer } from "./styles";
 import image1 from "../../assets/avatar.jpeg";
 import { BiLogoJavascript, BiLogoHtml5, BiLogoCss3 } from "react-icons/bi";
 import Card from "../Card";
 import ModalVideo from "../Modal-2";
+import Carousel from "../Carousel";
+import Carousel3D from "../Carousel";
 interface SectionTwoProps {
   sectionTwoRef: React.RefObject<HTMLDivElement>; // Defina a propriedade sectionTwoRef corretamente
 }
@@ -25,11 +26,16 @@ const SectionTwo: React.FC<SectionTwoProps> = ({ sectionTwoRef }) => {
     <>
       <SessionTwoContainer ref={sectionTwoRef}>
         <section className="about">
+          <div className="unir">
+          <div className="teste">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.</p>
+          </div>
           <div className="carrousel">
-            <CarouselTwo />
+            <Carousel3D images={[]}/>
+          </div>
           </div>
           <h2>Experiências</h2>
-          {/* <div className="containerCards">
+          <div className="containerCards">
             <Card
               title="Portal Minha Senha"
               imageUrl={image1}
@@ -37,7 +43,7 @@ const SectionTwo: React.FC<SectionTwoProps> = ({ sectionTwoRef }) => {
               icons={icons}
               onViewMoreClick={openModal}
             />
-          </div> */}
+          </div>
           <div></div>
         </section>
       </SessionTwoContainer>

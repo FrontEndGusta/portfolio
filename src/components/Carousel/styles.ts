@@ -1,80 +1,67 @@
 import styled from "styled-components";
 
 export const ContainerCarousel = styled.div`
-ol,
-li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
+  .carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 
-.carousel {
-  position: relative;
-  width: 100%;
-  height: 30vh;
-  perspective: 100px;
-  overflow: hidden;
-}
+  .carousel {
+    display: flex;
+    width: 300px; /* Largura do contêiner do carrossel (ajustada para 200px) */
+    animation: 5s slide infinite linear;
+  }
 
-.carousel__viewport {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  overflow-x: scroll;
-  counter-reset: item;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-}
+  .carousel-slide {
+    transition: transform 0.5s ease;
+    width: 100%; /* Garante que cada slide ocupe a largura total do contêiner */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.carousel::before,
-.carousel::after {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  left: 50%;
-  translate: -50% 0;
-  width: 500%;
-  height: 500%;
-  border-radius: 50%;
-  background: #ffffff;
-}
+  .carousel-image {
+    margin-left: 20px;
+    width: 100px; /* Largura da imagem 100% para preencher o slide */
+    height: auto; /* Altura automática */
+    filter: brightness(0.7); /* Reduz o brilho das imagens não ativas */
+    transition: filter 0.5s ease; /* Aplica uma transição suave para o filtro */
+  }
 
-.carousel::before {
-  top: -480%;
-}
+  .carousel svg{
+    width: 80px;
+    height: 80px;
+  }
 
-.carousel::after {
-  bottom: -480%;
-}
+  .carousel-slide.active {
+    transform: translateX(0);
+  }
 
-.carousel__slide {
-  position: relative;
-  flex: 0 0 33.33%;
-  width: 33.33%;
-  counter-increment: item;
-}
+  .carousel-slide.active .carousel-image {
+    filter: brightness(1); /* Mantém o brilho normal para a imagem ativa */
+    transition: filter 0.5s ease; /* Adicione uma transição suave para o filtro */
+  }
 
-.carousel__slide:before {
-  content: counter(item);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -40%, 70px);
-}
-
-.carousel__snapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  scroll-snap-align: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: 50%;
-  border: 10px solid #ffffff;
-}
-`;
+  .carousel-slide.active .carousel-image:hover {
+    transform: scale(1.2); /* Efeito de escala ao passar o mouse sobre a imagem ativa */
+    transition: transform 0.5s ease; /* Adicione uma transição suave para o efeito de escala */
+  }
+  .buttons{
+    display: flex;
+    gap:15px;
+  }
+  .buttons button{
+    padding: 5px 10px;
+  }
+`

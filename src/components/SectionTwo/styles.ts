@@ -9,6 +9,13 @@ export const SessionTwoContainer = styled.div`
   margin-top: 50px;
   color: ${props => props.theme.colors.primary};
 }
+.unir{
+  display:flex;
+
+}
+.teste{
+  width: 65%;
+}
 .containerCards{
     display: flex;
     align-items:center;
