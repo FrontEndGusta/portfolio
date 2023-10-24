@@ -73,7 +73,7 @@ export const Popovers: React.FC = () => {
       </nav>
       {isModalOpen && ( // Verifica se o modal deve ser exibido
         <Modal title={modalTitle} closeModal={closeModal}>
-          <p>{modalChildren}</p>
+         {modalChildren}
         </Modal>
       )}
     </PopoversContainer>

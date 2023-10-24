@@ -50,8 +50,8 @@ export const TypeWriter: React.FC<Props> = () => {
 
   return (
     <TypeWriterContainer theme={theme}>
-      <div>
-        <h1>{textInitial}</h1> <h1 className="writer">{texto}</h1>
+      <div className="typewriter">
+        <h2>{textInitial}</h2> <h2 className="writer">{texto}</h2>
       </div>
     </TypeWriterContainer>
   );

@@ -33,6 +33,14 @@ export const SessionOneContainer = styled.div`
       flex-direction: column-reverse;
       justify-content: center;
     }
+    .containerBtn {
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    .banner h2 {
+      font-size: 2.3em ;
+    }
   }
 
   .banner::before {
@@ -49,15 +57,14 @@ export const SessionOneContainer = styled.div`
   .banner h2 {
     white-space: nowrap;
     margin: 0 0 4px;
-    font-size: 40px;
     letter-spacing: 1.5px;
+    color: ${(props) => props.theme.colors.primary};
   }
 
   .banner h3 {
     font-weight: 400;
-    width: 80%;
     letter-spacing: 1.5px;
-    color: ${props => props.theme.colors.primary};
+    color: ${(props) => props.theme.colors.primary};
   }
 
   .containerBtn {
@@ -130,7 +137,6 @@ export const SessionOneContainer = styled.div`
     bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
-
   }
   .arr svg {
     height: 40px;
@@ -138,17 +144,17 @@ export const SessionOneContainer = styled.div`
     cursor: pointer;
     animation: arrowDown 1.5s ease infinite;
   }
-  .arr svg:active{
+  .arr svg:active {
     color: blue;
   }
-  
+
   @keyframes arrowDown {
-    0%, 100% {
-      transform: translateY(0)
+    0%,
+    100% {
+      transform: translateY(0);
     }
-      50%{
-        transform: translateY(-10px);
-      }
+    50% {
+      transform: translateY(-10px);
     }
-  
+  }
 `;

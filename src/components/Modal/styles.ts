@@ -72,6 +72,9 @@ export const ModalContainer = styled.div`
     color: #a3a3a3;
   }
 
+  .modal-body{
+    height: 90%;
+  }
   .close-button {
     background: none;
     border: none;
@@ -87,6 +90,17 @@ export const ModalContainer = styled.div`
 
 .close-button.hide {
   opacity: 0; /* Tornar o botão de fechamento invisível durante o fechamento */
+}
+
+.body{
+  height: 100%;
+}
+
+@media (width <= 620px) {
+  .modal-content{
+    width: 90%;
+    height: 75%;
+  }
 }
 
 

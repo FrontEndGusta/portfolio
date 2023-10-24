@@ -71,7 +71,7 @@ export const PopoversContainer = styled.div`
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
-    height: 380px;
+    height: 100%;
     position: relative;
   }
   .icons {

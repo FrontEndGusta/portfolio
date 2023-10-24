@@ -18,9 +18,7 @@ export const SectionOne: React.FC = () => {
       <SessionOneContainer>
         <section className="banner">
           <div className="textBanner">
-            <h2 className="teste">
-              <TypeWriter />
-            </h2>
+            <TypeWriter />
             <h3>Desenvolvedor Front-End</h3>
             <div className="containerBtn">
               <button className="cv">
