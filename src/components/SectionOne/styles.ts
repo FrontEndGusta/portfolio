@@ -33,6 +33,7 @@ export const SessionOneContainer = styled.div`
       flex-direction: column-reverse;
       justify-content: center;
       padding-top: 0;
+      height: 95vh;
     }
     .containerBtn {
       align-items: center;
