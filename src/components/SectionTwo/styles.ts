@@ -9,12 +9,19 @@ export const SessionTwoContainer = styled.div`
   margin-top: 50px;
   color: ${props => props.theme.colors.primary};
 }
-.unir{
+.containerAbout{
   display:flex;
-
+  align-items: center;
+  gap:15px
 }
-.teste{
+
+.tecnologies{
   width: 65%;
+}
+
+.carrousel{
+  width: 40%;
+  padding-right: 40px;
 }
 .containerCards{
     display: flex;

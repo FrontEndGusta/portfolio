@@ -6,6 +6,8 @@ import Card from "../Card";
 import ModalVideo from "../Modal-2";
 import Carousel from "../Carousel";
 import Carousel3D from "../Carousel";
+import Carouselteste from "../IconSlider";
+import IconSlider from "../IconSlider";
 interface SectionTwoProps {
   sectionTwoRef: React.RefObject<HTMLDivElement>; // Defina a propriedade sectionTwoRef corretamente
 }
@@ -26,12 +28,13 @@ const SectionTwo: React.FC<SectionTwoProps> = ({ sectionTwoRef }) => {
     <>
       <SessionTwoContainer ref={sectionTwoRef}>
         <section className="about">
-          <div className="unir">
-          <div className="teste">
+          <div className="containerAbout">
+          <div className="tecnologies">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.</p>
           </div>
           <div className="carrousel">
-            <Carousel3D images={[]}/>
+            {/* <Carousel3D images={[]}/> */}
+            <IconSlider/>
           </div>
           </div>
           <h2>Experiências</h2>
