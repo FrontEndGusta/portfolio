@@ -96,7 +96,6 @@ export const VideoContainer = styled.div`
   p{
     color: black;
     opacity: .9;
-    letter-spacing: 1.5px;
   }
 `;
 

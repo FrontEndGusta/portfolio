@@ -6,47 +6,63 @@ import {
   BiLogoJavascript,
   BiLogoGithub,
   BiLogoTypescript,
+  BiLogoHtml5,
+  BiLogoCss3,
+  BiLogoReact,
 } from "react-icons/bi";
+import {SiStyledcomponents} from 'react-icons/si'
 import image1 from "../../assets/avatar.jpeg";
 import { ContainerTeste } from "./styles";
 
-// Import other images as needed
-
-const imageSources = [<BiLogoJavascript />, <BiLogoGithub />, <BiLogoTypescript />, <BiLogoJavascript />, <BiLogoGithub />, <BiLogoTypescript />, <BiLogoTypescript />];
+const imageSources = [
+  { icon: <BiLogoJavascript />, name: "JavaScript" },
+  { icon: <BiLogoGithub />, name: "GitHub" },
+  { icon: <BiLogoTypescript />, name: "TypeScript" },
+  { icon: <BiLogoHtml5 />, name: "HTML" },
+  { icon: <BiLogoCss3 />, name: "CSS3" },
+  { icon: <SiStyledcomponents />, name: "Styled-Components" },
+  { icon: <BiLogoReact />, name: "React" },
+];
 
 const IconSlider: React.FC = () => {
   return (
     <>
       <ContainerTeste>
-      <div className="logos">
-        <div className="logos-slide">
-          {imageSources.map((image, index) => (
-            typeof image === "string" ? (
-              <img
-                src={image}
-                alt={`Slide ${index}`}
-                className="carousel-image"
-              />
-            ) : (
-              image // Render React elements directly
-            )
-          ))}
+        <div className="logos">
+          <div className="logos-slide">
+            {imageSources.map((item, index) => (
+              <div className="slides" key={index}>
+                {typeof item.icon === "string" ? (
+                  <img
+                    src={item.icon}
+                    alt={`Slide ${index}`}
+                    className="carousel-image"
+                  />
+                ) : (
+                  item.icon // Render React elements directly
+                )}
+                <div className="technology-name">{item.name}</div>
+              </div>
+            ))}
+          </div>
+          <div className="logos-slide">
+            {imageSources.map((item, index) => (
+              <div className="slides" key={index}>
+                {typeof item.icon === "string" ? (
+                  <img
+                    src={item.icon}
+                    alt={`Slide ${index}`}
+                    className="carousel-image"
+                  />
+                ) : (
+                  item.icon // Render React elements directly
+                )}
+                <div className="technology-name">{item.name}</div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="logos-slide">
-          {imageSources.map((image, index) => (
-            typeof image === "string" ? (
-              <img
-                src={image}
-                alt={`Slide ${index}`}
-                className="carousel-image"
-              />
-            ) : (
-              image // Render React elements directly
-            )
-          ))}
-        </div>
-      </div>
-    </ContainerTeste>
+      </ContainerTeste>
     </>
   );
 };

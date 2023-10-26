@@ -30,9 +30,11 @@ const SectionTwo: React.FC<SectionTwoProps> = ({ sectionTwoRef }) => {
         <section className="about">
           <div className="containerAbout">
           <div className="tecnologies">
+            <h2>Sobre mim</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.</p>
           </div>
           <div className="carrousel">
+            <h2>Habilidades</h2>
             {/* <Carousel3D images={[]}/> */}
             <IconSlider/>
           </div>

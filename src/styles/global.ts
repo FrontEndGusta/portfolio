@@ -21,7 +21,12 @@ export default createGlobalStyle`
 
   h1 {
     color: ${(props) => props.theme.colors.h1};
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
+  }
+  
+  p{
+    letter-spacing: 1.5px;
+    color: ${(props) => props.theme.colors.primary};
   }
 
   .popover{

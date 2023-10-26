@@ -14,6 +14,7 @@ export const CardContainer = styled.div`
     border-radius: 20px;
     transition: all 0.1s ease-out;
     cursor: pointer;
+    box-shadow: ${(props) => props.theme.colors.shadow};;
   }
   .card:hover {
     transform: scale(1.1);

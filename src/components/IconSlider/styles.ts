@@ -13,28 +13,13 @@ export const ContainerTeste = styled.div`
 
   .logos {
     overflow: hidden;
-    background: white;
+    background: ${props => props.theme.colors.secundary};
     white-space: nowrap;
     position: relative;
-  }
-
-  .logos:before,
-  .logos:after {
-    position: absolute;
-    top: 0;
-    width: 250px;
-    height: 100%;
-    content: "";
-  }
-
-  .logos:before {
-    left: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
-  }
-
-  .logos:after {
-    right: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+    margin: 35px 0;
+    padding: 10px;
+    border-radius: 5px; /* Adicione bordas arredondadas */
+    box-shadow: ${props => props.theme.colors.shadow} /* Ajuste os valores da sombra para torná-la mais escura */
   }
 
   .logos:hover .logos-slide {
@@ -46,8 +31,19 @@ export const ContainerTeste = styled.div`
     animation: 5s slide infinite linear;
   }
 
-  .logos-slide svg {
-    height: 70px;
-    margin: 0 40px;
+  .slides{
+    display: inline-block;
   }
-`;
+
+  .technology-name{
+    color: ${props => props.theme.colors.primary};
+  }
+
+  .logos-slide svg {
+    height: 85px;
+    margin: 0 40px;
+    width: 85px;
+    color: ${props => props.theme.colors.primary}
+  }
+
+`

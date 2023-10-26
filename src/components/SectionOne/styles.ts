@@ -63,6 +63,7 @@ export const SessionOneContainer = styled.div`
   .banner h3 {
     font-weight: 400;
     letter-spacing: 1.5px;
+    margin: 10px 0 10px 0;
     color: ${(props) => props.theme.colors.primary};
   }
 

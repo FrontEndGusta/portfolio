@@ -7,13 +7,13 @@ export const TypeWriterContainer = styled.div`
   .typewriter {
     width: 100%;
   }
-  .typewriter h2 {
+  .typewriter h1 {
     width: 100%;
     font-size: 3em;
   }
 
   @media (width <= 620px) {
-    .typewriter h2 {
+    .typewriter h1 {
       font-size: 2em;
     }
   }

@@ -13,6 +13,7 @@ declare module 'styled-components' {
       h1: string;
       svg: string;
       filter: number;
+      shadow: string;
     };
   }
 }
