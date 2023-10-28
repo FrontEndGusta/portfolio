@@ -10,7 +10,7 @@ import {
   BiLogoCss3,
   BiLogoReact,
 } from "react-icons/bi";
-import {SiStyledcomponents} from 'react-icons/si'
+import {SiStyledcomponents, SiPostman} from 'react-icons/si'
 import image1 from "../../assets/avatar.jpeg";
 import { ContainerTeste } from "./styles";
 
@@ -22,6 +22,7 @@ const imageSources = [
   { icon: <BiLogoCss3 />, name: "CSS3" },
   { icon: <SiStyledcomponents />, name: "Styled-Components" },
   { icon: <BiLogoReact />, name: "React" },
+  { icon: <SiPostman />, name: "Postman" },
 ];
 
 const IconSlider: React.FC = () => {

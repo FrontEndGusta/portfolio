@@ -9,11 +9,6 @@ import {
 } from "react-icons/bi";
 import { PopoversContainer } from "./styles";
 import ione from "../../assets/popovers/1.jpg";
-import itwo from "../../assets/popovers/2.jpg";
-import itree from "../../assets/popovers/3.jpg";
-import ifor from "../../assets/popovers/4.jpg";
-import ifive from "../../assets/popovers/4.jpg";
-import avatar from "../../assets/popovers/avatar.webp";
 import Modal from "../Modal";
 
 export const Popovers: React.FC = () => {
@@ -50,7 +45,7 @@ export const Popovers: React.FC = () => {
               "Título do Favorito",
               <div className="containerIcons">
                 <div className="imageCard">
-                  <img src={ione} alt="" />
+                  <img src='#' alt="" />
                 </div>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga

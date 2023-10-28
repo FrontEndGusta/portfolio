@@ -54,6 +54,7 @@ export const ModalContainer = styled.div`
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     width: 40%;
     height: 70%;
+    clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
     overflow-y: auto; /* Adiciona uma barra de rolagem se o conteúdo for muito longo */
   }
 

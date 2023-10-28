@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { CardContainer } from "./styles";
 
 interface CardProps {
-  title: string;
+  title: string | number;
   imageUrl?: string;
-  info: string;
+  info: string | number;
   icons: React.ReactNode[]; // Nova prop para a imagem
   onViewMoreClick: () => void;
 }

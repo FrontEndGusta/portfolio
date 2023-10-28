@@ -4,6 +4,7 @@ import { SessionOneContainer } from "./styles";
 import TypeWriter from "../TypeWriter";
 import image from "../../assets/avatar.jpeg";
 import SectionTwo from "../SectionTwo";
+import SectionTree from "../SectionTree";
 export const SectionOne: React.FC = () => {
   const sectionTwoRef = useRef<HTMLDivElement | null>(null);
 
@@ -34,6 +35,7 @@ export const SectionOne: React.FC = () => {
         </section>
       </SessionOneContainer>
       <SectionTwo sectionTwoRef={sectionTwoRef} />
+      <SectionTree />
     </>
   );
 };

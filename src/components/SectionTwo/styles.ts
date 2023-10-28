@@ -35,11 +35,6 @@ export const SessionTwoContainer = styled.div`
   width: 100%;
   padding: 0 50px 0 50px;
 }
-.containerCards{
-    display: flex;
-    align-items:center;
-    justify-content: space-around;
-    margin-top: 50px;
-}
+
 
 `

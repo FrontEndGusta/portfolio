@@ -75,10 +75,32 @@ export const PopoversContainer = styled.div`
     position: relative;
   }
   .icons {
-    border: 2px solid black;
+    border-bottom: 2px solid black;
     padding: 10px 15px;
     border-radius: 50px;
   }
+
+ /* Ícone do Gmail */
+.icons > :nth-child(4):hover {
+  background-color: rgb(221, 157, 185);
+}
+
+/* Ícone do LinkedIn */
+.icons > :nth-child(2):hover {
+  background-color: #47a0d5; /* Azul mais claro */
+}
+
+/* Ícone do GitHub */
+.icons > :nth-child(3):hover {
+  background-color: #333333; /* Cinza mais claro */
+}
+
+/* Ícone do Instagram */
+.icons > :first-child:hover {
+  background-color: rgb(221, 157, 189);
+}
+
+
 
   .containerIcons svg {
     color: black;
@@ -86,25 +108,18 @@ export const PopoversContainer = styled.div`
     height: 35px;
     margin: 0 15px;
     cursor: pointer;
+    transition: 300ms all ease-in-out;
+    clip-path: circle(65%);
   }
   .containerIcons svg:hover {
-    animation: spinAndScale 0.9s ease;
-    transform: scale(1.4);
-  }
-
-  @keyframes spinAndScale {
-    0% {
-      transform: rotate(0deg) scale(1);
-    }
-    100% {
-      transform: rotateY(360deg) scale(1.4);
-    }
+    translate: -0px -10px;
   }
 
   .containerIcons p {
     width: 85%;
     text-align: center;
     font-size: 16px;
+    color: ${props => props.theme.colors.secundary};
     letter-spacing: 1px;
     line-height: 1.5;
     margin-bottom: 10px;
