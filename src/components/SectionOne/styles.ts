@@ -1,6 +1,17 @@
 import styled from "styled-components";
 
 export const SessionOneContainer = styled.div`
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
   body {
     margin: 0;
   }
@@ -25,6 +36,10 @@ export const SessionOneContainer = styled.div`
     padding-bottom: 100px;
     height: 100vh;
     margin-bottom: 40px;
+  }
+
+  .visible {
+    animation:slide-in-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
 
   @media (width <= 620px) {

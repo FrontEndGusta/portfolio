@@ -3,10 +3,16 @@ import { BiArrowToBottom, BiChevronsDown } from "react-icons/bi";
 import { SessionOneContainer } from "./styles";
 import TypeWriter from "../TypeWriter";
 import image from "../../assets/avatar.jpeg";
+import useIntersectionObserver from "../../utils/useIntersectionObserver";
 import SectionTwo from "../SectionTwo";
 import SectionTree from "../SectionTree";
 export const SectionOne: React.FC = () => {
+
   const sectionTwoRef = useRef<HTMLDivElement | null>(null);
+  const sectionOneRef = useRef<HTMLDivElement | null>(null);
+
+
+  const isBannerVisible = useIntersectionObserver(sectionOneRef);
 
   const handleScrollToSectionTwo = () => {
     // Role suavemente para a SectionTwo
@@ -16,8 +22,8 @@ export const SectionOne: React.FC = () => {
   };
   return (
     <>
-      <SessionOneContainer>
-        <section className="banner">
+      <SessionOneContainer ref={sectionOneRef}>
+        <section className={`banner ${isBannerVisible ? 'visible' : ''}`}>
           <div className="textBanner">
             <TypeWriter />
             <h3>Desenvolvedor Front-End</h3>

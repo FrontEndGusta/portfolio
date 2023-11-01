@@ -21,8 +21,8 @@ const App = () => {
       <GlobalStyle />
       <Header toggleTheme={toggleTheme}/>
       <PageOne/>
-      <Progress />
       <Popovers />
+      <Progress />
     </div>
     </ThemeProvider>
   );

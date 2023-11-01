@@ -13,7 +13,13 @@ export const SessionTreeContainer = styled.div`
     display: flex;
     align-items:center;
     justify-content: space-around;
+    padding: 0 50px 0 50px;
     margin-top: 50px;
+}
+@media (width <= 650px) {
+    .containerCards{
+        flex-direction: column;
+    }
 }
 
 `

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { SessionTwoContainer } from "./styles";
 import Card from "../Card";
+import useIntersectionObserver from "../../utils/useIntersectionObserver";
 import texts from "../../utils/texts";
 import IconSlider from "../IconSlider";
 interface SectionTwoProps {
@@ -8,21 +9,22 @@ interface SectionTwoProps {
 }
 
 const SectionTwo: React.FC<SectionTwoProps> = ({ sectionTwoRef }) => {
+  const isAboutVisible = useIntersectionObserver(sectionTwoRef);
 
   return (
     <>
       <SessionTwoContainer ref={sectionTwoRef}>
-        <section className="about">
+        <section className={`about ${isAboutVisible ? "visible" : ""}`}>
           <div className="containerAbout">
-          <div className="tecnologies">
-            <h2>{texts.sectionTwo.about.aboutMe}</h2>
-            <p>{texts.sectionTwo.about.description}</p>
-          </div>
-          <div className="carrousel">
-            <h2>Habilidades</h2>
-            {/* <Carousel3D images={[]}/> */}
-            <IconSlider/>
-          </div>
+            <div className="tecnologies">
+              <h2>{texts.sectionTwo.about.aboutMe}</h2>
+              <p>{texts.sectionTwo.about.description}</p>
+            </div>
+            <div className="carrousel">
+              <h2>Habilidades</h2>
+              {/* <Carousel3D images={[]}/> */}
+              <IconSlider />
+            </div>
           </div>
           <div></div>
         </section>
