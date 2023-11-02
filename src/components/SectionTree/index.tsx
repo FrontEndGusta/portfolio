@@ -3,53 +3,99 @@ import { BiLogoJavascript, BiLogoHtml5, BiLogoCss3 } from "react-icons/bi";
 import Card from "../Card";
 import image1 from "../../assets/avatar.jpeg";
 import { SessionTreeContainer } from "./styles";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import ModalVideo from "../Modal-2";
+import useIntersectionObserver from "../../utils/useIntersectionObserver";
 
 export const SectionTree: React.FC = () => {
   const icons = [<BiLogoJavascript />, <BiLogoHtml5 />, <BiLogoCss3 />];
 
+  const [selectedExperienceModalIndex, setSelectedExperienceModalIndex] =
+    useState<number | null>(null);
+
+  const [selectedProjectsModalIndex, setSelectedProjectsModalIndex] = useState<
+    number | null
+  >(null);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = () => {
+  const sectionTreeRef = useRef<HTMLDivElement | null>(null);
+
+  const isProjectsVisible = useIntersectionObserver(sectionTreeRef);
+
+  const openModal = (index: number, section: string) => {
+    if (section === "experience") {
+      setSelectedExperienceModalIndex(index);
+    } else if (section === "projects") {
+      setSelectedProjectsModalIndex(index);
+    }
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+  // renderizando Cards
+  const renderCards = (
+    data: {
+      title: string;
+      description: string;
+    }[],
+    section: string
+  ) => {
+    return data.map((cardData, index) => (
+      <div className="hidden" key={index}>
+        <Card
+          title={cardData.title}
+          imageUrl={image1}
+          info={cardData.description}
+          icons={icons}
+          onViewMoreClick={() => openModal(index, section)}
+        />
+      </div>
+    ));
+  };
+
+  //renderizando modais
+
   return (
     <>
-      <SessionTreeContainer>
-        <div className="AllProjects">
+      <SessionTreeContainer ref={sectionTreeRef}>
+        <div className="hidden">
           <h2>Experiências</h2>
           <div className="containerCards">
-            <Card
-              title={texts.sectionTwo.card[0].title}
-              imageUrl={image1}
-              info={texts.sectionTwo.card[0].description}
-              icons={icons}
-              onViewMoreClick={openModal}
-            />
-            <Card
-              title={texts.sectionTwo.card[1].title}
-              imageUrl={image1}
-              info={texts.sectionTwo.card[1].description}
-              icons={icons}
-              onViewMoreClick={openModal}
-            />
+            {renderCards(texts.sectionTree.cardExperience, "experience")}
           </div>
+
           <h2>{texts.sectionTree.projects.title}</h2>
+          <div className="containerCards">
+            {renderCards(texts.sectionTree.cardsProjects, "projects")}
+          </div>
         </div>
       </SessionTreeContainer>
-      <ModalVideo
-        title={texts.sectionTwo.modalVideo[0].title}
-        description={texts.sectionTwo.modalVideo[0].description}
-        videoUrl={texts.sectionTwo.modalVideo[0].url}
-        closeModal={closeModal}
-        isOpen={isModalOpen} // Passa o estado para o ModalVideo
-      />
-      ;
+
+      {texts.sectionTree.modalVideoExperience.map((modalData, index) => (
+        <ModalVideo
+          key={index} // Certifique-se de definir uma chave única
+          title={modalData.title}
+          description={modalData.description}
+          videoUrl={modalData.url}
+          closeModal={closeModal}
+          isOpen={isModalOpen && selectedExperienceModalIndex === index}
+        />
+      ))}
+
+      {texts.sectionTree.modalVideoAllProjects.map((modalData, index) => (
+        <ModalVideo
+          key={index} // Certifique-se de definir uma chave única
+          title={modalData.title}
+          description={modalData.description}
+          videoUrl={modalData.url}
+          closeModal={closeModal}
+          isOpen={isModalOpen && selectedProjectsModalIndex === index}
+        />
+      ))}
     </>
   );
 };

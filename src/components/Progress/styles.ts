@@ -20,6 +20,8 @@ progress::-webkit-progress-bar {
 
 progress::-webkit-progress-value {
   background-color: #8f44fd;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
 nav h1 {

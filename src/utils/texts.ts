@@ -1,3 +1,5 @@
+import image1 from '../assets/avatar.jpeg'
+
 const texts = {
   sectionTwo: {
     about: {
@@ -5,7 +7,10 @@ const texts = {
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
     },
-    card: [
+  },
+
+  sectionTree: {
+    cardExperience: [
       {
         title: "Portal Minha Senha",
         description:
@@ -17,7 +22,8 @@ const texts = {
           "Ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
       },
     ],
-    modalVideo: [
+
+    modalVideoExperience: [
       {
         title: "titulo do video",
         description:
@@ -27,26 +33,41 @@ const texts = {
       {
         title: "titulo do video",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
+          "ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
         url: "https://www.youtube.com/embed/SEZNJp3otzg",
       },
     ],
-  },
-  sectionTree: {
+
+    modalVideoAllProjects: [
+      {
+        title: "titulo de teste1",
+        description:
+          "1 ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
+        url: "https://www.youtube.com/embed/SEZNJp3otzg",
+      },
+      {
+        title: "titulo teste2",
+        description:
+          "2 ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
+        url: "https://www.youtube.com/embed/SEZNJp3otzg",
+      },
+    ],
+
     projects: {
       title: "Todos os Projetos",
     },
-    cards: [
-        {
-            title: "Portal Minha Senha",
-            description:
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
-          },
-          {
-            title: "Portal ",
-            description:
-              "Ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
-          },
+
+    cardsProjects: [
+      {
+        title: "Portal Minha Senha",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
+      },
+      {
+        title: "Portal ",
+        description:
+          "Ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
+      },
     ],
   },
 };

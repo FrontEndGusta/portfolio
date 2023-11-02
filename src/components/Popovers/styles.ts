@@ -75,6 +75,10 @@ export const PopoversContainer = styled.div`
     position: relative;
   }
   .icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     border-bottom: 2px solid black;
     padding: 10px 15px;
     border-radius: 50px;
