@@ -11,6 +11,7 @@ export const SessionTreeContainer = styled.div`
 .hidden h2{
     text-align: center;
     margin: 50px 0;
+    color: ${props => props.theme.colors.primary};
 }
 
 .show{

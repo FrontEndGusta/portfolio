@@ -7,17 +7,27 @@ import { useRef, useState } from "react";
 import ModalVideo from "../Modal-2";
 import useIntersectionObserver from "../../utils/useIntersectionObserver";
 
+// Interface para os dados de um card
+interface CardData {
+  title: string;
+  description: string;
+}
+
+// Interface para os dados de um modal de vídeo
+interface ModalVideoData {
+  title: string;
+  description: string;
+  url: string;
+}
+
 export const SectionTree: React.FC = () => {
   const icons = [<BiLogoJavascript />, <BiLogoHtml5 />, <BiLogoCss3 />];
 
-  const [selectedExperienceModalIndex, setSelectedExperienceModalIndex] =
-    useState<number | null>(null);
+  const [isExperienceModalOpen, setIsExperienceModalOpen] = useState(false);
+  const [experienceModalIndex, setExperienceModalIndex] = useState<number | null>(null);
 
-  const [selectedProjectsModalIndex, setSelectedProjectsModalIndex] = useState<
-    number | null
-  >(null);
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isProjectsModalOpen, setIsProjectsModalOpen] = useState(false);
+  const [projectsModalIndex, setProjectsModalIndex] = useState<number | null>(null);
 
   const sectionTreeRef = useRef<HTMLDivElement | null>(null);
 
@@ -25,25 +35,21 @@ export const SectionTree: React.FC = () => {
 
   const openModal = (index: number, section: string) => {
     if (section === "experience") {
-      setSelectedExperienceModalIndex(index);
+      setIsExperienceModalOpen(true);
+      setExperienceModalIndex(index);
     } else if (section === "projects") {
-      setSelectedProjectsModalIndex(index);
+      setIsProjectsModalOpen(true);
+      setProjectsModalIndex(index);
     }
-    setIsModalOpen(true);
   };
 
   const closeModal = () => {
-    setIsModalOpen(false);
+    setIsExperienceModalOpen(false);
+    setIsProjectsModalOpen(false);
   };
 
-  // renderizando Cards
-  const renderCards = (
-    data: {
-      title: string;
-      description: string;
-    }[],
-    section: string
-  ) => {
+  // Função para renderizar Cards
+  const renderCards = (data: CardData[], section: string) => {
     return data.map((cardData, index) => (
       <div className="hidden" key={index}>
         <Card
@@ -57,7 +63,21 @@ export const SectionTree: React.FC = () => {
     ));
   };
 
-  //renderizando modais
+  // Função para renderizar modais de vídeo
+  const renderModalVideos = (modalDataArray: ModalVideoData[], isOpen: boolean, index: number | null) => {
+    if (isOpen && index !== null) {
+      return (
+        <ModalVideo
+          title={modalDataArray[index].title}
+          description={modalDataArray[index].description}
+          videoUrl={modalDataArray[index].url}
+          closeModal={closeModal}
+          isOpen={isOpen}
+        />
+      );
+    }
+    return null;
+  };
 
   return (
     <>
@@ -75,27 +95,8 @@ export const SectionTree: React.FC = () => {
         </div>
       </SessionTreeContainer>
 
-      {texts.sectionTree.modalVideoExperience.map((modalData, index) => (
-        <ModalVideo
-          key={index} // Certifique-se de definir uma chave única
-          title={modalData.title}
-          description={modalData.description}
-          videoUrl={modalData.url}
-          closeModal={closeModal}
-          isOpen={isModalOpen && selectedExperienceModalIndex === index}
-        />
-      ))}
-
-      {texts.sectionTree.modalVideoAllProjects.map((modalData, index) => (
-        <ModalVideo
-          key={index} // Certifique-se de definir uma chave única
-          title={modalData.title}
-          description={modalData.description}
-          videoUrl={modalData.url}
-          closeModal={closeModal}
-          isOpen={isModalOpen && selectedProjectsModalIndex === index}
-        />
-      ))}
+      {renderModalVideos(texts.sectionTree.modalVideoExperience, isExperienceModalOpen, experienceModalIndex)}
+      {renderModalVideos(texts.sectionTree.modalVideoAllProjects, isProjectsModalOpen, projectsModalIndex)}
     </>
   );
 };
