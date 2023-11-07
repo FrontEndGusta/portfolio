@@ -65,7 +65,7 @@ export const SessionOneContainer = styled.div`
     left: 50%;
     translate: -50% -50%;
     width: 100%;
-    height: 110%;
+    height: 100%;
   }
 
   .banner h2 {

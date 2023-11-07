@@ -52,6 +52,7 @@ export const ThemeSwitchContainer = styled.div`
   border-radius: var(--container-radius);
   overflow: hidden;
   cursor: pointer;
+  z-index: 2;
   -webkit-transition: var(--transition);
   -o-transition: var(--transition);
   transition: var(--transition);
