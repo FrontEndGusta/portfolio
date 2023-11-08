@@ -89,6 +89,7 @@ export const VideoContainer = styled.div`
    @media (width <= 768px) {
    flex-direction: column;
    align-items: center;
+   justify-content: center;
 
    .videoIframe{
     width: 100%;
