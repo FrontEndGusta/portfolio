@@ -3,9 +3,12 @@ import { BiLogoJavascript, BiLogoHtml5, BiLogoCss3 } from "react-icons/bi";
 import Card from "../Card";
 import image1 from "../../assets/avatar.jpeg";
 import { SessionTreeContainer } from "./styles";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import ModalVideo from "../Modal-2";
 import useIntersectionObserver from "../../utils/useIntersectionObserver";
+interface sectionThreeProps {
+  sectionThreeRef: React.RefObject<HTMLDivElement>;
+}
 
 // Interface para os dados de um card
 interface CardData {
@@ -20,18 +23,22 @@ interface ModalVideoData {
   url: string;
 }
 
-export const SectionTree: React.FC = () => {
+export const SectionThree: React.FC<sectionThreeProps> = ({
+  sectionThreeRef,
+}) => {
   const icons = [<BiLogoJavascript />, <BiLogoHtml5 />, <BiLogoCss3 />];
 
   const [isExperienceModalOpen, setIsExperienceModalOpen] = useState(false);
-  const [experienceModalIndex, setExperienceModalIndex] = useState<number | null>(null);
+  const [experienceModalIndex, setExperienceModalIndex] = useState<
+    number | null
+  >(null);
 
   const [isProjectsModalOpen, setIsProjectsModalOpen] = useState(false);
-  const [projectsModalIndex, setProjectsModalIndex] = useState<number | null>(null);
+  const [projectsModalIndex, setProjectsModalIndex] = useState<number | null>(
+    null
+  );
 
-  const sectionTreeRef = useRef<HTMLDivElement | null>(null);
-
-  const isProjectsVisible = useIntersectionObserver(sectionTreeRef);
+  const isProjectsVisible = useIntersectionObserver(sectionThreeRef);
 
   const openModal = (index: number, section: string) => {
     if (section === "experience") {
@@ -64,7 +71,11 @@ export const SectionTree: React.FC = () => {
   };
 
   // Função para renderizar modais de vídeo
-  const renderModalVideos = (modalDataArray: ModalVideoData[], isOpen: boolean, index: number | null) => {
+  const renderModalVideos = (
+    modalDataArray: ModalVideoData[],
+    isOpen: boolean,
+    index: number | null
+  ) => {
     if (isOpen && index !== null) {
       return (
         <ModalVideo
@@ -81,7 +92,7 @@ export const SectionTree: React.FC = () => {
 
   return (
     <>
-      <SessionTreeContainer ref={sectionTreeRef}>
+      <SessionTreeContainer ref={sectionThreeRef}>
         <div className="hidden">
           <h2>Experiências</h2>
           <div className="containerCards">
@@ -95,10 +106,18 @@ export const SectionTree: React.FC = () => {
         </div>
       </SessionTreeContainer>
 
-      {renderModalVideos(texts.sectionTree.modalVideoExperience, isExperienceModalOpen, experienceModalIndex)}
-      {renderModalVideos(texts.sectionTree.modalVideoAllProjects, isProjectsModalOpen, projectsModalIndex)}
+      {renderModalVideos(
+        texts.sectionTree.modalVideoExperience,
+        isExperienceModalOpen,
+        experienceModalIndex
+      )}
+      {renderModalVideos(
+        texts.sectionTree.modalVideoAllProjects,
+        isProjectsModalOpen,
+        projectsModalIndex
+      )}
     </>
   );
 };
 
-export default SectionTree;
+export default SectionThree;

@@ -74,6 +74,7 @@ export const Container = styled.div`
     cursor: pointer;
     transition: 0.2s;
     position: relative;
+    cursor: pointer;
   }
 
   .portfolio p {
@@ -91,15 +92,16 @@ export const Container = styled.div`
     text-align: center;
     padding: 0 15px;
   }
-  .switch ul li a {
+  .switch ul li {
     text-decoration: none;
     color: ${(props) => props.theme.colors.secundary};
     font-size: 1.2em;
     position: relative;
     letter-spacing: 0.15em;
+    cursor: pointer;
   }
   .menu-items li:after,
-  a:after {
+  li:after {
     bottom: -5px;
     content: "";
     display: block;
@@ -111,7 +113,7 @@ export const Container = styled.div`
     width: 0;
   }
   .menu-items li:hover:after,
-  a:hover:after {
+  li:hover:after {
     width: 100%;
     left: 0;
     background-color: ${(props) => props.theme.colors.secundary};

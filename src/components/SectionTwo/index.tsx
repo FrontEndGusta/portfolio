@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { SessionTwoContainer } from "./styles";
-import Card from "../Card";
 import useIntersectionObserver from "../../utils/useIntersectionObserver";
 import texts from "../../utils/texts";
 import IconSlider from "../IconSlider";
@@ -22,7 +21,6 @@ const SectionTwo: React.FC<SectionTwoProps> = ({ sectionTwoRef }) => {
             </div>
             <div className="carrousel">
               <h2>Habilidades</h2>
-              {/* <Carousel3D images={[]}/> */}
               <IconSlider />
             </div>
           </div>
