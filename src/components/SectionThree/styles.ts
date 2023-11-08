@@ -6,7 +6,7 @@ export const SessionTreeContainer = styled.div`
     
     opacity: 0;
     transform: translateX(-100%);
-    transition: all 2s;
+    transition: all 1s;
 }
 .hidden h2{
     text-align: center;
@@ -16,16 +16,16 @@ export const SessionTreeContainer = styled.div`
 
 .show{
     opacity: 1;
-    transition: all 2s;
+    transition: all 1s;
     transform: translateX(0)
 }
 
 .containerCards :nth-child(2){
-    transition-delay: 600ms;
+    transition-delay: 300ms;
 }
 
 .containerCards :nth-child(3){
-    transition-delay: 1000ms;
+    transition-delay: 800ms;
 }
 
 .containerCards{
@@ -42,13 +42,6 @@ export const SessionTreeContainer = styled.div`
         flex-direction: column;
         gap:30px;
     }
-}
-
-.containerCards :nth-child(2){
-    transition-delay: 500ms ;
-}
-.containerCards :nth-child(3){
-    transition-delay: 700ms ;
 }
 
 .avatar{

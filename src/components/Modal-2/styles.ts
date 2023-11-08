@@ -43,11 +43,6 @@ export const ModalContent = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
 
-  h2 {
-    text-align: center;
-    color: black;
-  }
-
   .close {
     position: absolute;
     top: 10px;
@@ -61,6 +56,8 @@ export const ModalContent = styled.div`
   .close svg:hover {
     color: #a3a3a3;
   }
+  @media (width <= 768px) {}
+  height: 60%;
 `;
 
 export const VideoContainer = styled.div`
