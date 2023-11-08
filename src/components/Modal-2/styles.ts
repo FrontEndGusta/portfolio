@@ -15,19 +15,6 @@ const modalOpenAnimation = keyframes`
     top: 0;
   }
   `;
-//   const modalCloseAnimation = keyframes`
-//   0% {
-//     opacity: 0;
-//     transform: scale(0.8);
-//     z-index: 1;
-//     top: 0;
-//   }
-//   100% {
-//     opacity: 0;
-//     transform: scale(0.8);
-//     z-index: -1;
-//     top: -200px;
-//   }
 
 export const ModalVideoContainer = styled.div`
 
@@ -83,6 +70,7 @@ export const VideoContainer = styled.div`
   overflow: hidden;
   display: flex;
   gap: 20px;
+
   iframe {
     width: 100%;
     height: 100%;
@@ -97,6 +85,20 @@ export const VideoContainer = styled.div`
     color: black;
     opacity: .9;
   }
+
+   @media (width <= 768px) {
+   flex-direction: column;
+   align-items: center;
+
+   .videoIframe{
+    width: 100%;
+   }
+
+   .description{
+    width: 100%;
+    text-align: center;
+   }
+  }
 `;
 
 export const ButtonContainer = styled.div`
@@ -106,6 +108,12 @@ export const ButtonContainer = styled.div`
   width: 60%;
   gap: 10px;
   margin-top: 20px;
+
+  @media (width <= 768px) {
+   width : 100% ;
+   align-items: center;
+  }
+
   button {
     /* Estilize os botões conforme necessário */
     border: 2px solid #090C08;
