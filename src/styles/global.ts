@@ -16,7 +16,7 @@ export default createGlobalStyle`
   body {
     background: ${(props) => props.theme.colors.background};
     font-size: 15px;
-    font-family: 'DM Sans', sans-serif; /* Defina a fonte correta aqui */
+    font-family: sans-serif; /* Defina a fonte correta aqui */
   }
 
   svg{

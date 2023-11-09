@@ -41,9 +41,11 @@ export const SessionTwoContainer = styled.div`
   .about {
     height: 100vh;
     text-align: center;
+    opacity: 0;
   }
   .visible {
     animation:bounce-in-left 1.3s both;
+    opacity: 1;
   }
 
   .about h2 {
