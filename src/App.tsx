@@ -10,6 +10,7 @@ import { useRef } from "react";
 import SectionThree from "./components/SectionThree";
 import SectionOne from "./components/SectionOne";
 import SectionTwo from "./components/SectionTwo";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   const [theme, setTheme] = usePersistedState("theme", light);
@@ -25,6 +26,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <div className="App">
         <GlobalStyle />
+        <ScrollToTop sectionOneRef={sectionOneRef} />
         <Header
           toggleTheme={toggleTheme}
           sectionOneRef={sectionOneRef}
