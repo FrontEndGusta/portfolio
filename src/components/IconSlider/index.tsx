@@ -1,8 +1,6 @@
 import React from "react";
 import "./styles";
 import {
-  BiChevronRight,
-  BiChevronLeft,
   BiLogoJavascript,
   BiLogoGithub,
   BiLogoTypescript,
@@ -10,7 +8,7 @@ import {
   BiLogoCss3,
   BiLogoReact,
 } from "react-icons/bi";
-import {SiStyledcomponents, SiPostman} from 'react-icons/si'
+import { SiStyledcomponents, SiPostman } from "react-icons/si";
 import image1 from "../../assets/avatar.jpeg";
 import { ContainerTeste } from "./styles";
 

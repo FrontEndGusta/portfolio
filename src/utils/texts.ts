@@ -1,5 +1,4 @@
 import image1 from '../assets/avatar.jpeg'
-
 const texts = {
   sectionTwo: {
     about: {
@@ -15,6 +14,11 @@ const texts = {
         title: "Portal Minha Senha",
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
+      },
+      {
+        title: "Portal ",
+        description:
+          "Ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
       },
       {
         title: "Portal ",
@@ -62,6 +66,11 @@ const texts = {
         title: "Portal Minha Senha",
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
+      },
+      {
+        title: "Portal ",
+        description:
+          "Ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
       },
       {
         title: "Portal ",

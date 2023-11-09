@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const SessionTreeContainer = styled.div`
 
 .hidden{
-    
     opacity: 0;
     transform: translateX(-100%);
     transition: all 1s;
@@ -25,7 +24,7 @@ export const SessionTreeContainer = styled.div`
 }
 
 .containerCards :nth-child(3){
-    transition-delay: 800ms;
+    transition-delay: 600ms;
 }
 
 .containerCards{
@@ -41,6 +40,13 @@ export const SessionTreeContainer = styled.div`
     .containerCards{
         flex-direction: column;
         gap:30px;
+    }
+    .hidden{
+        display: flex;
+        flex-direction: column;
+    }
+    .hidden h2{
+        margin: 50px 0 0;
     }
 }
 

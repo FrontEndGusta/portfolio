@@ -1,7 +1,12 @@
 import { createGlobalStyle } from "styled-components";
 
-export default createGlobalStyle`
+const link = document.createElement("link");
+link.href =
+  "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,100&display=swap";
+link.rel = "stylesheet";
+document.head.appendChild(link);
 
+export default createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
@@ -11,8 +16,7 @@ export default createGlobalStyle`
   body {
     background: ${(props) => props.theme.colors.background};
     font-size: 15px;
-    
-    font-family: sans-serif
+    font-family: 'DM Sans', sans-serif; /* Defina a fonte correta aqui */
   }
 
   svg{

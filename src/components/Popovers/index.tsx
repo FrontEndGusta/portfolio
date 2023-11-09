@@ -9,7 +9,7 @@ import {
 } from "react-icons/bi";
 import { PopoversContainer } from "./styles";
 import ione from "../../assets/popovers/1.jpg";
-import Modal from "../Modal";
+import Modal from "../ModalPopovers";
 
 export const Popovers: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

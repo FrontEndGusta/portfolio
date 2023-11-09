@@ -1,10 +1,10 @@
 import texts from "../../utils/texts";
 import { BiLogoJavascript, BiLogoHtml5, BiLogoCss3 } from "react-icons/bi";
-import Card from "../Card";
+import Card from "../CardProjects";
 import image1 from "../../assets/avatar.jpeg";
 import { SessionTreeContainer } from "./styles";
 import { useState } from "react";
-import ModalVideo from "../Modal-2";
+import ModalVideo from "../ModalProjects";
 import useIntersectionObserver from "../../utils/useIntersectionObserver";
 interface sectionThreeProps {
   sectionThreeRef: React.RefObject<HTMLDivElement>;

@@ -90,14 +90,14 @@ export const Container = styled.div`
     display: flex;
     gap: 15px;
     text-align: center;
-    padding: 0 15px;
+    padding: 0 30px;
   }
   .switch ul li {
     text-decoration: none;
     color: ${(props) => props.theme.colors.secundary};
     font-size: 1.2em;
     position: relative;
-    letter-spacing: 0.15em;
+    letter-spacing: 1.5px;
     cursor: pointer;
   }
   .menu-items li:after,
@@ -105,12 +105,13 @@ export const Container = styled.div`
     bottom: -5px;
     content: "";
     display: block;
-    height: 4px;
+    height: 2px;
     left: 50%;
     position: absolute;
     background: #fff;
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
+    border-radius: 30px;
   }
   .menu-items li:hover:after,
   li:hover:after {

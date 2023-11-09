@@ -17,7 +17,6 @@ const modalOpenAnimation = keyframes`
   `;
 
 export const ModalVideoContainer = styled.div`
-
   position: fixed;
   top: 0;
   left: 0;
@@ -50,14 +49,15 @@ export const ModalContent = styled.div`
     cursor: pointer;
     font-size: 1.5em;
   }
-  .close svg{
+  .close svg {
     color: black;
   }
   .close svg:hover {
     color: #a3a3a3;
   }
-  @media (width <= 768px) {}
-  height: 60%;
+  @media (width <= 768px) {
+    height: 60%;
+  }
 `;
 
 export const VideoContainer = styled.div`
@@ -78,24 +78,24 @@ export const VideoContainer = styled.div`
   .description {
     width: 40%;
   }
-  p{
+  p {
     color: black;
-    opacity: .9;
+    opacity: 0.9;
   }
 
-   @media (width <= 768px) {
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
+  @media (width <= 768px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-   .videoIframe{
-    width: 100%;
-   }
+    .videoIframe {
+      width: 100%;
+    }
 
-   .description{
-    width: 100%;
-    text-align: center;
-   }
+    .description {
+      width: 100%;
+      text-align: center;
+    }
   }
 `;
 
@@ -108,18 +108,18 @@ export const ButtonContainer = styled.div`
   margin-top: 20px;
 
   @media (width <= 768px) {
-   width : 100% ;
-   align-items: center;
+    width: 100%;
+    align-items: center;
   }
 
   button {
     /* Estilize os botões conforme necessário */
-    border: 2px solid #090C08;
+    border: 2px solid #090c08;
     cursor: pointer;
-    
+
     &:hover {
-      background-color: #090C08;
-      color: #FFFFFF;
+      background-color: #090c08;
+      color: #ffffff;
     }
   }
 `;

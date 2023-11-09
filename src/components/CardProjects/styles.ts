@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CardContainer = styled.div`
   .card {
-    min-width: 290px;
+    min-width: 270px;
     max-width: 350px;
     height: 254px;
     background: ${(props) => props.theme.colors.primary};
