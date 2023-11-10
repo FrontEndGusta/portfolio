@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { LuArrowBigUpDash } from "react-icons/lu";
+import {MdKeyboardDoubleArrowUp} from "react-icons/md";
 import { ContainerScrollToTop } from "./styles";
 import useIntersectionObserver from "../../utils/useIntersectionObserver";
 
@@ -26,7 +26,7 @@ const ScrollToTop: React.FC<ScrollToTopProps> = ({ sectionOneRef }) => {
     <ContainerScrollToTop>
       {!visible && (
         <div className="scrollToTop" onClick={scrollUp}>
-          <LuArrowBigUpDash />
+          <MdKeyboardDoubleArrowUp />
         </div>
       )}
     </ContainerScrollToTop>

@@ -28,10 +28,9 @@ export const ContainerScrollToTop = styled.div`
     }
   }
   .scrollToTop svg {
-    margin-top: 3px;
     height: 30px;
     width: 30px;
-    animation: arrowTop 0.9s linear infinite;
+    animation: arrowTop 0.9s ease infinite;
   }
 
   .scrollToTop:hover {
@@ -46,9 +45,8 @@ export const ContainerScrollToTop = styled.div`
     100% {
       transform: translateY(0);
     }
-    50%,
-    60% {
-      transform: translateY(-3px);
+    50%{
+      transform: translateY(-2px);
     }
   }
 
