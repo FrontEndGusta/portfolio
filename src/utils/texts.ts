@@ -11,19 +11,29 @@ const texts = {
   sectionTree: {
     cardExperience: [
       {
-        title: "Portal Minha Senha",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
+        title: "Portal Minha Senha"
       },
       {
-        title: "Portal ",
-        description:
-          "Ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
+        title: "Portal "
       },
       {
-        title: "Portal ",
-        description:
-          "Ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
+        title: "Portal "
+      },
+    ],
+
+    projects: {
+      title: "Todos os Projetos",
+    },
+
+    cardsProjects: [
+      {
+        title: "Portal Minha Senha"
+      },
+      {
+        title: "Portal "
+      },
+      {
+        title: "Portal "
       },
     ],
 
@@ -32,6 +42,12 @@ const texts = {
         title: "titulo do video",
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
+        url: "https://www.youtube.com/embed/SEZNJp3otzg",
+      },
+      {
+        title: "titulo do video",
+        description:
+          "ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
         url: "https://www.youtube.com/embed/SEZNJp3otzg",
       },
       {
@@ -55,27 +71,11 @@ const texts = {
           "2 ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
         url: "https://www.youtube.com/embed/SEZNJp3otzg",
       },
-    ],
-
-    projects: {
-      title: "Todos os Projetos",
-    },
-
-    cardsProjects: [
       {
-        title: "Portal Minha Senha",
+        title: "titulo teste2",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
-      },
-      {
-        title: "Portal ",
-        description:
-          "Ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
-      },
-      {
-        title: "Portal ",
-        description:
-          "Ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
+          "2 ipsum dolor sit amet consectetur adipisicing elit. Eius blanditiis reiciendis, perspiciatis quod laboriosam quas consectetur amet, vitae facilis possimus recusandae accusamus quibusdam perferendis ex. Illo unde totam mollitia eos.",
+        url: "https://www.youtube.com/embed/SEZNJp3otzg",
       },
     ],
   },

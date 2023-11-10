@@ -1,7 +1,7 @@
 import texts from "../../utils/texts";
 import { BiLogoJavascript, BiLogoHtml5, BiLogoCss3 } from "react-icons/bi";
 import Card from "../CardProjects";
-import image1 from "../../assets/avatar.jpeg";
+import image1 from "../../assets/projects/portalMinhaSenha.jpeg";
 import { SessionTreeContainer } from "./styles";
 import { useState } from "react";
 import ModalVideo from "../ModalProjects";
@@ -13,7 +13,6 @@ interface sectionThreeProps {
 // Interface para os dados de um card
 interface CardData {
   title: string;
-  description: string;
 }
 
 // Interface para os dados de um modal de vídeo
@@ -62,7 +61,6 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
         <Card
           title={cardData.title}
           imageUrl={image1}
-          info={cardData.description}
           icons={icons}
           onViewMoreClick={() => openModal(index, section)}
         />

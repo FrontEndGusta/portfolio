@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const CardContainer = styled.div`
   .card {
     min-width: 270px;
-    max-width: 350px;
+    max-width: 340px;
     height: 254px;
     background: ${(props) => props.theme.colors.primary};
     position: relative;
@@ -15,7 +15,8 @@ export const CardContainer = styled.div`
     border-radius: 20px;
     transition: all 0.1s ease-out;
     cursor: pointer;
-    box-shadow: ${(props) => props.theme.colors.shadow};;
+    clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
+    box-shadow: ${(props) => props.theme.colors.shadow};
   }
   .card:hover {
     transform: scale(1.1);
@@ -44,25 +45,13 @@ export const CardContainer = styled.div`
     height: 50%;
     display: flex;
     justify-content: space-evenly;
-    margin-top: 5%;
+    margin: 2% 0 5%;
   }
   .image img {
-    border-radius: 20px;
-    width: 40%;
-  }
-  .more {
-    z-index: 1;
-    margin-top: 3%;
-    width: 40%;
-  }
-  .more p {
-    overflow: auto; /* Adiciona uma barra de rolagem quando necessário */
-    max-height: 90%; /* Define a altura máxima antes da barra de rolagem aparecer */
-    padding: 1px;
-    color: ${props => props.theme.colors.primary};
-  }
-  .more p::-webkit-scrollbar {
-    width: 5px; /* Largura da barra de rolagem vertical */
+    border-radius: 5px;
+    border: 2px solid black;
+    width: 80%;
+    clip-path: polygon(5% 0, 100% 0, 100% 0, 100% 93%, 96% 100%, 0 100%, 0 100%, 0 6%);
   }
 
   .technologies {
@@ -82,6 +71,7 @@ export const CardContainer = styled.div`
   .icons svg {
     width: 20px;
     height: 20px;
+    border: 1px solid ${props => props.theme.colors.primary};
   }
 
   .viewMore {
@@ -96,8 +86,8 @@ export const CardContainer = styled.div`
     width: 100px;
     background-image: linear-gradient(
       180deg,
-      rgb(255, 48, 255),
-      rgb(255, 48, 255)
+      #8f44fd,
+      #8f44fd
     );
     height: 170%;
     animation: rotBGimg 3s linear infinite;

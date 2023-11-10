@@ -54,9 +54,8 @@ export const Popovers: React.FC = () => {
                   porro? Eveniet quos quae a ipsa maiores.
                 </p>
                 <div className="icons">
-                  <BiLogoInstagram />
                   <BiLogoLinkedinSquare />
-                  <BiLogoGithub />
+                  <BiLogoGithub href="" />
                   <BiLogoGmail />
                 </div>
               </div>

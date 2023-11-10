@@ -4,12 +4,11 @@ import { CardContainer } from "./styles";
 interface CardProps {
   title: string | number;
   imageUrl?: string;
-  info: string | number;
   icons: React.ReactNode[]; // Nova prop para a imagem
   onViewMoreClick: () => void;
 }
 
-export const Card: React.FC<CardProps> = ({ title, imageUrl, info, icons, onViewMoreClick }) => {
+export const Card: React.FC<CardProps> = ({ title, imageUrl, icons, onViewMoreClick }) => {
 
 
   return (
@@ -18,9 +17,6 @@ export const Card: React.FC<CardProps> = ({ title, imageUrl, info, icons, onView
         <h3>{title}</h3>
         <div className="image">
           <img src={imageUrl} alt="" />
-          <div className="more">
-            <p>{info}</p>
-          </div>
         </div>
         <div className="technologies">
           <div className="icons">
