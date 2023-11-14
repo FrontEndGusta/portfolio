@@ -39,7 +39,7 @@ export const SessionTwoContainer = styled.div`
   }
 
   .about {
-    height: 100vh;
+    height: 170vh;
     text-align: center;
     opacity: 0;
   }

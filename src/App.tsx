@@ -11,6 +11,7 @@ import SectionThree from "./components/SectionThree";
 import SectionOne from "./components/SectionOne";
 import SectionTwo from "./components/SectionTwo";
 import ScrollToTop from "./components/ScrollToTop";
+import SectionFor from "./components/SectionFor";
 
 const App = () => {
   const [theme, setTheme] = usePersistedState("theme", light);
@@ -39,6 +40,7 @@ const App = () => {
         />
         <SectionTwo sectionTwoRef={sectionTwoRef} />
         <SectionThree sectionThreeRef={sectionThreeRef} />
+        <SectionFor />
         <Popovers />
         <Progress />
       </div>

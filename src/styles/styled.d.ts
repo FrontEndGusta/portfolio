@@ -14,6 +14,7 @@ declare module 'styled-components' {
       svg: string;
       filter: number;
       shadow: string;
+      card: string;
     };
   }
 }

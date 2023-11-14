@@ -5,7 +5,7 @@ export const CardContainer = styled.div`
     min-width: 270px;
     max-width: 340px;
     height: 254px;
-    background: ${(props) => props.theme.colors.primary};
+    background: ${(props) => props.theme.colors.card};
     position: relative;
     display: flex;
     place-content: center;
@@ -15,19 +15,20 @@ export const CardContainer = styled.div`
     border-radius: 20px;
     transition: all 0.1s ease-out;
     cursor: pointer;
-    clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
+    clip-path: polygon(7% 0, 100% 0, 100% 0, 100% 93%, 94% 100%, 0 100%, 0 100%, 0 7%);
     box-shadow: ${(props) => props.theme.colors.shadow};
   }
   .card:hover {
     transform: scale(1.1);
   }
   button {
-    color: ${(props) => props.theme.colors.primary};
+    color: ${(props) => props.theme.colors.secundary};
+    border: 2px solid ${(props) => props.theme.colors.secundary};
   }
   button:hover {
     transform: scale(1);
-    background: ${(props) => props.theme.colors.primary};
-    color: ${(props) => props.theme.colors.secundary};
+    background: ${(props) => props.theme.colors.secundary};
+    color: ${(props) => props.theme.colors.primary};
   }
   button:active {
     transform: scale(0.9);
@@ -36,8 +37,9 @@ export const CardContainer = styled.div`
 
   .card h3 {
     z-index: 1;
-    color: ${(props) => props.theme.colors.primary};
+    color: ${(props) => props.theme.colors.secundary};
     font-size: 1.5;
+    font-weight: 600;
   }
   .image {
     z-index: 1;
@@ -71,7 +73,8 @@ export const CardContainer = styled.div`
   .icons svg {
     width: 20px;
     height: 20px;
-    border: 1px solid ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.secundary};
+    border: 1px solid ${props => props.theme.colors.secundary};
   }
 
   .viewMore {
@@ -107,7 +110,7 @@ export const CardContainer = styled.div`
   .card::after {
     content: "";
     position: absolute;
-    background: ${(props) => props.theme.colors.secundary};
+    background: ${(props) => props.theme.colors.card};
     inset: 4px;
     border-radius: 15px;
   }

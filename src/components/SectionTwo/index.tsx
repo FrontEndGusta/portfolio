@@ -3,12 +3,22 @@ import { SessionTwoContainer } from "./styles";
 import useIntersectionObserver from "../../utils/useIntersectionObserver";
 import texts from "../../utils/texts";
 import IconSlider from "../IconSlider";
+import ProgressBar from "../ProgressTecnologies";
 interface SectionTwoProps {
   sectionTwoRef: React.RefObject<HTMLDivElement>; // Defina a propriedade sectionTwoRef corretamente
 }
 
 const SectionTwo: React.FC<SectionTwoProps> = ({ sectionTwoRef }) => {
   const isAboutVisible = useIntersectionObserver(sectionTwoRef);
+
+  const technologies = [
+    { name: "React", width: 80 },
+    { name: "Javascript", width: 70 },
+    { name: "Typescript", width: 80 },
+    { name: "Github", width: 70 },
+    { name: "Styled-Components", width: 85 },
+    // Adicione quantas tecnologias desejar
+  ];
 
   return (
     <>
@@ -23,6 +33,7 @@ const SectionTwo: React.FC<SectionTwoProps> = ({ sectionTwoRef }) => {
               <h2>Habilidades</h2>
               <IconSlider />
             </div>
+            {isAboutVisible && <ProgressBar tech={technologies} />}
           </div>
           <div></div>
         </section>

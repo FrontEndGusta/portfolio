@@ -35,6 +35,12 @@ const texts = {
       {
         title: "Portal "
       },
+      {
+        title: "Portal "
+      },
+      {
+        title: "Portal "
+      },
     ],
 
     modalVideoExperience: [

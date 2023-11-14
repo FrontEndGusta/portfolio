@@ -11,5 +11,6 @@ export default {
         svg: '#FFFFFF',
         filter: 'invert(100%)', // Corrigido: definição da string de filtro
         shadow: '0 3px 6px rgba(255, 255, 255, .5)',
+        card: '#F2F2F2',
     }
 }
