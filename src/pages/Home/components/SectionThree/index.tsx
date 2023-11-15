@@ -1,11 +1,11 @@
-import texts from "../../utils/texts";
+import texts from "../../../../utils/texts";
 import { BiLogoJavascript, BiLogoHtml5, BiLogoCss3 } from "react-icons/bi";
-import Card from "../CardProjects";
+import Card from "../../../../components/CardProjects";
 import image1 from "../../assets/projects/portalMinhaSenha.jpeg";
 import { SessionTreeContainer } from "./styles";
 import { useState } from "react";
-import ModalVideo from "../ModalProjects";
-import useIntersectionObserver from "../../utils/useIntersectionObserver";
+import ModalVideo from "../../../../components/ModalProjects";
+import useIntersectionObserver from "../../../../utils/useIntersectionObserver";
 interface sectionThreeProps {
   sectionThreeRef: React.RefObject<HTMLDivElement>;
 }

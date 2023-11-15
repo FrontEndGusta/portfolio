@@ -1,9 +1,9 @@
-import React, { RefObject, useContext, useRef } from "react";
+import React, { RefObject } from "react";
 import { BiArrowToBottom, BiChevronsDown } from "react-icons/bi";
 import { SessionOneContainer } from "./styles";
-import TypeWriter from "../TypeWriter";
-import image from "../../assets/avatar.jpeg";
-import useIntersectionObserver from "../../utils/useIntersectionObserver";
+import useIntersectionObserver from "utils/useIntersectionObserver";
+import TypeWriter from "components/TypeWriter";
+import image from 'assets/avatar.jpeg'
 interface SectionTwoProps {
   sectionOneRef: React.RefObject<HTMLDivElement>;
   sectionTwoRef: React.RefObject<HTMLDivElement>;
