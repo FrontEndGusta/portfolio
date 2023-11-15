@@ -13,6 +13,10 @@ interface sectionThreeProps {
 // Interface para os dados de um card
 interface CardData {
   title: string;
+  images?: string;
+  component?: React.ReactNode;
+  icons?: React.ReactNode[];
+  viewMore?: boolean;
 }
 
 // Interface para os dados de um modal de vídeo
@@ -25,7 +29,7 @@ interface ModalVideoData {
 export const SectionThree: React.FC<sectionThreeProps> = ({
   sectionThreeRef,
 }) => {
-  const icons = [<BiLogoJavascript />, <BiLogoHtml5 />, <BiLogoCss3 />];
+  
 
   const [isExperienceModalOpen, setIsExperienceModalOpen] = useState(false);
   const [experienceModalIndex, setExperienceModalIndex] = useState<
@@ -60,8 +64,13 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
       <div className="hidden" key={index}>
         <Card
           title={cardData.title}
-          imageUrl={image1}
-          icons={icons}
+          imageUrl={cardData.images}
+          customComponent={cardData.component}
+          icons={cardData.icons && cardData.icons.map((icon: React.ReactNode, iconIndex: number) => (
+            // Use a combination of the card index and icon index as a unique key
+            <span key={`${index}-${iconIndex}`}>{icon}</span>
+          ))}
+          showViewMoreButton={cardData.viewMore}
           onViewMoreClick={() => openModal(index, section)}
         />
       </div>

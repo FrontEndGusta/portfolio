@@ -1,4 +1,9 @@
-import image1 from '../assets/avatar.jpeg'
+import { BiLogoCss3, BiLogoHtml5, BiLogoJavascript } from 'react-icons/bi';
+import image1 from '../assets/projects/portalMinhaSenha.jpeg'
+import HamsterWheel from '../components/HamsterWheel';
+
+const icons = [<BiLogoJavascript />, <BiLogoHtml5 />, <BiLogoCss3 />];
+
 const texts = {
   sectionTwo: {
     about: {
@@ -11,13 +16,17 @@ const texts = {
   sectionTree: {
     cardExperience: [
       {
-        title: "Portal Minha Senha"
+        title: "Portal Minha Senha",
+        images: image1,
+        icons: icons,
       },
       {
-        title: "Portal "
+        title: "Portal Minha Senha",
+        images: image1,
       },
       {
-        title: "Portal "
+        title: "Portal Minha Senha",
+        images: image1,
       },
     ],
 
@@ -27,19 +36,25 @@ const texts = {
 
     cardsProjects: [
       {
-        title: "Portal Minha Senha"
+        title: "Portal Minha Senha",
+        images: image1,
       },
       {
-        title: "Portal "
+        title: "Portal Minha Senha",
+        images: image1,
       },
       {
-        title: "Portal "
+        title: "Portal Minha Senha",
+        images: image1,
       },
       {
-        title: "Portal "
+        title: "Portal Minha Senha",
+        images: image1,
       },
       {
-        title: "Portal "
+        title: "Trabalhando nisso...",
+        component: <HamsterWheel/>,
+        viewMore: false,
       },
     ],
 

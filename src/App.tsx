@@ -12,6 +12,7 @@ import SectionOne from "./components/SectionOne";
 import SectionTwo from "./components/SectionTwo";
 import ScrollToTop from "./components/ScrollToTop";
 import SectionFor from "./components/SectionFor";
+import HamsterWheel from "./components/HamsterWheel";
 
 const App = () => {
   const [theme, setTheme] = usePersistedState("theme", light);

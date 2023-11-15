@@ -4,30 +4,30 @@ import { CardContainer } from "./styles";
 interface CardProps {
   title: string | number;
   imageUrl?: string;
-  icons: React.ReactNode[]; // Nova prop para a imagem
+  customComponent?: React.ReactNode;
+  icons?: React.ReactNode[]; // Change to an array of React nodes
   onViewMoreClick: () => void;
+  showViewMoreButton?: boolean;
 }
 
-export const Card: React.FC<CardProps> = ({ title, imageUrl, icons, onViewMoreClick }) => {
-
+export const Card: React.FC<CardProps> = ({ title, imageUrl, customComponent, icons, showViewMoreButton = true, onViewMoreClick }) => {
 
   return (
     <CardContainer>
       <div className="card">
         <h3>{title}</h3>
         <div className="image">
-          <img src={imageUrl} alt="" />
+          {imageUrl && <img src={imageUrl} alt={`Image`} />}
+          {customComponent && <div className="custom-image">{customComponent}</div>}
         </div>
         <div className="technologies">
           <div className="icons">
-            {icons.map((icon, index) => (
+            {icons && icons.map((icon, index) => (
               <span key={index}>{icon}</span>
             ))}
           </div>
           <div className="viewMore">
-            <button onClick={() => {
-              onViewMoreClick(); // Chama a função quando o botão é clicado
-            }}>ver mais..</button>
+            {showViewMoreButton && <button onClick={onViewMoreClick}>ver mais..</button>}
           </div>
         </div>
       </div>
