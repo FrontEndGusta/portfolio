@@ -44,12 +44,13 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
 
   const fetchData = async () => {
     return axios
-      .get("http://localhost:3001/sectionTree")
+      .get("https://backend-portfolio-g7yl.onrender.com/sectionTree")
       .then((response) => response.data);
+      console.log(data)
   };
 
   const { data, error, isLoading } = useQuery("sectionTree", fetchData);
-
+  console.log(data)
   if (isLoading) {
     return <p>carrregando...</p>;
   }
