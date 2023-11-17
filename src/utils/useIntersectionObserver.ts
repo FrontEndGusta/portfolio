@@ -12,18 +12,7 @@ export function useIntersectionObserver(ref: React.RefObject<Element>, threshold
       threshold,
     };
     
-    const myObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        } else {
-          entry.target.classList.remove('show');
-        }
-      });
-    });
-
-    const elements = document.querySelectorAll('.hidden');
-    elements.forEach((element) => myObserver.observe(element));
+    
     
 
     const observer = new IntersectionObserver((entries) => {
@@ -33,6 +22,18 @@ export function useIntersectionObserver(ref: React.RefObject<Element>, threshold
         } else {
           setIsIntersecting(false);
         }
+        const myObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('show');
+            } else {
+              entry.target.classList.remove('show');
+            }
+          });
+        });
+    
+        const elements = document.querySelectorAll('.hidden');
+        elements.forEach((element) => myObserver.observe(element));
       });
     }, observerOptions);
 

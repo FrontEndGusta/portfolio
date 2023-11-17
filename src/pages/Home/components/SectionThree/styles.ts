@@ -7,7 +7,7 @@ export const SessionTreeContainer = styled.div`
     transform: translateX(-100%);
     transition: all 1s;
 }
-.hidden h2{
+h2{
     text-align: center;
     margin: 50px 0;
     color: ${props => props.theme.colors.primary};
@@ -17,14 +17,6 @@ export const SessionTreeContainer = styled.div`
     opacity: 1;
     transition: all 1s;
     transform: translateX(0)
-}
-
-.containerCards :nth-child(2){
-    transition-delay: 300ms;
-}
-
-.containerCards :nth-child(3){
-    transition-delay: 600ms;
 }
 
 .containerCards{

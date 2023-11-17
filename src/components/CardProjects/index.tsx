@@ -10,24 +10,33 @@ interface CardProps {
   showViewMoreButton?: boolean;
 }
 
-export const Card: React.FC<CardProps> = ({ title, imageUrl, customComponent, icons, showViewMoreButton = true, onViewMoreClick }) => {
-
+export const Card: React.FC<CardProps> = ({
+  title,
+  imageUrl,
+  customComponent,
+  icons,
+  showViewMoreButton = true,
+  onViewMoreClick,
+}) => {
   return (
     <CardContainer>
       <div className="card">
         <h3>{title}</h3>
         <div className="image">
           {imageUrl && <img src={imageUrl} alt={`Image`} />}
-          {customComponent && <div className="custom-image">{customComponent}</div>}
+          {customComponent && !imageUrl && (
+            <div className="custom-image">{customComponent}</div>
+          )}
         </div>
         <div className="technologies">
           <div className="icons">
-            {icons && icons.map((icon, index) => (
-              <span key={index}>{icon}</span>
-            ))}
+            {icons &&
+              icons.map((icon, index) => <span key={index}>{icon}</span>)}
           </div>
           <div className="viewMore">
-            {showViewMoreButton && <button onClick={onViewMoreClick}>ver mais..</button>}
+            {showViewMoreButton && (
+              <button onClick={onViewMoreClick}>ver mais..</button>
+            )}
           </div>
         </div>
       </div>
