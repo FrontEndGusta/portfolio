@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { BiMessageSquareDetail } from "react-icons/bi";
 import {
   BiHeart,
-  BiLogoInstagram,
   BiLogoLinkedinSquare,
   BiLogoGithub,
   BiLogoGmail,

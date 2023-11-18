@@ -4,7 +4,7 @@ export const ContainerSectionFor = styled.div`
   .contact {
     height: 100vh;
   }
-
+  
   .card {
     width: 100%;
     height: 100%;
@@ -18,13 +18,14 @@ export const ContainerSectionFor = styled.div`
     width: 70%;
     position: relative;
     box-shadow: ${props => props.theme.colors.shadow};
+    background: ${props => props.theme.colors.card};
   }
 
   .circle {
     width: 100px;
     height: 100px;
-    background: ${props => props.theme.colors.primary};
-    clip-path: polygon(25% 33%, 85% 13%, 48% 37%, 62% 48%, 81% 60%, 17% 85%, 51% 58%);
+    background: ${props => props.theme.colors.card};
+    border-radius: 8px;
     position: absolute;
     animation: move-up6 2s ease-in infinite alternate-reverse;
     z-index: 0 !important; /* Mantenha o z-index menor para que os círculos fiquem atrás do .card-inner */
@@ -41,11 +42,13 @@ export const ContainerSectionFor = styled.div`
     overflow: hidden;
     display: flex;
     align-items:center;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
+    color: ${props => props.theme.colors.secundary};
   }
   .card-center p{
     text-align:center;
+    color: ${props => props.theme.colors.secundary};
   }
 
   .circle:nth-child(1) {

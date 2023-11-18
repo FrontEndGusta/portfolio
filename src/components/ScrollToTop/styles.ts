@@ -4,16 +4,14 @@ export const ContainerScrollToTop = styled.div`
   .scrollToTop {
     position: fixed;
     bottom: 20px;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     min-width: 30px;
     min-height: 30px;
     right: 10px;
-    border: 2px solid ${(props) => props.theme.colors.primary};
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
     cursor: pointer;
     z-index: 2;
     transition: all 0.1s ease-in-out;

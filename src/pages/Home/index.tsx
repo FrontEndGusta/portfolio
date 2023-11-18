@@ -7,6 +7,7 @@ import SectionFor from "./components/SectionFor";
 import SectionOne from "./components/SectionOne";
 import SectionThree from "./components/SectionThree";
 import SectionTwo from "./components/SectionTwo";
+import { ToastContainer } from "react-toastify";
 
 const Home = ({ toggleTheme }: { toggleTheme: () => void }) => {
   const sectionOneRef = useRef(null);

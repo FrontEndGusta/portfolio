@@ -1,5 +1,8 @@
 import React from "react";
 import { ContainerSectionFor } from "./styles";
+import IconsContact from "./components";
+import Contact from "components/Form";
+
 const SectionFor: React.FC = () => {
   return (
     <ContainerSectionFor>
@@ -10,11 +13,13 @@ const SectionFor: React.FC = () => {
             <div className="circle"></div>
           </div>
           <div className="card-center">
-            <h2>titulo</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur deserunt error rerum veritatis iusto adipisci mollitia sint minima, quisquam ex ipsa incidunt sequi, recusandae fugit dignissimos architecto dolorem tenetur. Voluptatum.</p>
+            <h2>Contato</h2>
+            <Contact />
+            <div className="div"><IconsContact /></div>
           </div>
         </div>
       </div>
+      
     </ContainerSectionFor>
   );
 };
