@@ -15,6 +15,8 @@ declare module 'styled-components' {
       filter: number;
       shadow: string;
       card: string;
+      toast: string;
+      text_toast: string;
     };
   }
 }

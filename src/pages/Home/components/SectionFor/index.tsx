@@ -2,8 +2,10 @@ import React from "react";
 import { ContainerSectionFor } from "./styles";
 import IconsContact from "./components";
 import Contact from "components/Form";
+import { useToastContext } from "components/Toast/useToastContext";
 
 const SectionFor: React.FC = () => {
+  const { ToastComponent } = useToastContext();
   return (
     <ContainerSectionFor>
       <div className="contact">
@@ -18,8 +20,9 @@ const SectionFor: React.FC = () => {
             <div className="div"><IconsContact /></div>
           </div>
         </div>
+      {ToastComponent}
       </div>
-      
+     
     </ContainerSectionFor>
   );
 };
