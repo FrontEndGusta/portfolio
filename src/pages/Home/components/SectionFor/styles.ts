@@ -35,7 +35,6 @@ export const ContainerSectionFor = styled.div`
   .card-center {
     height: 75%;
     width: 75%;
-    background: rgba(255, 255, 255, 0.05);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     position: absolute;
