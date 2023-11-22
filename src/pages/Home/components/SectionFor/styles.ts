@@ -18,7 +18,6 @@ export const ContainerSectionFor = styled.div`
     width: 75%;
     position: relative;
     border-radius: 8px;
-    background: ${props => props.theme.colors.card};
   }
 
   .circle {
@@ -34,6 +33,7 @@ export const ContainerSectionFor = styled.div`
   .card-center {
     height: 75%;
     width: 75%;
+    background: ${props => props.theme.colors.card};
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     position: absolute;
