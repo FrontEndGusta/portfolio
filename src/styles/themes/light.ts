@@ -11,7 +11,7 @@ export default {
         svg: '#090C08',
         filter: 100,
         shadow: '0 4px 8px rgba(0, 0, 0, .7)',
-        card: '#333333',
+        card: '#111',
         toast: '#121212',
         text_toast: '#FFFFFF'
     }

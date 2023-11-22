@@ -40,7 +40,7 @@ export const ToastContainer = styled.div`
   }
 
   .icons.error svg{
-    color: #e74c3c
+    color: #e74c3c;
   }
 
   .icons.success svg{

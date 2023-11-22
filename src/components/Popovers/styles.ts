@@ -14,6 +14,7 @@ export const PopoversContainer = styled.div`
     gap: 8px;
     padding: 20px;
     cursor: pointer;
+    -webkit-tap-highlight-color:transparent;
   }
 
   .nav .btn-bubble,

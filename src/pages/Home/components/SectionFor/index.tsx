@@ -1,6 +1,6 @@
 import React from "react";
 import { ContainerSectionFor } from "./styles";
-import IconsContact from "./components";
+import IconsContact from "./components/IconsContact";
 import Contact from "components/Form";
 import { useToastContext } from "components/Toast/useToastContext";
 
@@ -15,9 +15,7 @@ const SectionFor: React.FC = () => {
             <div className="circle"></div>
           </div>
           <div className="card-center">
-            <h2>Contato</h2>
             <Contact />
-            <div className="div"><IconsContact /></div>
           </div>
         </div>
       {ToastComponent}

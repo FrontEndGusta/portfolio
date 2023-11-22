@@ -5,6 +5,7 @@ import { object, string, ObjectSchema } from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useToastContext } from "components/Toast/useToastContext";
+import IconsContact from "pages/Home/components/SectionFor/components/IconsContact";
 
 const Contact: React.FC = () => {
   const { createToast, ToastComponent } = useToastContext();
@@ -14,11 +15,11 @@ const Contact: React.FC = () => {
     message: string;
   }
   const formSchema: ObjectSchema<formProps> = object({
-    name: string().required("é necessário preencher o campo de nome"),
+    name: string().required("É necessário preencher o campo de nome."),
     email: string()
       .email()
-      .required("é necessário preencher o campo de e-mail"),
-    message: string().required("é necessário preencher a mensagem"),
+      .required("É necessário preencher o campo de e-mail."),
+    message: string().required("É necessário preencher a mensagem."),
   });
 
   const {
@@ -55,33 +56,33 @@ const Contact: React.FC = () => {
   return (
     <Container>
       <div className="container">
-        <h1 className="title">Contato</h1>
-
+          <h2>Contato</h2>
         <form className="form" onSubmit={handleSubmit(sendEmail)}>
           <input
             className="input"
-            placeholder="digite seu nome"
+            placeholder="Digite seu nome"
             type="text"
             {...register("name")}
           />
-          {errors.name && <span>{errors.name?.message}</span>}
+          {errors.name && <span className="error">{errors.name?.message}</span>}
 
           <input
             className="input"
             type="text"
-            placeholder="Digite seu email"
+            placeholder="Digite seu e-mail"
             {...register("email")}
           />
-          {errors.email && <span>{errors.email?.message}</span>}
+          {errors.email && <span className="error">{errors.email?.message}</span>}
 
           <textarea
             className="textarea"
             placeholder="Digite sua mensagem..."
             {...register("message")}
           />
-          {errors.message && <span>{errors.message?.message}</span>}
+          {errors.message && <span className="error">{errors.message?.message}</span>}
           
           <input className="button" type="submit" value="Enviar" />
+          <div className="iconsContact"><IconsContact /></div>
         </form>
       </div>
     </Container>

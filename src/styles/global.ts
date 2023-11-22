@@ -17,6 +17,7 @@ export default createGlobalStyle`
     background: ${(props) => props.theme.colors.background};
     font-size: 15px;
     font-family: sans-serif; /* Defina a fonte correta aqui */
+    -webkit-tap-highlight-color:transparent;
   }
 
   svg{
@@ -49,6 +50,7 @@ export default createGlobalStyle`
   transition: all 0.1s ease-in-out;
   &:hover {
   transform: scale(1.1);
+  -webkit-tap-highlight-color:transparent;
 }
 }
 

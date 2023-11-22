@@ -43,6 +43,7 @@ export const ThemeSwitchContainer = styled.div`
   margin: 0;
   padding: 0;
   font-size: var(--toggle-size);
+  -webkit-tap-highlight-color:transparent;
 }
 
 .theme-switch__container {

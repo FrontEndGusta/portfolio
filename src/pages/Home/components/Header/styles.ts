@@ -38,6 +38,7 @@ export const Container = styled.div`
     z-index: 2;
     transition: 0.3s;
     display: none;
+    -webkit-tap-highlight-color:transparent;
   }
 
   .hamburger.active .bar:first-child {
