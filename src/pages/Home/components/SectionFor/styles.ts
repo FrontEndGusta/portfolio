@@ -18,7 +18,6 @@ export const ContainerSectionFor = styled.div`
     width: 75%;
     position: relative;
     border-radius: 8px;
-    box-shadow: ${props => props.theme.colors.shadow};
     background: ${props => props.theme.colors.card};
   }
 
