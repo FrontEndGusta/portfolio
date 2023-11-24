@@ -6,6 +6,7 @@ export const SessionTreeContainer = styled.div`
     opacity: 0;
     transform: translateX(-100%);
     transition: all 1s;
+    
 }
 h2{
     text-align: center;
@@ -16,7 +17,7 @@ h2{
 .show{
     opacity: 1;
     transition: all 1s;
-    transform: translateX(0)
+    transform: translateX(0);
 }
 
 .containerCards{

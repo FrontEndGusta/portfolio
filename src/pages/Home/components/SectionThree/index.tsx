@@ -3,10 +3,11 @@ import ModalVideo from "components/ModalProjects";
 import texts from "utils/texts";
 import useIntersectionObserver from "utils/useIntersectionObserver";
 import { SessionTreeContainer } from "./styles";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import axios from "axios";
 import components from "utils/useComponent";
+import LoadingCards from "./components/LoadingCards";
 
 interface sectionThreeProps {
   sectionThreeRef: React.RefObject<HTMLDivElement>;
@@ -36,24 +37,24 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
   >(null);
 
   const [isProjectsModalOpen, setIsProjectsModalOpen] = useState(false);
+
   const [projectsModalIndex, setProjectsModalIndex] = useState<number | null>(
     null
   );
 
   const isProjectsVisible = useIntersectionObserver(sectionThreeRef);
+  console.log("isProjectsVisible:", isProjectsVisible);
 
-  const fetchData = async () => {
-    return axios
-      .get("https://backend-portfolio-g7yl.onrender.com/sectionTree")
-      .then((response) => response.data);
-      console.log(data)
-  };
+  const { data, error, isLoading } = useQuery("sectionData", async () => {
+    const delayDuration = 5000; // 5 segundos em milissegundos
 
-  const { data, error, isLoading } = useQuery("sectionTree", fetchData);
-  console.log(data)
-  if (isLoading) {
-    return <p>carrregando...</p>;
-  }
+    // Simulando um atraso de 5 segundos na resposta da API
+    await new Promise(resolve => setTimeout(resolve, delayDuration));
+    const response = await axios.get(
+      "https://backend-portfolio-g7yl.onrender.com/sectionTree"
+    );
+    return response.data;
+  });
 
   const openModal = (index: number, section: string) => {
     if (section === "experience") {
@@ -74,11 +75,14 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
   const renderCards = (data: CardData[], section: string) => {
     return data.map((cardData, index) => {
       // Verifique se a propriedade icons está presente e se há um componente correspondente em components.icons
-      const icons = typeof cardData.icons === 'string' ? components.icons[cardData.icons] : undefined;
-  
+      const icons =
+        typeof cardData.icons === "string"
+          ? components.icons[cardData.icons]
+          : undefined;
+
       return (
         <div
-          className="hidden"
+          className={`hidden ${isProjectsVisible ? "show" : ""}`}
           style={{ transitionDelay: `${index * 300}ms` }}
           key={index}
         >
@@ -95,18 +99,18 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
     });
   };
 
-  // Função para renderizar modais de vídeo
   const renderModalVideos = (
-    modalDataArray: ModalVideoData[],
+    modalDataArray: ModalVideoData[] | null,
     isOpen: boolean,
     index: number | null
   ) => {
-    if (isOpen && index !== null) {
+    if (isOpen && index !== null && modalDataArray) {
+      // Check if modalDataArray is not null before accessing its properties
       return (
         <ModalVideo
-          title={modalDataArray[index].title}
-          description={modalDataArray[index].description}
-          videoUrl={modalDataArray[index].url}
+          title={modalDataArray[index]?.title || ""}
+          description={modalDataArray[index]?.description || ""}
+          videoUrl={modalDataArray[index]?.url || ""}
           closeModal={closeModal}
           isOpen={isOpen}
         />
@@ -118,24 +122,30 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
   return (
     <>
       <SessionTreeContainer ref={sectionThreeRef}>
-        <h2>Experiências</h2>
-        <div className="containerCards">
-          {renderCards(data.cardExperience, "experience")}
-        </div>
+        {isLoading ? (
+          <LoadingCards />
+        ) : (
+          <section>
+            <h2>Experiências</h2>
+            <div className="containerCards">
+              {renderCards(data.cardExperience, "experience")}
+            </div>
 
-        <h2>{data.projects.title}</h2>
-        <div className="containerCards">
-          {renderCards(data.cardsProjects, "projects")}
-        </div>
+            {/* <h2>{data.projects.title}</h2> */}
+            <div className="containerCards">
+              {renderCards(data.cardsProjects, "projects")}
+            </div>
+          </section>
+        )}
       </SessionTreeContainer>
 
       {renderModalVideos(
-        data.modalVideoExperience,
+        data?.modalVideoExperience || [],
         isExperienceModalOpen,
         experienceModalIndex
       )}
       {renderModalVideos(
-        data.modalVideoAllProjects,
+        data?.modalVideoAllProjects || [],
         isProjectsModalOpen,
         projectsModalIndex
       )}

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-export function useIntersectionObserver(ref: React.RefObject<Element>, threshold = 0.2): boolean {
+export function useIntersectionObserver(ref: React.RefObject<Element>, threshold = 0): boolean {
   const [isIntersecting, setIsIntersecting] = useState(false);
 
   useEffect(() => {
@@ -11,31 +11,13 @@ export function useIntersectionObserver(ref: React.RefObject<Element>, threshold
       rootMargin: "0px",
       threshold,
     };
-    
-    
-    
 
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsIntersecting(true);
-        } else {
-          setIsIntersecting(false);
-        }
-        const myObserver = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('show');
-            } else {
-              entry.target.classList.remove('show');
-            }
-          });
-        });
-    
-        const elements = document.querySelectorAll('.hidden');
-        elements.forEach((element) => myObserver.observe(element));
-      });
+      const isAnyIntersecting = entries.some((entry) => entry.isIntersecting);
+      setIsIntersecting(isAnyIntersecting);
+      // console.log(observer)
     }, observerOptions);
+    
 
     if (ref.current) {
       observer.observe(ref.current);
@@ -43,7 +25,7 @@ export function useIntersectionObserver(ref: React.RefObject<Element>, threshold
 
     return () => {
       if (ref.current) {
-        observer.unobserve(ref.current);
+        observer.disconnect();
       }
     };
   }, [ref, threshold]);

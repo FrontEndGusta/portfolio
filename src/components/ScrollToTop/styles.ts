@@ -21,7 +21,7 @@ export const ContainerScrollToTop = styled.div`
       svg {
         color: ${(props) =>
           props.theme.colors
-            .secundary}; /* Altera a cor de preenchimento do ícone para preto */
+            .secundary}; 
       }
     }
   }
