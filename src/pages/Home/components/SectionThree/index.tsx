@@ -46,10 +46,8 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
   console.log("isProjectsVisible:", isProjectsVisible);
 
   const { data, error, isLoading } = useQuery("sectionData", async () => {
-    const delayDuration = 5000; // 5 segundos em milissegundos
-
-    // Simulando um atraso de 5 segundos na resposta da API
-    await new Promise(resolve => setTimeout(resolve, delayDuration));
+    // const delayDuration = 5000; // 5 segundos em milissegundos
+    // await new Promise(resolve => setTimeout(resolve, delayDuration));
     const response = await axios.get(
       "https://backend-portfolio-g7yl.onrender.com/sectionTree"
     );
