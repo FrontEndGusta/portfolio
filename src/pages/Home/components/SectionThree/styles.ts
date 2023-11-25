@@ -8,11 +8,6 @@ export const SessionTreeContainer = styled.div`
     transition: all 1s;
     
 }
-h2{
-    text-align: center;
-    margin: 50px 0;
-    color: ${props => props.theme.colors.primary};
-}
 
 .show{
     opacity: 1;
@@ -20,6 +15,12 @@ h2{
     transform: translateX(0);
 }
 
+
+h2{
+    text-align: center;
+    margin: 50px 0;
+    color: ${props => props.theme.colors.primary};
+}
 .containerCards{
     display: flex;
     align-items:center;

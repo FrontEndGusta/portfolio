@@ -47,7 +47,7 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
 
   const { data, error, isLoading } = useQuery("sectionData", async () => {
     // const delayDuration = 5000; // 5 segundos em milissegundos
-    // await new Promise(resolve => setTimeout(resolve, delayDuration));
+    // await new Promise((resolve) => setTimeout(resolve, delayDuration));
     const response = await axios.get(
       "https://backend-portfolio-g7yl.onrender.com/sectionTree"
     );
@@ -80,7 +80,7 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
 
       return (
         <div
-          className={`hidden ${isProjectsVisible ? "show" : ""}`}
+          
           style={{ transitionDelay: `${index * 300}ms` }}
           key={index}
         >
@@ -119,26 +119,25 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
 
   return (
     <>
+      {isLoading && <LoadingCards />}
       <SessionTreeContainer ref={sectionThreeRef}>
-        {isLoading ? (
-          <LoadingCards />
-        ) : (
-          <section>
-            <h2>Experiências</h2>
+        {data && (
+          <section className={`hidden ${isProjectsVisible ? "show" : ""}`}>
+            <h2>{data.titleHighlights.title}</h2>
             <div className="containerCards">
-              {renderCards(data.cardExperience, "experience")}
+              {renderCards(data.cardsHighlights, "experience")}
             </div>
 
-            {/* <h2>{data.projects.title}</h2> */}
+            <h2>{data.titleAllProjects.title}</h2>
             <div className="containerCards">
-              {renderCards(data.cardsProjects, "projects")}
+              {renderCards(data.cardsAllProjects, "projects")}
             </div>
           </section>
         )}
       </SessionTreeContainer>
 
       {renderModalVideos(
-        data?.modalVideoExperience || [],
+        data?.modalVideoHighlights || [],
         isExperienceModalOpen,
         experienceModalIndex
       )}

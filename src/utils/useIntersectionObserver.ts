@@ -1,3 +1,5 @@
+
+
 // useIntersectionObserver.js
 
 import { useEffect, useState } from 'react';
@@ -15,9 +17,7 @@ export function useIntersectionObserver(ref: React.RefObject<Element>, threshold
     const observer = new IntersectionObserver((entries) => {
       const isAnyIntersecting = entries.some((entry) => entry.isIntersecting);
       setIsIntersecting(isAnyIntersecting);
-      // console.log(observer)
     }, observerOptions);
-    
 
     if (ref.current) {
       observer.observe(ref.current);
@@ -29,7 +29,8 @@ export function useIntersectionObserver(ref: React.RefObject<Element>, threshold
       }
     };
   }, [ref, threshold]);
+  console.log("useIntersectionObserver - isIntersecting:", isIntersecting); // Adicionado para depuração
 
   return isIntersecting;
 }
-export default useIntersectionObserver; // Export the function
+export default useIntersectionObserver
