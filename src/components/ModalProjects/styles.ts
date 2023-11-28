@@ -45,6 +45,7 @@ export const ModalContent = styled.div`
   .titleModal{
     height: 20px;
     text-align: center;
+    margin: 0px 0 20px;
   }
   .close {
     position: absolute;

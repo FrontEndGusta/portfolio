@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ContainerCarousel = styled.div`
   height: 100%;
-  .carousel-container {
+  .carrousel-container {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@ export const ContainerCarousel = styled.div`
     height: 100%;
   }
 
-  .carousel {
+  .carrousel-images {
     width: 90%;
     height: 90%;
     max-width: 600px;

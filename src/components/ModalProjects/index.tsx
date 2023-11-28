@@ -6,7 +6,7 @@ import {
   VideoContainer,
   ButtonContainer,
 } from "./styles";
-import Carousel from "components/Carousel";
+import Carousel from "components/Carrousel";
 
 interface ModalProps {
   title: string;

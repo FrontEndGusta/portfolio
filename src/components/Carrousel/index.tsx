@@ -28,8 +28,8 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
 
   return (
     <ContainerCarousel>
-      <div className="carousel-container">
-        <div className="carousel">
+      <div className="carrousel-container">
+        <div className="carrousel-images">
           <button className="arrow" onClick={prevImage}>
             &lt;
           </button>
