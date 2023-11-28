@@ -1,7 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import {BiSolidXCircle} from 'react-icons/bi'
-import { ModalVideoContainer, ModalContent, VideoContainer, ButtonContainer } from './styles';
-import Carousel from 'components/Carousel';
+import React, { useState, useEffect } from "react";
+import { BiSolidXCircle } from "react-icons/bi";
+import {
+  ModalVideoContainer,
+  ModalContent,
+  VideoContainer,
+  ButtonContainer,
+} from "./styles";
+import Carousel from "components/Carousel";
 
 interface ModalProps {
   title: string;
@@ -11,7 +16,13 @@ interface ModalProps {
   isOpen: boolean;
 }
 
-export const ModalVideo: React.FC<ModalProps> = ({ title, description, images, closeModal, isOpen }) => {
+export const ModalVideo: React.FC<ModalProps> = ({
+  title,
+  description,
+  images,
+  closeModal,
+  isOpen,
+}) => {
   const [isModalOpen, setIsModalOpen] = useState(isOpen);
 
   useEffect(() => {
@@ -23,14 +34,20 @@ export const ModalVideo: React.FC<ModalProps> = ({ title, description, images, c
       {isModalOpen && (
         <ModalVideoContainer>
           <ModalContent>
+            <div className="titleModal">
             <h2>{title}</h2>
+            </div>
             <VideoContainer>
-                <div className="videoIframe">
-              <Carousel images={images} />
-              <span className='close'onClick={closeModal}><BiSolidXCircle/></span>
-              </div>
+              <span className="close" onClick={closeModal}>
+                <BiSolidXCircle />
+              </span>
               <div className="description">
-              <p>{description}</p>
+                <div className="carrousel">
+                  <Carousel images={images} />
+                </div>
+                <div className="textDescription">
+                  <p>{description}</p>
+                </div>
               </div>
             </VideoContainer>
             <ButtonContainer>

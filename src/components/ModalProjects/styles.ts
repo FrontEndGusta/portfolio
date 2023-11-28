@@ -37,11 +37,15 @@ export const ModalContent = styled.div`
   position: relative;
   padding: 20px;
   width: 80%;
-  height: 80%;
+  height: 70%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 
+  .titleModal{
+    height: 20px;
+    text-align: center;
+  }
   .close {
     position: absolute;
     top: 10px;
@@ -62,21 +66,26 @@ export const ModalContent = styled.div`
 
 export const VideoContainer = styled.div`
   /* Estilize o container do vídeo aqui, por exemplo, definindo uma altura máxima */
-  height: 50vh;
+  /* height: 50vh; */
   width: 100%;
+  height: 100%;
   overflow: hidden;
   display: flex;
   gap: 20px;
 
-  iframe {
+  .description {
+    display: flex;
     width: 100%;
     height: 100%;
+    gap: 10px;
   }
-  .videoIframe {
-    width: 60%;
+  .carrousel {
+    height: 100%;
+    width: 50%;
   }
-  .description {
-    width: 40%;
+  .textDescription {
+    height: 100%;
+    width: 50%;
   }
   p {
     color: black;
@@ -84,16 +93,24 @@ export const VideoContainer = styled.div`
   }
 
   @media (width <= 768px) {
-    flex-direction: column;
-    align-items: center;
     overflow: auto;
-    .videoIframe {
+    .carrousel {
+      height: 80%;
       width: 100%;
-      height: 100%
     }
-
-    .description {
+    .textDescription {
+      height: 20%;
       width: 100%;
+      text-align: center;
+    }
+    .textDescription p {
+      width: 100%;
+      height: 100%;
+    }
+    .description {
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
       text-align: center;
     }
   }
@@ -103,7 +120,7 @@ export const ButtonContainer = styled.div`
   /* Estilize o container de botões aqui, por exemplo, alinhando-os horizontalmente */
   display: flex;
   justify-content: space-evenly;
-  width: 60%;
+  width: 50%;
   gap: 10px;
   margin-top: 20px;
 
