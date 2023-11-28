@@ -56,7 +56,7 @@ export const ModalContent = styled.div`
     color: #a3a3a3;
   }
   @media (width <= 768px) {
-    height: 60%;
+    height: 80%;
   }
 `;
 
@@ -86,10 +86,10 @@ export const VideoContainer = styled.div`
   @media (width <= 768px) {
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-
+    overflow: auto;
     .videoIframe {
       width: 100%;
+      height: 100%
     }
 
     .description {

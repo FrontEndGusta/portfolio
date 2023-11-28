@@ -7,11 +7,14 @@ import SectionFor from "./components/SectionFor";
 import SectionOne from "./components/SectionOne";
 import SectionThree from "./components/SectionThree";
 import SectionTwo from "./components/SectionTwo";
-
+import Carousel from "components/Carousel";
+import image1 from '../../assets/avatar.jpeg'
+import image2 from '../../assets/projects/portalMinhaSenha.png'
 const Home = ({ toggleTheme }: { toggleTheme: () => void }) => {
   const sectionOneRef = useRef(null);
   const sectionTwoRef = useRef(null);
   const sectionThreeRef = useRef(null);
+
   return (
     <>
       <ScrollToTop sectionOneRef={sectionOneRef} />

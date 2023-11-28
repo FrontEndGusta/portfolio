@@ -11,81 +11,51 @@ import {
 } from "react-icons/bi";
 import { ContainerCarousel } from "./styles";
 
-const images = [<BiLogoJavascript />, <BiLogoGithub />, <BiLogoTypescript />, <BiLogoJavascript />, <BiLogoGithub />, <BiLogoTypescript />]; // Add more images as needed
-
 interface CarouselProps {
-  images: React.ReactNode[]; // Change the type to ReactNode
+  images: string[]; // Change the type to ReactNode
 }
 
-const Carousel3D: React.FC<CarouselProps> = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+const Carousel: React.FC<CarouselProps> = ({ images }) => {
+  const [currentImage, setCurrentImage] = useState(0);
 
   const nextImage = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setCurrentImage((prev) => (prev + 1) % images.length);
   };
 
   const prevImage = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
+    setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
   };
 
   return (
     <ContainerCarousel>
       <div className="carousel-container">
         <div className="carousel">
-          {images.map((image, index) => (
-            <div
-              key={index}
-              className={`carousel-slide ${
-                index === currentIndex ? "active" : ""
-              }`}
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
-              {typeof image === "string" ? (
-                <img
-                  src={image}
-                  alt={`Slide ${index}`}
-                  className="carousel-image"
-                />
-              ) : (
-                image // Render React elements directly
-              )}
-            </div>
-            
-          ))}
-           {images.map((image, index) => (
-            <div
-              key={index}
-              className={`carousel-slide ${
-                index === currentIndex ? "active" : ""
-              }`}
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
-              {typeof image === "string" ? (
-                <img
-                  src={image}
-                  alt={`Slide ${index}`}
-                  className="carousel-image"
-                />
-              ) : (
-                image // Render React elements directly
-              )}
-            </div>
-            
-          ))}
+          <button className="arrow" onClick={prevImage}>
+            &lt;
+          </button>
+          {/* <div className="image-container"> */}
+            <img
+              className="image"
+              src={images[currentImage]}
+              alt={`Image ${currentImage + 1}`}
+            />
+          {/* </div> */}
+          <button className="arrow" onClick={nextImage}>
+            &gt;
+          </button>
         </div>
-        <div className="buttons">
-          <button onClick={prevImage}>
-            <BiChevronLeft />
-          </button>
-          <button onClick={nextImage}>
-            <BiChevronRight />
-          </button>
+        <div className="dots">
+          {images.map((_, index) => (
+            <span
+              key={index}
+              className={`dot ${currentImage === index ? "active" : ""}`}
+              onClick={() => setCurrentImage(index)}
+            />
+          ))}
         </div>
       </div>
     </ContainerCarousel>
   );
 };
 
-export default Carousel3D;
+export default Carousel;

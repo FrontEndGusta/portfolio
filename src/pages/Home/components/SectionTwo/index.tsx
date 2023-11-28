@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { SessionTwoContainer } from "./styles";
 import useIntersectionObserver from "../../../../utils/useIntersectionObserver";
-import texts from "../../../../utils/texts";
 import IconSlider from "../../../../components/IconSlider";
 import ProgressBar from "../../../../components/ProgressTecnologies";
+import texts from "backup/texts";
 interface SectionTwoProps {
   sectionTwoRef: React.RefObject<HTMLDivElement>; // Defina a propriedade sectionTwoRef corretamente
 }

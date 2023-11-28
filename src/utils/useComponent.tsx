@@ -7,19 +7,26 @@ import {
   BiLogoGithub,
   BiLogoTypescript,
 } from "react-icons/bi";
-
+import image1 from "../assets/avatar.jpeg";
+import image2 from "../assets/projects/portalMinhaSenha.png";
 interface IComponents {
   projects: React.ReactNode;
   icons: {
     [key: string]: React.ReactNode[];
   };
+  imagesModais: {
+    [key: string]: string[];
+  };
 }
 
 const components: IComponents = {
   projects: <HamsterWheel />,
-  icons:{
-  icons1: [<BiChevronRight />, <BiChevronLeft />],
-  icons2: [<BiLogoJavascript />, <BiLogoTypescript />],
+  icons: {
+    icons1: [<BiChevronRight />, <BiChevronLeft />],
+    icons2: [<BiLogoJavascript />, <BiLogoTypescript />],
+  },
+  imagesModais: {
+    modalOne: [image1, image2],
   },
 };
 

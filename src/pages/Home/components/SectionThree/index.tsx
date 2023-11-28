@@ -1,6 +1,5 @@
 import Card from "components/CardProjects";
 import ModalVideo from "components/ModalProjects";
-import texts from "utils/texts";
 import useIntersectionObserver from "utils/useIntersectionObserver";
 import { SessionTreeContainer } from "./styles";
 import { useEffect, useState } from "react";
@@ -25,7 +24,7 @@ interface CardData {
 interface ModalVideoData {
   title: string;
   description: string;
-  url: string;
+  images?: string;
 }
 
 export const SectionThree: React.FC<sectionThreeProps> = ({
@@ -80,7 +79,7 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
 
       return (
         <div
-          
+         className={`hidden ${isProjectsVisible ? "show" : ""}`}
           style={{ transitionDelay: `${index * 300}ms` }}
           key={index}
         >
@@ -102,13 +101,19 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
     isOpen: boolean,
     index: number | null
   ) => {
-    if (isOpen && index !== null && modalDataArray) {
+    
+    if (isOpen && index !== null && modalDataArray && modalDataArray[index]) {
+      const modalData = modalDataArray[index];
+      const images =
+        typeof modalData.images === "string"
+          ? components.imagesModais[modalData.images]
+          : []
       // Check if modalDataArray is not null before accessing its properties
       return (
         <ModalVideo
           title={modalDataArray[index]?.title || ""}
           description={modalDataArray[index]?.description || ""}
-          videoUrl={modalDataArray[index]?.url || ""}
+          images={images}
           closeModal={closeModal}
           isOpen={isOpen}
         />
@@ -122,7 +127,7 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
       {isLoading && <LoadingCards />}
       <SessionTreeContainer ref={sectionThreeRef}>
         {data && (
-          <section className={`hidden ${isProjectsVisible ? "show" : ""}`}>
+          <section >
             <h2>{data.titleHighlights.title}</h2>
             <div className="containerCards">
               {renderCards(data.cardsHighlights, "experience")}

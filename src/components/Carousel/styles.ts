@@ -1,67 +1,81 @@
 import styled from "styled-components";
 
 export const ContainerCarousel = styled.div`
-@keyframes slide {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+height: 100%;
+.carousel-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
 }
-  .carousel-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    white-space: nowrap;
-  }
 
-  .carousel {
-    display: flex;
-    width: 300px; /* Largura do contêiner do carrossel (ajustada para 200px) */
-    animation: 5s slide infinite linear;
-  }
+.carousel {
+  width: 80%;
+  height: 90%;
+  max-width: 600px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+.image-container{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-  .carousel-slide {
-    transition: transform 0.5s ease;
-    width: 100%; /* Garante que cada slide ocupe a largura total do contêiner */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.arrow {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px;
+  color: #333;
+  transition: background-color 0.3s;
+}
 
-  .carousel-image {
-    margin-left: 20px;
-    width: 100px; /* Largura da imagem 100% para preencher o slide */
-    height: auto; /* Altura automática */
-    filter: brightness(0.7); /* Reduz o brilho das imagens não ativas */
-    transition: filter 0.5s ease; /* Aplica uma transição suave para o filtro */
-  }
+.arrow:hover {
+  background-color: #ddd;
+}
 
-  .carousel svg{
-    width: 80px;
-    height: 80px;
-  }
+.arrow:first-child {
+  left: 10px;
+}
 
-  .carousel-slide.active {
-    transform: translateX(0);
-  }
+.arrow:last-child {
+  right: 10px;
+}
 
-  .carousel-slide.active .carousel-image {
-    filter: brightness(1); /* Mantém o brilho normal para a imagem ativa */
-    transition: filter 0.5s ease; /* Adicione uma transição suave para o filtro */
-  }
+.dots {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 10px;;
+}
 
-  .carousel-slide.active .carousel-image:hover {
-    transform: scale(1.2); /* Efeito de escala ao passar o mouse sobre a imagem ativa */
-    transition: transform 0.5s ease; /* Adicione uma transição suave para o efeito de escala */
-  }
-  .buttons{
-    display: flex;
-    gap:15px;
-  }
-  .buttons button{
-    padding: 5px 10px;
-  }
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #333;
+}
+
 `
