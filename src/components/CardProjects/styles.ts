@@ -18,9 +18,6 @@ export const CardContainer = styled.div`
     clip-path: polygon(7% 0, 100% 0, 100% 0, 100% 93%, 94% 100%, 0 100%, 0 100%, 0 7%);
     box-shadow: ${(props) => props.theme.colors.shadow};
   }
-  .card:hover {
-    transform: scale(1.1);
-  }
   button {
     color: ${(props) => props.theme.colors.secundary};
     border: 2px solid ${(props) => props.theme.colors.secundary};

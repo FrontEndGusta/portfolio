@@ -51,9 +51,9 @@ export const ModalVideo: React.FC<ModalProps> = ({
               </div>
             </VideoContainer>
             <ButtonContainer>
-              <button>Botão 1</button>
-              <button>Botão 2</button>
-              <button>Botão 3</button>
+              <button>Acessar Projeto</button>
+              <button>Acessar Repositório</button>
+              <button>Acessar LinkedIn</button>
             </ButtonContainer>
           </ModalContent>
         </ModalVideoContainer>

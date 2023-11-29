@@ -71,21 +71,26 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
   // Função para renderizar Cards
   const renderCards = (data: CardData[], section: string) => {
     return data.map((cardData, index) => {
-      // Verifique se a propriedade icons está presente e se há um componente correspondente em components.icons
+      
       const icons =
         typeof cardData.icons === "string"
           ? components.icons[cardData.icons]
           : undefined;
 
+      const imagesCards =
+        typeof cardData.images === "string"
+          ? components.imagesCards[cardData.images]
+          : undefined;
+
       return (
         <div
-         className={`hidden ${isProjectsVisible ? "show" : ""}`}
+          className={`hidden ${isProjectsVisible ? "show" : ""}`}
           style={{ transitionDelay: `${index * 300}ms` }}
           key={index}
         >
           <Card
             title={cardData.title}
-            imageUrl={cardData.images}
+            imageUrl={imagesCards}
             icons={icons || []} // Use os ícones correspondentes ou um array vazio se não houver correspondência
             customComponent={components.projects}
             showViewMoreButton={cardData.viewMore}
@@ -101,13 +106,12 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
     isOpen: boolean,
     index: number | null
   ) => {
-    
     if (isOpen && index !== null && modalDataArray && modalDataArray[index]) {
       const modalData = modalDataArray[index];
       const images =
         typeof modalData.images === "string"
           ? components.imagesModais[modalData.images]
-          : []
+          : [];
       // Check if modalDataArray is not null before accessing its properties
       return (
         <ModalVideo
@@ -127,7 +131,7 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
       {isLoading && <LoadingCards />}
       <SessionTreeContainer ref={sectionThreeRef}>
         {data && (
-          <section >
+          <section>
             <h2>{data.titleHighlights.title}</h2>
             <div className="containerCards">
               {renderCards(data.cardsHighlights, "experience")}

@@ -1,5 +1,5 @@
 import { BiLogoCss3, BiLogoHtml5, BiLogoJavascript } from 'react-icons/bi';
-import image1 from '../assets/projects/portalMinhaSenha.png'
+import image1 from '../assets/projects/Portal-Minha-Senha/minhasenha.cea.com.br_ (1).png'
 import HamsterWheel from '../components/HamsterWheel';
 
 const icons = [<BiLogoJavascript />, <BiLogoHtml5 />, <BiLogoCss3 />];
