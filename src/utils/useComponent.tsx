@@ -15,7 +15,7 @@ import meet2 from "../assets/projects/page-meet/landing-page-lime-mu-82.vercel.a
 import meet3 from "../assets/projects/page-meet/landing-page-lime-mu-82.vercel.app_ (7).png";
 //tipagem para os componentes
 interface IComponents {
-  projects: React.ReactNode;
+  customComponent: React.ReactNode;
   icons: {
     [key: string]: React.ReactNode[];
   };
@@ -29,7 +29,7 @@ interface IComponents {
 
 const components: IComponents = {
   //componente para projetos em andamento
-  projects: <HamsterWheel />,
+  customComponent: <HamsterWheel />,
   //icones para definir as tecnologias utilizadas em cada projeto
   icons: {
     icons1: [<BiLogoJavascript />, <BiLogoHtml5 />, <BiLogoCss3 />],
