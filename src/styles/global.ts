@@ -57,7 +57,6 @@ export default createGlobalStyle`
 button:active{
   transform: scale(.9);
   transition: all 0.2s;
-  background-color: blue;
 }
 
    /* Estilização da barra de rolagem */

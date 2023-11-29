@@ -13,7 +13,6 @@ export const ContainerCarousel = styled.div`
   .carrousel-images {
     width: 90%;
     height: 90%;
-    max-width: 600px;
     overflow: hidden;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -28,8 +27,8 @@ export const ContainerCarousel = styled.div`
     overflow: hidden;
   }
   .image {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    border-radius: 8px;
     object-fit: contain;
   }
 
@@ -37,26 +36,28 @@ export const ContainerCarousel = styled.div`
     position: absolute;
     top: 45%;
     transform: translateY(-50%);
-    font-size: 24px;
-    background-color: #fff;
+    font-size: 35px;
     border: none;
     outline: none;
     cursor: pointer;
     padding: 10px;
-    color: #333;
-    transition: background-color 0.3s;
+    transition: transform .1s ease-in-out;
   }
 
-  .arrow:hover {
-    background-color: #ddd;
+  .arrow:active{
+    transform: translateY(-50%) scale(0.7);
+  }
+
+  .arrow svg{
+    color: #757575;
   }
 
   .arrow:first-child {
-    left: -10px;
+    left: 24px;
   }
 
   .arrow:last-child {
-    right: -10px;
+    right: 24px;
   }
 
   .dots {
@@ -79,11 +80,11 @@ export const ContainerCarousel = styled.div`
   }
   @media (width <= 768px) {
     .arrow:first-child {
-      left: 0px;
-    }
+    left: 5px;
+  }
 
-    .arrow:last-child {
-      right: 0px;
-    }
+  .arrow:last-child {
+    right: 5px;
+  }
   }
 `;

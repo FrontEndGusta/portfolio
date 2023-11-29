@@ -82,11 +82,11 @@ export const VideoContainer = styled.div`
   }
   .carrousel {
     height: 100%;
-    width: 50%;
+    width: 60%;
   }
   .textDescription {
     height: 100%;
-    width: 50%;
+    width: 40%;
     display: flex;
     text-align: center;
     align-items: center;
@@ -131,6 +131,11 @@ export const ButtonContainer = styled.div`
   @media (width <= 768px) {
     width: 100%;
     align-items: center;
+    flex-direction: column;
+    button {
+      width: 100%;
+      justify-content: center;
+    }
   }
 
   button {

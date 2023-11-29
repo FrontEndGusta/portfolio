@@ -2,13 +2,8 @@ import React, { useState } from "react";
 import "./styles";
 import image1 from "../../assets/avatar.jpeg";
 import image2 from "../../assets/Carousel/2.svg";
-import {
-  BiChevronRight,
-  BiChevronLeft,
-  BiLogoJavascript,
-  BiLogoGithub,
-  BiLogoTypescript,
-} from "react-icons/bi";
+import { MdOutlineArrowForwardIos, MdOutlineArrowBackIos  } from "react-icons/md";
+
 import { ContainerCarousel } from "./styles";
 
 interface CarouselProps {
@@ -31,7 +26,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
       <div className="carrousel-container">
         <div className="carrousel-images">
           <button className="arrow" onClick={prevImage}>
-            &lt;
+            <MdOutlineArrowBackIos />
           </button>
           <div className="image-container">
             <img
@@ -41,7 +36,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
             />
           </div>
           <button className="arrow" onClick={nextImage}>
-            &gt;
+           <MdOutlineArrowForwardIos />
           </button>
         </div>
         <div className="dots">
