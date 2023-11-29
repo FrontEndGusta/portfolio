@@ -71,7 +71,6 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
   // Função para renderizar Cards
   const renderCards = (data: CardData[], section: string) => {
     return data.map((cardData, index) => {
-
       const icons =
         typeof cardData.icons === "string"
           ? components.icons[cardData.icons]
@@ -82,7 +81,10 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
           ? components.imagesCards[cardData.images]
           : undefined;
 
-          const customComponent = typeof cardData.component === "string" ? components.customComponent : undefined
+      const customComponent =
+        typeof cardData.component === "string"
+          ? components.customComponent[cardData.component]
+          : undefined;
 
       return (
         <div
@@ -119,7 +121,7 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
         <ModalVideo
           title={modalDataArray[index]?.title || ""}
           description={modalDataArray[index]?.description || ""}
-          images={images}
+          images={images || []}
           closeModal={closeModal}
           isOpen={isOpen}
         />

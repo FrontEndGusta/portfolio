@@ -13,6 +13,8 @@ export const SessionTreeContainer = styled.div`
     opacity: 1;
     transition: all 1s;
     transform: translateX(0);
+    animation: bounce-in-left 2s both;
+    
 }
 
 

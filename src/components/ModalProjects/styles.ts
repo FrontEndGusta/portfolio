@@ -87,6 +87,10 @@ export const VideoContainer = styled.div`
   .textDescription {
     height: 100%;
     width: 50%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    text-align: center;
   }
   p {
     color: black;
@@ -102,7 +106,6 @@ export const VideoContainer = styled.div`
     .textDescription {
       height: 20%;
       width: 100%;
-      text-align: center;
     }
     .textDescription p {
       width: 100%;
