@@ -52,6 +52,12 @@ const components: IComponents = {
       {
         icon: portal2,
       },
+      {
+        icon: portal3,
+      },
+      {
+        icon: portal4,
+      },
     ],
     modalTwo: [
       {
@@ -63,7 +69,7 @@ const components: IComponents = {
       {
         icon: meet3,
       },
-    ]
+    ],
   },
 };
 

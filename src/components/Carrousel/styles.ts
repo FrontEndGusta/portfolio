@@ -64,7 +64,7 @@ export const CarrouselTwoContainer = styled.div`
 }
 
 .indicators-symbol-active svg{
-  color: blue;
+  color: #8f44fd;
   height: 25px;
   width: 25px;
 }

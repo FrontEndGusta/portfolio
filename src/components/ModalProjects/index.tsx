@@ -6,10 +6,7 @@ import {
   VideoContainer,
   ButtonContainer,
 } from "./styles";
-import CarrouselTwo from "components/CarrouselTwo";
-interface CarouselItemProps {
-  icon: string
-}
+import CarrouselTwo from "components/Carrousel";
 interface ModalProps {
   title: string;
   description: string;
@@ -37,7 +34,7 @@ export const ModalVideo: React.FC<ModalProps> = ({
         <ModalVideoContainer>
           <ModalContent>
             <div className="titleModal">
-            <h2>{title}</h2>
+              <h2>{title}</h2>
             </div>
             <VideoContainer>
               <span className="close" onClick={closeModal}>
@@ -45,7 +42,7 @@ export const ModalVideo: React.FC<ModalProps> = ({
               </span>
               <div className="description">
                 <div className="carrousel">
-                 <CarrouselTwo items={images} />
+                  <CarrouselTwo items={images} />
                 </div>
                 <div className="textDescription">
                   <p>{description}</p>

@@ -1,22 +1,17 @@
 import React, { useState } from "react";
-import { CarouselItem } from "../CarrouselTwo/components/useCarrouselItem";
+import { CarouselItem } from "../Carrousel/components/useCarrouselItem";
 import { CarrouselTwoContainer } from "./styles";
-import { MdOutlineArrowForwardIos, MdOutlineArrowBackIos, MdOutlineRadioButtonChecked } from "react-icons/md";
-
-interface CarouselItemProps {
-  icon: string;
-}
+import {
+  MdOutlineArrowForwardIos,
+  MdOutlineArrowBackIos,
+  MdOutlineRadioButtonChecked,
+} from "react-icons/md";
 
 interface CarouselProps {
-    items: CarouselItemProps[];
-  }
-  interface CarouselItemProps {
-    icon: string;
-  }
+  items: { icon: string }[];
+}
 
-  
-
-export const Carousel: React.FC<CarouselProps> = ({items}) => {
+export const Carousel: React.FC<CarouselProps> = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const updateIndex = (newIndex: number) => {
@@ -46,7 +41,9 @@ export const Carousel: React.FC<CarouselProps> = ({items}) => {
             updateIndex(activeIndex - 1);
           }}
         >
-          <span className="material-symbols-outlined"><MdOutlineArrowBackIos /></span>
+          <span className="material-symbols-outlined">
+            <MdOutlineArrowBackIos />
+          </span>
         </button>
         <div className="indicators">
           {items.map((_, index) => (
@@ -62,7 +59,7 @@ export const Carousel: React.FC<CarouselProps> = ({items}) => {
                     : "indicators-symbol"
                 }`}
               >
-               <MdOutlineRadioButtonChecked  />
+                <MdOutlineRadioButtonChecked />
               </span>
             </button>
           ))}
@@ -74,11 +71,11 @@ export const Carousel: React.FC<CarouselProps> = ({items}) => {
           }}
         >
           <span className="material-symbols-outlined">
-          <MdOutlineArrowForwardIos />
+            <MdOutlineArrowForwardIos />
           </span>
         </button>
       </div>
-      </CarrouselTwoContainer>
+    </CarrouselTwoContainer>
   );
 };
 
