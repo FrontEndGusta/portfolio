@@ -13,6 +13,7 @@ import portal4 from "../assets/projects/Portal-Minha-Senha/minhasenha.cea.com.br
 import meet1 from "../assets/projects/page-meet/landing-page-lime-mu-82.vercel.app_ (5).png";
 import meet2 from "../assets/projects/page-meet/landing-page-lime-mu-82.vercel.app_ (6).png";
 import meet3 from "../assets/projects/page-meet/landing-page-lime-mu-82.vercel.app_ (7).png";
+import { MdOutlineNetworkWifi1Bar } from "react-icons/md";
 //tipagem para os componentes
 interface IComponents {
   customComponent: {
@@ -25,7 +26,7 @@ interface IComponents {
     [key: string]: string;
   };
   imagesModais: {
-    [key: string]: string[];
+    [key: string]: { icon: string }[];
   };
 }
 
@@ -44,8 +45,25 @@ const components: IComponents = {
   },
   //imagens dos projetos nos respectivos modais
   imagesModais: {
-    modalOne: [portal1, portal2, portal3, portal4],
-    modalTwo: [meet1, meet2, meet3],
+    modalOne: [
+      {
+        icon: portal1,
+      },
+      {
+        icon: portal2,
+      },
+    ],
+    modalTwo: [
+      {
+        icon: meet1,
+      },
+      {
+        icon: meet2,
+      },
+      {
+        icon: meet3,
+      },
+    ]
   },
 };
 

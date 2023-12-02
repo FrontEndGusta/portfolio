@@ -8,13 +8,14 @@ import axios from "axios";
 import components from "utils/useComponent";
 import LoadingCards from "./components/LoadingCards";
 
+
 interface sectionThreeProps {
   sectionThreeRef: React.RefObject<HTMLDivElement>;
 }
 // Interface para os dados de um card
 interface CardData {
   title: string;
-  images?: string;
+  images?: { icon: string }[];
   component?: React.ReactNode;
   icons?: React.ReactNode[];
   viewMore?: boolean;

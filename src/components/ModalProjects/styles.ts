@@ -42,7 +42,7 @@ export const ModalContent = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
 
-  .titleModal{
+  .titleModal {
     height: 20px;
     text-align: center;
     margin: 0px 0 20px;
@@ -99,13 +99,15 @@ export const VideoContainer = styled.div`
 
   @media (width <= 768px) {
     overflow: auto;
+    &::-webkit-scrollbar {width: 3px;}
     .carrousel {
       height: 80%;
       width: 100%;
     }
     .textDescription {
-      height: 20%;
+      height: 100%;
       width: 100%;
+      margin-top: 20px;
     }
     .textDescription p {
       width: 100%;
@@ -124,7 +126,7 @@ export const ButtonContainer = styled.div`
   /* Estilize o container de botões aqui, por exemplo, alinhando-os horizontalmente */
   display: flex;
   justify-content: space-evenly;
-  width: 50%;
+  width: 60%;
   gap: 10px;
   margin-top: 20px;
 
