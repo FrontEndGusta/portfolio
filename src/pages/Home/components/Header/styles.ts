@@ -33,7 +33,7 @@ export const Container = styled.div`
 
   .hamburger {
     cursor: pointer;
-    padding: 15px;
+    padding: 15px 10px;
     position: fixed;
     top: 0;
     left: 0;
