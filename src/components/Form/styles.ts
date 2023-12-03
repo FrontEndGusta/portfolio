@@ -68,7 +68,6 @@ export const Container = styled.div`
     border-radius: 4px;
     cursor: pointer;
     font-size: 18px;
-    transition: background-color, transform 0.8s;
     color: ${(props) => props.theme.colors.secundary};
     background-color: ${(props) => props.theme.colors.card};
     border: 2px solid ${(props) => props.theme.colors.secundary};
@@ -77,11 +76,11 @@ export const Container = styled.div`
 
   .button:hover {
     color: ${(props) => props.theme.colors.secundary};
-    transform: scale(1.01);
   }
 
   .button:active {
-    transform: scale(.9);
+    box-shadow: 0px 0px ${(props) => props.theme.colors.secundary};
+    transform: translate(3px, 3px);
     background-color: ${(props) => props.theme.colors.primary};
   }
 
