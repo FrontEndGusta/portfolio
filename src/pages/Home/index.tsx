@@ -12,6 +12,7 @@ const Home = ({ toggleTheme }: { toggleTheme: () => void }) => {
   const sectionOneRef = useRef(null);
   const sectionTwoRef = useRef(null);
   const sectionThreeRef = useRef(null);
+  const sectionForRef = useRef(null);
 
   return (
     <>
@@ -21,11 +22,12 @@ const Home = ({ toggleTheme }: { toggleTheme: () => void }) => {
         sectionOneRef={sectionOneRef}
         sectionTwoRef={sectionTwoRef}
         sectionThreeRef={sectionThreeRef}
+        sectionForRef={sectionForRef}
       />
       <SectionOne sectionOneRef={sectionOneRef} sectionTwoRef={sectionTwoRef} />
       <SectionTwo sectionTwoRef={sectionTwoRef} />
       <SectionThree sectionThreeRef={sectionThreeRef} />
-      <SectionFor />
+      <SectionFor sectionForRef={sectionForRef}/>
       <Popovers />
       <Progress />
     </>

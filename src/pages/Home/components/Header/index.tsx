@@ -7,12 +7,14 @@ interface Props {
   sectionOneRef: RefObject<HTMLElement>;
   sectionTwoRef: RefObject<HTMLElement>;
   sectionThreeRef: RefObject<HTMLElement>;
+  sectionForRef: RefObject<HTMLElement>;
 }
 const Header: React.FC<Props> = ({
   toggleTheme,
   sectionOneRef,
   sectionTwoRef,
   sectionThreeRef,
+  sectionForRef,
 }) => {
   const theme = useContext(ThemeContext);
 
@@ -38,9 +40,10 @@ const Header: React.FC<Props> = ({
             <div className="bar"></div>
           </div>
           <ul className="menu-items">
+            <li onClick={() => scrollToSection(sectionOneRef)}>Início</li>
             <li onClick={() => scrollToSection(sectionTwoRef)}>Sobre mim</li>
             <li onClick={() => scrollToSection(sectionThreeRef)}>Projetos</li>
-            <li onClick={() => scrollToSection(sectionThreeRef)}>Contato</li>
+            <li onClick={() => scrollToSection(sectionForRef)}>Contato</li>
           </ul>
         </div>
         <div className="portfolio">
@@ -48,9 +51,10 @@ const Header: React.FC<Props> = ({
         </div>
         <div className="switch">
           <ul>
+            <li onClick={() => scrollToSection(sectionOneRef)}>Início</li>
             <li onClick={() => scrollToSection(sectionTwoRef)}>Sobre mim</li>
             <li onClick={() => scrollToSection(sectionThreeRef)}>Projetos</li>
-            <li onClick={() => scrollToSection(sectionThreeRef)}>Contato</li>
+            <li onClick={() => scrollToSection(sectionForRef)}>Contato</li>
           </ul>
           <ThemeSwitch toggleTheme={toggleTheme} />
         </div>
