@@ -6,7 +6,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 30px;
+  padding: 0 15px;
   width: 100%;
   position: fixed;
   z-index: 1;
@@ -33,7 +33,7 @@ export const Container = styled.div`
 
   .hamburger {
     cursor: pointer;
-    padding: 15px 10px;
+    padding: 10px 15px;
     position: fixed;
     top: 0;
     left: 0;
