@@ -14,15 +14,14 @@ interface CarouselProps {
 export const Carousel: React.FC<CarouselProps> = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const updateIndex = (newIndex: number) => {
-    if (newIndex < 0) {
-      newIndex = 0;
-    } else if (newIndex >= items.length) {
-      newIndex = items.length - 1;
-    }
-
-    setActiveIndex(newIndex);
+  const nextImage = () => {
+    setActiveIndex((prev) => (prev + 1) % items.length);
   };
+  
+  const prevImage = () => {
+    setActiveIndex((prev) => (prev - 1 + items.length) % items.length);
+  };
+  
 
   return (
     <CarrouselTwoContainer>
@@ -37,9 +36,7 @@ export const Carousel: React.FC<CarouselProps> = ({ items }) => {
       <div className="carousel-buttons">
         <button
           className="button-arrow"
-          onClick={() => {
-            updateIndex(activeIndex - 1);
-          }}
+          onClick={prevImage}
         >
           <span className="material-symbols-outlined">
             <MdOutlineArrowBackIos />
@@ -50,7 +47,7 @@ export const Carousel: React.FC<CarouselProps> = ({ items }) => {
             <button
               key={index}
               className="indicator-buttons"
-              onClick={() => updateIndex(index)}
+              onClick={() => setActiveIndex(index)}
             >
               <span
                 className={`material-symbols-outlined ${
@@ -66,9 +63,7 @@ export const Carousel: React.FC<CarouselProps> = ({ items }) => {
         </div>
         <button
           className="button-arrow"
-          onClick={() => {
-            updateIndex(activeIndex + 1);
-          }}
+          onClick={nextImage}
         >
           <span className="material-symbols-outlined">
             <MdOutlineArrowForwardIos />

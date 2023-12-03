@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  height: 60px;
+  height: 50px;
   background: ${(props) => props.theme.colors.primary};
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
   width: 100%;
+  position: fixed;
+  z-index: 1;
 
   .menu {
     position: fixed;
