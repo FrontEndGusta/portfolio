@@ -107,7 +107,7 @@ export const VideoContainer = styled.div`
     .textDescription {
       height: 100%;
       width: 100%;
-      margin-top: 20px;
+      margin-top: 10px;
     }
     .textDescription p {
       width: 100%;

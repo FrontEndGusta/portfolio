@@ -38,7 +38,7 @@ export const Carousel: React.FC<CarouselProps> = ({ items }) => {
           className="button-arrow"
           onClick={prevImage}
         >
-          <span className="material-symbols-outlined">
+          <span className="previous">
             <MdOutlineArrowBackIos />
           </span>
         </button>
@@ -50,7 +50,7 @@ export const Carousel: React.FC<CarouselProps> = ({ items }) => {
               onClick={() => setActiveIndex(index)}
             >
               <span
-                className={`material-symbols-outlined ${
+                className={`${
                   index === activeIndex
                     ? "indicators-symbol-active"
                     : "indicators-symbol"
@@ -65,7 +65,7 @@ export const Carousel: React.FC<CarouselProps> = ({ items }) => {
           className="button-arrow"
           onClick={nextImage}
         >
-          <span className="material-symbols-outlined">
+          <span className="next">
             <MdOutlineArrowForwardIos />
           </span>
         </button>

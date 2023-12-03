@@ -44,11 +44,11 @@ const Contact: React.FC = () => {
       )
       .then(
         (response) => {
-          createToast.success('Mensagem enviada com sucesso');
+          createToast.success("Mensagem enviada com sucesso");
           reset();
         },
         (err) => {
-          createToast.error('Ocorreu um erro ao enviar a mensagem');
+          createToast.error("Ocorreu um erro ao enviar a mensagem");
           console.log("erro: ", err);
         }
       );
@@ -56,7 +56,7 @@ const Contact: React.FC = () => {
   return (
     <Container>
       <div className="container">
-          <h2>Contato</h2>
+        <h2>Contato</h2>
         <form className="form" onSubmit={handleSubmit(sendEmail)}>
           <input
             className="input"
@@ -72,18 +72,24 @@ const Contact: React.FC = () => {
             placeholder="Digite seu e-mail"
             {...register("email")}
           />
-          {errors.email && <span className="error">{errors.email?.message}</span>}
+          {errors.email && (
+            <span className="error">{errors.email?.message}</span>
+          )}
 
           <textarea
             className="textarea"
             placeholder="Digite sua mensagem..."
             {...register("message")}
           />
-          {errors.message && <span className="error">{errors.message?.message}</span>}
-          
+          {errors.message && (
+            <span className="error">{errors.message?.message}</span>
+          )}
+
           <input className="button" type="submit" value="Enviar" />
-          <div className="iconsContact"><IconsContact /></div>
         </form>
+        <div className="iconsContact">
+          <IconsContact />
+        </div>
       </div>
     </Container>
   );

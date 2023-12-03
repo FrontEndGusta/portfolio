@@ -27,12 +27,7 @@ export const ContactContainer = styled.div`
     transform: translate(3px, 3px);
     background-color: ${(props) => props.theme.colors.primary};
   }
-
-  .icon {
-    border: 2px solid ${(props) => props.theme.colors.secundary};
-    box-shadow: 3px 3px ${(props) => props.theme.colors.secundary};
-  }
-
+  
   .icon svg {
     width: 30px;
     height: 30px;

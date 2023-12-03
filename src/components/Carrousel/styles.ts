@@ -8,65 +8,74 @@ export const CarrouselTwoContainer = styled.div`
   flex-direction: column;
   justify-content: center;
 
-.inner{
-  white-space: nowrap;
-  transition: transform 0.3s;
-  height: 100%;
-}
+  .inner {
+    white-space: nowrap;
+    transition: transform 0.3s;
+    height: 100%;
+  }
 
-.carousel-item{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  background-color: #fff;
-}
+  .carousel-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: #fff;
+  }
 
-.carousel-img{
-  height: 85%;
-  width: 100%;
-}
+  .carousel-img {
+    height: 85%;
+    width: 100%;
+  }
 
-.carousel-buttons{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
+  .carousel-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 
-.button-arrow{
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-bottom: 20px;
-  padding: 0;
-}
+  .button-arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 0;
+  }
 
-.indicators{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-bottom: 20px;
-}
+  .indicators {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+  }
 
-.indicator-buttons{
-  border:none;
-  cursor: pointer;
-  padding: 0;
-}
+  .indicator-buttons {
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
 
-.indicators > button{
-  background: none ;
-}
+  .indicators > button {
+    background: none;
+  }
 
-.indicators-symbol svg{
-  height: 20px;
-  width: 20px;
-  color: #090C08;
-}
+  span svg {
+    color: #090c08;
+  }
 
-.indicators-symbol-active svg{
-  color: #8f44fd;
-  height: 25px;
-  width: 25px;
-}
+  .previous svg,
+  .next svg {
+    height: 20px;
+    width: 20px;
+  }
+
+  .indicators-symbol svg {
+    height: 20px;
+    width: 20px;
+  }
+
+  .indicators-symbol-active svg {
+    color: #8f44fd;
+    height: 25px;
+    width: 25px;
+  }
 `;
