@@ -20,6 +20,10 @@ export default createGlobalStyle`
     -webkit-tap-highlight-color:transparent;
   }
 
+  section{
+    padding-top: 50px 0;
+  }
+
   svg{
     color: ${(props) => props.theme.colors.svg}
   }

@@ -8,7 +8,6 @@ import axios from "axios";
 import components from "utils/useComponent";
 import LoadingCards from "./components/LoadingCards";
 
-
 interface sectionThreeProps {
   sectionThreeRef: React.RefObject<HTMLDivElement>;
 }
@@ -32,6 +31,7 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
   sectionThreeRef,
 }) => {
   const [isExperienceModalOpen, setIsExperienceModalOpen] = useState(false);
+
   const [experienceModalIndex, setExperienceModalIndex] = useState<
     number | null
   >(null);
@@ -46,8 +46,7 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
   console.log("isProjectsVisible:", isProjectsVisible);
 
   const { data, error, isLoading } = useQuery("sectionData", async () => {
-    // const delayDuration = 5000; // 5 segundos em milissegundos
-    // await new Promise((resolve) => setTimeout(resolve, delayDuration));
+    
     const response = await axios.get(
       "https://backend-portfolio-g7yl.onrender.com/sectionTree"
     );
@@ -72,20 +71,8 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
   // Função para renderizar Cards
   const renderCards = (data: CardData[], section: string) => {
     return data.map((cardData, index) => {
-      const icons =
-        typeof cardData.icons === "string"
-          ? components.icons[cardData.icons]
-          : undefined;
-
-      const imagesCards =
-        typeof cardData.images === "string"
-          ? components.imagesCards[cardData.images]
-          : undefined;
-
-      const customComponent =
-        typeof cardData.component === "string"
-          ? components.customComponent[cardData.component]
-          : undefined;
+      const { icons, imagesCards, customComponent } =
+        getCardComponents(cardData);
 
       return (
         <div
@@ -104,6 +91,24 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
         </div>
       );
     });
+  };
+
+  // Função auxiliar para obter componentes do cartão
+  const getCardComponents = (cardData: CardData) => {
+    const icons =
+      typeof cardData.icons === "string"
+        ? components.icons[cardData.icons]
+        : undefined;
+    const imagesCards =
+      typeof cardData.images === "string"
+        ? components.imagesCards[cardData.images]
+        : undefined;
+    const customComponent =
+      typeof cardData.component === "string"
+        ? components.customComponent[cardData.component]
+        : undefined;
+
+    return { icons, imagesCards, customComponent };
   };
 
   const renderModalVideos = (

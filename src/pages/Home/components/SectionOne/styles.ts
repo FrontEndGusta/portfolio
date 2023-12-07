@@ -47,8 +47,6 @@ export const SessionOneContainer = styled.div`
       text-align: center;
       flex-direction: column-reverse;
       justify-content: center;
-      padding-top: 0;
-      height: 95vh;
     }
     .containerBtn {
       align-items: center;
@@ -149,7 +147,7 @@ export const SessionOneContainer = styled.div`
 
   .arr {
     position: absolute;
-    bottom: 10%;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
   }
