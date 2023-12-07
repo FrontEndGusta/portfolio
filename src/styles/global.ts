@@ -21,7 +21,7 @@ export default createGlobalStyle`
   }
 
   section{
-    padding-top: 50px 0;
+    padding-top: 50px;
   }
 
   svg{
