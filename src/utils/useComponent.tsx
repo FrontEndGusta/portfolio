@@ -8,18 +8,18 @@ import {
   BiLogoReact,
 } from "react-icons/bi";
 
-import portal1 from "../assets/projects/Portal-Minha-Senha/minhasenha.cea.com.br_ (5).png";
-import portal2 from "../assets/projects/Portal-Minha-Senha/minhasenha.cea.com.br_ (1).png";
-import portal3 from "../assets/projects/Portal-Minha-Senha/minhasenha.cea.com.br_ (2).png";
-import portal4 from "../assets/projects/Portal-Minha-Senha/minhasenha.cea.com.br_ (3).png";
+import portal1 from "../assets/projects/Portal-Minha-Senha/portal1.png";
+import portal2 from "../assets/projects/Portal-Minha-Senha/portal2.png";
+import portal3 from "../assets/projects/Portal-Minha-Senha/portal3.png";
+import portal4 from "../assets/projects/Portal-Minha-Senha/portal4.png";
 
-import meet1 from "../assets/projects/Page-Meet/landing-page-lime-mu-82.vercel.app_ (5).png";
-import meet2 from "../assets/projects/Page-Meet/landing-page-lime-mu-82.vercel.app_ (6).png";
-import meet3 from "../assets/projects/Page-Meet/landing-page-lime-mu-82.vercel.app_ (7).png";
+import meet1 from "../assets/projects/Page-Meet/meet1.png";
+import meet2 from "../assets/projects/Page-Meet/meet2.png";
+import meet3 from "../assets/projects/Page-Meet/meet3.png";
 
-import secretWord1 from '../assets/projects/Secret-Word/game-secret-word-sable.vercel.app_ (2).png'
-import secretWord2 from '../assets/projects/Secret-Word/game-secret-word-sable.vercel.app_ (1).png'
-import secretWord3 from '../assets/projects/Secret-Word/game-secret-word-sable.vercel.app_.png'
+import secretWord1 from '../assets/projects/Secret-Word/secret1.png'
+import secretWord2 from '../assets/projects/Secret-Word/secret2.png'
+import secretWord3 from '../assets/projects/Secret-Word/secret3.png'
 
 
 import { MdOutlineNetworkWifi1Bar } from "react-icons/md";
