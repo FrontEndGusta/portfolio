@@ -21,7 +21,9 @@ export const Card: React.FC<CardProps> = ({
   return (
     <CardContainer>
       <div className="card">
+        <div className="title">
         <h3>{title}</h3>
+        </div>
         <div className="image">
           {imageUrl && <img src={imageUrl} alt={`Image`} />}
           {customComponent && !imageUrl && (

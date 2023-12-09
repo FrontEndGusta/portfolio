@@ -4,6 +4,7 @@ import useIntersectionObserver from "../../../../utils/useIntersectionObserver";
 import IconSlider from "../../../../components/IconSlider";
 import ProgressBar from "../../../../components/ProgressTecnologies";
 import texts from "backup/texts";
+import useApi from "services/useApi";
 interface SectionTwoProps {
   sectionTwoRef: React.RefObject<HTMLDivElement>; // Defina a propriedade sectionTwoRef corretamente
 }
@@ -20,14 +21,25 @@ const SectionTwo: React.FC<SectionTwoProps> = ({ sectionTwoRef }) => {
     // Adicione quantas tecnologias desejar
   ];
 
+  type AboutData = {
+    about: {
+      aboutMe: string;
+      description: string;
+    };
+  };
+
+  const { data, isLoading } = useApi<AboutData>("/sectionTwo");
+  console.log(data);
+
   return (
     <>
+      {isLoading && <p> carregando</p>}
       <SessionTwoContainer ref={sectionTwoRef}>
         <section className={`about ${isAboutVisible ? "visible" : ""}`}>
           <div className="containerAbout">
             <div className="tecnologies">
-              <h2>{texts.sectionTwo.about.aboutMe}</h2>
-              <p>{texts.sectionTwo.about.description}</p>
+              <h2>{data?.about?.aboutMe}</h2>
+              <p>{data?.about?.description}</p>
             </div>
             <div className="carrousel">
               <h2>Habilidades</h2>

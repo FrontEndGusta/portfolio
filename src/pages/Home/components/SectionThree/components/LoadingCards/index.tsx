@@ -2,14 +2,12 @@ import React from "react";
 import { LoadingCardsContainer } from "./styles";
 
 interface LoadingCardProps {
-  key: string;
+  cardKey: string;
 }
 
-const LoadingCard: React.FC<LoadingCardProps> = ({ key }) => {
-
-  
+const LoadingCard: React.FC<LoadingCardProps> = ({ cardKey }) => {
   return (
-    <div key={key} className="card">
+    <div key={cardKey} className="card">
       <div className="card__skeleton card__title"></div>
       <div className="card__skeleton card__image"></div>
       <div className="unir">
@@ -27,7 +25,7 @@ const LoadingCard: React.FC<LoadingCardProps> = ({ key }) => {
 };
 
 const LoadingCards: React.FC = () => {
-  // Defina a quantidade desejada de cartões
+  // Define a quantidade desejada de cartões
   const numberOfCards = 3;
 
   // Crie um array com chaves únicas para cada card
@@ -37,8 +35,8 @@ const LoadingCards: React.FC = () => {
 
   return (
     <LoadingCardsContainer>
-      {cardKeys.map((key) => (
-        <LoadingCard key={key} />
+      {cardKeys.map((cardKey, index) => (
+        <LoadingCard cardKey={cardKey} key={index}/>
       ))}
     </LoadingCardsContainer>
   );

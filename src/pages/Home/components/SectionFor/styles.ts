@@ -4,6 +4,9 @@ export const ContainerSectionFor = styled.div`
   .contact {
     height: 100vh;
   }
+  section {
+    padding-top: 20px;
+  }
   
   .card {
     width: 100%;
@@ -27,11 +30,12 @@ export const ContainerSectionFor = styled.div`
     border-radius: 8px;
     position: absolute;
     animation: move-up6 1s ease-in-out infinite alternate-reverse;
-    z-index: 0 !important; /* Mantenha o z-index menor para que os círculos fiquem atrás do .card-inner */
+    box-shadow: 0 0 3px ${props => props.theme.colors.primary};
+    border: 2px solid ${props => props.theme.colors.secundary};
   }
 
   .card-center {
-    height: 75%;
+    height: 80%;
     width: 75%;
     background: ${props => props.theme.colors.card};
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
@@ -43,6 +47,12 @@ export const ContainerSectionFor = styled.div`
     justify-content: space-evenly;
     flex-direction: column;
     color: ${props => props.theme.colors.secundary};
+    box-shadow: 0 0 3px ${props => props.theme.colors.primary};
+    border: 2px solid ${props => props.theme.colors.secundary};
+  }
+
+  .card-center::-webkit-scrollbar{
+    width: 5px;
   }
   .card-center p{
     text-align:center;

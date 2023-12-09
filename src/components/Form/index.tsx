@@ -8,7 +8,7 @@ import { useToastContext } from "components/Toast/useToastContext";
 import IconsContact from "pages/Home/components/SectionFor/components/IconsContact";
 
 const Contact: React.FC = () => {
-  const { createToast, ToastComponent } = useToastContext();
+  const { createToast } = useToastContext();
   interface formProps {
     name: string;
     email: string;

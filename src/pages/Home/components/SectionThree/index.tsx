@@ -7,6 +7,7 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import components from "utils/useComponent";
 import LoadingCards from "./components/LoadingCards";
+import useApi from "services/useApi";
 
 interface sectionThreeProps {
   sectionThreeRef: React.RefObject<HTMLDivElement>;
@@ -27,6 +28,19 @@ interface ModalVideoData {
   images?: string;
 }
 
+interface SectionThreeData {
+  titleHighlights: {
+    title: string;
+  };
+  cardsHighlights: CardData[];
+  titleAllProjects: {
+    title: string;
+  };
+  cardsAllProjects: CardData[];
+  modalVideoHighlights: ModalVideoData[];
+  modalVideoAllProjects: ModalVideoData[];
+}
+
 export const SectionThree: React.FC<sectionThreeProps> = ({
   sectionThreeRef,
 }) => {
@@ -43,15 +57,8 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
   );
 
   const isProjectsVisible = useIntersectionObserver(sectionThreeRef);
-  console.log("isProjectsVisible:", isProjectsVisible);
 
-  const { data, error, isLoading } = useQuery("sectionData", async () => {
-    
-    const response = await axios.get(
-      "https://backend-portfolio-g7yl.onrender.com/sectionTree"
-    );
-    return response.data;
-  });
+  const { data, isLoading } = useApi<SectionThreeData>("/sectionTree");
 
   const openModal = (index: number, section: string) => {
     if (section === "experience") {

@@ -41,9 +41,9 @@ export const Container = styled.div`
     height: 34px;
     border-radius: 4px;
     padding: 0 8px;
-    color: ${(props) => props.theme.colors.secundary};
-    background-color: ${(props) => props.theme.colors.card};
-    border: 2px solid ${(props) => props.theme.colors.secundary};
+    color: #090C08;
+    background-color: #FFFFFF;
+    border: 2px solid #090C08;
     box-shadow: 4px 4px ${(props) => props.theme.colors.secundary};
     outline: none;
   }
@@ -56,9 +56,9 @@ export const Container = styled.div`
     padding: 8px;
     height: 94px;
     resize: none;
-    color: ${(props) => props.theme.colors.secundary};
-    background-color: ${(props) => props.theme.colors.card};
-    border: 2px solid ${(props) => props.theme.colors.secundary};
+    color: #090C08;
+    background-color: #FFFFFF;
+    border: 2px solid #090C08;
     box-shadow: 4px 4px ${(props) => props.theme.colors.secundary};
   }
 
@@ -68,20 +68,16 @@ export const Container = styled.div`
     border-radius: 4px;
     cursor: pointer;
     font-size: 18px;
-    color: ${(props) => props.theme.colors.secundary};
-    background-color: ${(props) => props.theme.colors.card};
-    border: 2px solid ${(props) => props.theme.colors.secundary};
+    color: #090C08;
+    background-color: #FFFFFF;
+    border: 2px solid #090C08;
     box-shadow: 4px 4px ${(props) => props.theme.colors.secundary};
   }
 
-  .button:hover {
-    color: ${(props) => props.theme.colors.secundary};
-  }
-
   .button:active {
-    box-shadow: 0px 0px ${(props) => props.theme.colors.secundary};
+    box-shadow: 0px 0px #FFFFFF;
     transform: translate(3px, 3px);
-    background-color: ${(props) => props.theme.colors.primary};
+    background-color: #FFFFFF;
   }
 
   .iconsContact{

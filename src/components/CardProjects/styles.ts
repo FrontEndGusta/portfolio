@@ -31,17 +31,25 @@ export const CardContainer = styled.div`
     transform: scale(0.9);
     transition: all 0.2s;
   }
-
+  .title{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    width: 100%;
+    height: 10%;
+    z-index: 1
+  }
   .card h3 {
     z-index: 1;
     color: ${(props) => props.theme.colors.secundary};
     font-size: 1.5;
     font-weight: 600;
+    text-align: center;
   }
   .image {
     z-index: 1;
     width: 100%;
-    height: 50%;
+    height: 55%;
     display: flex;
     justify-content: space-evenly;
     margin: 2% 0 5%;
@@ -57,6 +65,7 @@ export const CardContainer = styled.div`
     z-index: 1;
     display: flex;
     width: 100%;
+    height: 15%;
     align-items: center;
     justify-content: space-evenly;
   }

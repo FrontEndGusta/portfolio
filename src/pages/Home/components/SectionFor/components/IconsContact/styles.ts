@@ -5,8 +5,9 @@ export const ContactContainer = styled.div`
   gap: 15px;
 
   .btn {
-    border: 2px solid ${(props) => props.theme.colors.secundary};
+    border: 2px solid #090C08;
     box-shadow: 3px 3px ${(props) => props.theme.colors.secundary};
+    background-color: #ffffff;
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
@@ -14,7 +15,7 @@ export const ContactContainer = styled.div`
   }
 
   .btn svg {
-    color: ${(props) => props.theme.colors.secundary};
+    color: #090C08;
   }
 
   .btn:hover {
@@ -25,7 +26,6 @@ export const ContactContainer = styled.div`
   .btn:active {
     box-shadow: 0px 0px ${(props) => props.theme.colors.secundary};
     transform: translate(3px, 3px);
-    background-color: ${(props) => props.theme.colors.primary};
   }
   
   .icon svg {

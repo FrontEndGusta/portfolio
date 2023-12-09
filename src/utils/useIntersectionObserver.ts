@@ -29,7 +29,7 @@ export function useIntersectionObserver(ref: React.RefObject<Element>, threshold
       }
     };
   }, [ref, threshold]);
-  console.log("useIntersectionObserver - isIntersecting:", isIntersecting); // Adicionado para depuração
+
 
   return isIntersecting;
 }
