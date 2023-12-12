@@ -44,8 +44,8 @@ export const ModalContent = styled.div`
 
   .titleModal {
     height: 20px;
-    text-align: center;
     margin: 0px 0 20px;
+    width: 100%;
   }
   .close {
     position: absolute;
@@ -88,13 +88,13 @@ export const VideoContainer = styled.div`
     height: 100%;
     width: 40%;
     display: flex;
-    text-align: center;
     align-items: center;
-    text-align: center;
+    flex-direction: column;
   }
   p {
     color: black;
     opacity: 0.9;
+    line-height: 24px;
   }
 
   @media (width <= 768px) {
@@ -134,16 +134,21 @@ export const ButtonContainer = styled.div`
     width: 100%;
     align-items: center;
     flex-direction: column;
-    button {
+    .linkTo {
       width: 100%;
       justify-content: center;
     }
   }
 
-  button {
+  .linkTo {
     /* Estilize os botões conforme necessário */
     border: 2px solid #090c08;
     cursor: pointer;
+    padding: 10px 24px;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+    text-decoration: none;
 
     &:hover {
       background-color: #090c08;

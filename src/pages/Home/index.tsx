@@ -28,7 +28,7 @@ const Home = ({ toggleTheme }: { toggleTheme: () => void }) => {
       <SectionTwo sectionTwoRef={sectionTwoRef} />
       <SectionThree sectionThreeRef={sectionThreeRef} />
       <SectionFor sectionForRef={sectionForRef}/>
-      <Popovers />
+      {/* <Popovers /> */}
       <Progress />
     </>
   );

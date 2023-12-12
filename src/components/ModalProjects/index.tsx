@@ -7,10 +7,14 @@ import {
   ButtonContainer,
 } from "./styles";
 import CarrouselTwo from "components/Carrousel";
+import { Link } from "react-router-dom";
 interface ModalProps {
   title: string;
   description: string;
   images: { icon: string }[];
+  projectLink?: string;
+  repositoryLink?: string;
+  LinkedInLink?: string;
   closeModal: () => void;
   isOpen: boolean;
 }
@@ -19,6 +23,9 @@ export const ModalVideo: React.FC<ModalProps> = ({
   title,
   description,
   images,
+  projectLink,
+  repositoryLink,
+  LinkedInLink,
   closeModal,
   isOpen,
 }) => {
@@ -33,9 +40,6 @@ export const ModalVideo: React.FC<ModalProps> = ({
       {isModalOpen && (
         <ModalVideoContainer>
           <ModalContent>
-            <div className="titleModal">
-              <h2>{title}</h2>
-            </div>
             <VideoContainer>
               <span className="close" onClick={closeModal}>
                 <BiSolidXCircle />
@@ -45,14 +49,29 @@ export const ModalVideo: React.FC<ModalProps> = ({
                   <CarrouselTwo items={images} />
                 </div>
                 <div className="textDescription">
+                  <div className="titleModal">
+                    <h2>{title}</h2>
+                  </div>
                   <p>{description}</p>
                 </div>
               </div>
             </VideoContainer>
             <ButtonContainer>
-              <button>Acessar Projeto</button>
-              <button>Acessar Repositório</button>
-              <button>Acessar LinkedIn</button>
+              <Link className="linkTo" target="_blank" to={projectLink || ""}>
+                Acessar Projeto
+              </Link>
+              {repositoryLink !== "" && (
+                <Link
+                  className="linkTo"
+                  target="_blank"
+                  to={repositoryLink || ""}
+                >
+                  Acessar Repositório
+                </Link>
+              )}
+              <Link className="linkTo" target="_blank" to={LinkedInLink || ""}>
+                Acessar LinkedIn
+              </Link>
             </ButtonContainer>
           </ModalContent>
         </ModalVideoContainer>

@@ -6,6 +6,7 @@ export const ContainerSectionFor = styled.div`
   }
   section {
     padding-top: 20px;
+    height: 100vh;
   }
   
   .card {

@@ -26,6 +26,9 @@ interface ModalVideoData {
   title: string;
   description: string;
   images?: string;
+  projectLink?: string;
+  repositoryLink?: string;
+  LinkedInLink?: string;
 }
 
 interface SectionThreeData {
@@ -90,7 +93,7 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
           <Card
             title={cardData.title}
             imageUrl={imagesCards}
-            icons={icons || []} // Use os ícones correspondentes ou um array vazio se não houver correspondência
+            icons={icons || []}
             customComponent={customComponent}
             showViewMoreButton={cardData.viewMore}
             onViewMoreClick={() => openModal(index, section)}
@@ -135,6 +138,9 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
           title={modalDataArray[index]?.title || ""}
           description={modalDataArray[index]?.description || ""}
           images={images || []}
+          projectLink={modalDataArray[index]?.projectLink}
+          repositoryLink={modalDataArray[index]?.repositoryLink}
+          LinkedInLink={modalDataArray[index]?.LinkedInLink}
           closeModal={closeModal}
           isOpen={isOpen}
         />

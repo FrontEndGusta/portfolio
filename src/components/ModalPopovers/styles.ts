@@ -75,6 +75,7 @@ export const ModalContainer = styled.div`
 
   .modal-body{
     height: 90%;
+    width: 100%;
   }
   .close-button {
     background: none;

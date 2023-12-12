@@ -55,13 +55,35 @@ export default createGlobalStyle`
   &:hover {
   transform: scale(1.1);
   -webkit-tap-highlight-color:transparent;
-}
-}
+  }
+  }
 
-button:active{
-  transform: scale(.9);
-  transition: all 0.2s;
-}
+  button:active{
+    transform: scale(.9);
+    transition: all 0.2s;
+  }
+
+  .linkTo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: transparent;
+    border: 2px solid ${(props) => props.theme.colors.primary};
+    border-radius: 34px;
+    padding: 10px 24px;
+    color:  #090C08;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+    transform: scale(1.1);
+    -webkit-tap-highlight-color:transparent;
+  }
+  }
+
+  .linkTo:active{
+    transform: scale(.9);
+    transition: all 0.2s;
+  }
 
    /* Estilização da barra de rolagem */
    ::-webkit-scrollbar {

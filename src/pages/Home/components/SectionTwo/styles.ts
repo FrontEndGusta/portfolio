@@ -68,7 +68,7 @@ export const SessionTwoContainer = styled.div`
   }
 
   .tecnologies p {
-    line-height: 25px;
+    line-height: 32px;
     font-size: 1.2em;
     margin: 35px 0 35px;
   }

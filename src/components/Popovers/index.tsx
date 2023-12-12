@@ -7,7 +7,7 @@ import {
   BiLogoGmail,
 } from "react-icons/bi";
 import { PopoversContainer } from "./styles";
-import ione from "../../assets/popovers/1.jpg";
+import favorite from "../../assets/popovers/favorite.svg";
 import Modal from "../ModalPopovers";
 
 export const Popovers: React.FC = () => {
@@ -44,14 +44,16 @@ export const Popovers: React.FC = () => {
               "Título do Favorito",
               <div className="containerIcons">
                 <div className="imageCard">
-                  <img src='#' alt="" />
+                  <img src={favorite} alt="" />
                 </div>
+                <div className="textCard">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
                   unde architecto consequuntur hic! Dolores consequatur
                   laboriosam beatae, dolorem ab nostrum fuga illum ratione
                   porro? Eveniet quos quae a ipsa maiores.
                 </p>
+                </div>
                 <div className="icons">
                   <BiLogoLinkedinSquare />
                   <BiLogoGithub href="" />
