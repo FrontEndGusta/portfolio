@@ -5,6 +5,7 @@ import IconSlider from "../../../../components/IconSlider";
 import ProgressBar from "../../../../components/ProgressTecnologies";
 import texts from "backup/texts";
 import useApi from "services/useApi";
+import LoadingAbout from "./components/LoadingAbout";
 interface SectionTwoProps {
   sectionTwoRef: React.RefObject<HTMLDivElement>; // Defina a propriedade sectionTwoRef corretamente
 }
@@ -29,26 +30,28 @@ const SectionTwo: React.FC<SectionTwoProps> = ({ sectionTwoRef }) => {
   };
 
   const { data, isLoading } = useApi<AboutData>("/sectionTwo");
-  console.log(data);
 
   return (
     <>
-      {isLoading && <p> carregando</p>}
+      {isLoading && <LoadingAbout />}
       <SessionTwoContainer ref={sectionTwoRef}>
-        <section className={`about ${isAboutVisible ? "visible" : ""}`}>
-          <div className="containerAbout">
-            <div className="tecnologies">
+        {data && (
+          <section className={`about ${isAboutVisible ? "visible" : ""}`}>
+            <div className="containerAbout">
               <h2>{data?.about?.aboutMe}</h2>
-              <p>{data?.about?.description}</p>
+              <div className="tecnologies">
+                <div className="description">
+                  <p>{data?.about?.description}</p>
+                </div>
+              </div>
+              <div className="carrousel">
+                <h2>Habilidades</h2>
+                <IconSlider />
+              </div>
+              {isAboutVisible && <ProgressBar tech={technologies} />}
             </div>
-            <div className="carrousel">
-              <h2>Habilidades</h2>
-              <IconSlider />
-            </div>
-            {isAboutVisible && <ProgressBar tech={technologies} />}
-          </div>
-          <div></div>
-        </section>
+          </section>
+        )}
       </SessionTwoContainer>
     </>
   );

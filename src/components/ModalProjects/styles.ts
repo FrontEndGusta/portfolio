@@ -35,7 +35,7 @@ export const ModalContent = styled.div`
   background: white;
   border-radius: 10px;
   position: relative;
-  padding: 20px;
+  padding: 35px 10px 20px 10px;
   width: 80%;
   height: 70%;
   display: flex;
@@ -112,6 +112,7 @@ export const VideoContainer = styled.div`
     .textDescription p {
       width: 100%;
       height: 100%;
+      padding: 0 8px;
     }
     .description {
       flex-direction: column;

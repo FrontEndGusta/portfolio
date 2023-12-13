@@ -44,18 +44,18 @@ export const SessionTwoContainer = styled.div`
     opacity: 0;
   }
   .visible {
-    animation:bounce-in-left 1.3s both;
     opacity: 1;
+    animation: bounce-in-left 1.3s both;
   }
 
   .about h2 {
-    margin-top: 50px;
     color: ${(props) => props.theme.colors.primary};
   }
   .containerAbout {
     display: flex;
     align-items: center;
     flex-direction: column;
+    height: 100%;
     gap: 15px;
   }
 
@@ -76,5 +76,12 @@ export const SessionTwoContainer = styled.div`
   .carrousel {
     width: 100%;
     padding: 0 50px 0 50px;
+  }
+
+  @media (width <= 650px) {
+    .tecnologies {
+      width: 95%;
+      overflow: auto;
+    }
   }
 `;
