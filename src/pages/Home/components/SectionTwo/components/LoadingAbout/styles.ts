@@ -16,26 +16,14 @@ export const LoadingAboutContainer = styled.div`
     padding: 1rem;
     text-align: center;
     border-radius: 0.8rem;
-    background-color: white;
-    clip-path: polygon(
-      7% 0,
-      100% 0,
-      100% 0,
-      100% 93%,
-      94% 100%,
-      0 100%,
-      0 100%,
-      0 7%
-    );
+    background-color: ${(props) => props.theme.colors.secundary};
   }
 
   .card__skeleton {
     background-image: linear-gradient(
-      90deg,
-      #ccc 0px,
-      rgb(229 229 229 / 90%) 40px,
-      #ccc 80px
+      ${(props) => props.theme.colors.card_skeleton}
     );
+
     background-size: 300%;
     background-position: 100% 0;
     border-radius: inherit;
@@ -69,10 +57,9 @@ export const LoadingAboutContainer = styled.div`
   .texts span {
     height: 20px;
     width: 80%;
-    
   }
 
-  .card__slider{
+  .card__slider {
     height: 100px;
     border-radius: 5px;
     width: 100%;
@@ -80,19 +67,19 @@ export const LoadingAboutContainer = styled.div`
     text-align: center;
   }
 
-  .card__progress{
+  .card__progress {
     height: 350px;
     border-radius: 5px;
-    width:60%;
+    width: 60%;
     margin-top: 50px;
     text-align: center;
   }
 
-  @media(width <= 650px) {
-    .card__progress{
-    height: 200px;
-    width:80%;
-  }
+  @media (width <= 650px) {
+    .card__progress {
+      height: 200px;
+      width: 80%;
+    }
   }
 
   @keyframes shimmer {
@@ -100,5 +87,4 @@ export const LoadingAboutContainer = styled.div`
       background-position: -100% 0;
     }
   }
-
-`
+`;

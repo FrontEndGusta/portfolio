@@ -17,6 +17,7 @@ declare module 'styled-components' {
       card: string;
       toast: string;
       text_toast: string;
+      card_skeleton: string;
     };
   }
 }

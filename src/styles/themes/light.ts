@@ -13,6 +13,7 @@ export default {
         shadow: '0 4px 8px rgba(0, 0, 0, .7)',
         card: '#111',
         toast: '#121212',
-        text_toast: '#FFFFFF'
+        text_toast: '#FFFFFF',
+        card_skeleton: '90deg, #ccc 0px, rgb(229 229 229 / 90%) 40px, #ccc 80px'
     }
 }

@@ -14,5 +14,6 @@ export default {
         card: '#F2F2F2',
         toast: '#FFFFFF',
         text_toast:'#757575',
+        card_skeleton: '90deg, #ffffff 0px, #ffffff 40px, rgb(229, 229, 229, 90%) 80px, #ffffff 80px'
     }
 }
