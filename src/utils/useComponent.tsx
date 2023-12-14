@@ -21,6 +21,9 @@ import secretWord1 from '../assets/projects/Secret-Word/secret1.png'
 import secretWord2 from '../assets/projects/Secret-Word/secret2.png'
 import secretWord3 from '../assets/projects/Secret-Word/secret3.png'
 
+import login1 from '../assets/projects/Page-Login/login1.png'
+import login2 from '../assets/projects/Page-Login/login2.png'
+import login3 from '../assets/projects/Page-Login/login3.png'
 
 import { MdOutlineNetworkWifi1Bar } from "react-icons/md";
 //tipagem para os componentes
@@ -52,7 +55,8 @@ const components: IComponents = {
   imagesCards: {
     cardOne: portal1,
     cardTwo: meet1,
-    cardThree: secretWord1
+    cardThree: secretWord1,
+    cardFor: login1
   },
   //imagens dos projetos nos respectivos modais
   imagesModais: {
@@ -90,6 +94,17 @@ const components: IComponents = {
       },
       {
         icon: secretWord3,
+      },
+    ],
+    modalFor: [
+      {
+        icon: login1,
+      },
+      {
+        icon: login2,
+      },
+      {
+        icon: login3,
       },
     ],
   },
