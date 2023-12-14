@@ -3,7 +3,8 @@ import { BiArrowToBottom, BiChevronsDown } from "react-icons/bi";
 import { SessionOneContainer } from "./styles";
 import useIntersectionObserver from "utils/useIntersectionObserver";
 import TypeWriter from "components/TypeWriter";
-import image from 'assets/avatar.jpeg'
+import image from "assets/avatar.jpeg";
+import useContactClick from "services/useEmail";
 interface SectionTwoProps {
   sectionOneRef: React.RefObject<HTMLDivElement>;
   sectionTwoRef: React.RefObject<HTMLDivElement>;
@@ -14,6 +15,7 @@ export const SectionOne: React.FC<SectionTwoProps> = ({
   sectionTwoRef,
 }) => {
   const isBannerVisible = useIntersectionObserver(sectionOneRef);
+
 
   const scrollToSection = (ref: RefObject<HTMLElement>) => {
     if (ref.current) ref.current.scrollIntoView({ behavior: "smooth" });
@@ -30,7 +32,9 @@ export const SectionOne: React.FC<SectionTwoProps> = ({
               <button className="cv">
                 Baixar CV <BiArrowToBottom />
               </button>
-              <button className="contact">Contato</button>
+              <button className="contact" onClick={useContactClick}>
+                Contato
+              </button>
             </div>
           </div>
           <img src={image} alt="Avatar" />

@@ -7,8 +7,8 @@ export const TypeWriter: React.FC<Props> = () => {
   const [texto, setTexto] = useState("");
   const [textIndex, setTextIndex] = useState(0);
   const theme = useContext(ThemeContext);
-  const textInitial = "I'm Gustavo, a";
-  const frases = ["Web Developer", "Designer"];
+  const textInitial = "Olá, eu sou o Gustavo";
+  const frases = ["Desenvolvedor Web", "Programador"];
   const textArray = frases[textIndex].split(""); // Divide o texto em um array de letras
 
   useEffect(() => {

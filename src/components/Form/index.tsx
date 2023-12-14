@@ -56,7 +56,7 @@ const Contact: React.FC = () => {
   return (
     <Container>
       <div className="container">
-        <h2>Contato</h2>
+        <h2>Me mande um E-mail</h2>
         <form className="form" onSubmit={handleSubmit(sendEmail)}>
           <input
             className="input"
