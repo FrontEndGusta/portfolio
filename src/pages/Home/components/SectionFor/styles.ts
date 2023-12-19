@@ -56,7 +56,7 @@ export const ContainerSectionFor = styled.div`
   }
 
   .card-center {
-    width: 70%;
+    width: 90%;
     background: ${(props) => props.theme.colors.card};
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
