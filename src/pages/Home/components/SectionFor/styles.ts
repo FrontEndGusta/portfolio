@@ -17,7 +17,7 @@ export const ContainerSectionFor = styled.div`
   .contact {
     height: 100vh;
   }
-  
+
   .forms {
     padding-top: 20px;
     height: 100vh;
@@ -56,8 +56,7 @@ export const ContainerSectionFor = styled.div`
   }
 
   .card-center {
-    height: 80%;
-    width: 75%;
+    width: 70%;
     background: ${(props) => props.theme.colors.card};
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
@@ -100,5 +99,6 @@ export const ContainerSectionFor = styled.div`
       width: 80px;
       height: 80px;
     }
+
   }
 `;
