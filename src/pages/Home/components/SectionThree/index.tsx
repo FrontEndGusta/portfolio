@@ -80,14 +80,16 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
 
   // Função para renderizar Cards
   const renderCards = (data: CardData[], section: string) => {
-    return data.map((cardData, index) => {
+    return data && data.map((cardData, index) => {
       const { icons, imagesCards, customComponent } =
         getCardComponents(cardData);
-
+  
       return (
         <div
-          className={`hidden ${isProjectsVisible ? "show" : ""}`}
-          style={{ transitionDelay: `${index * 300}ms` }}
+          className={isProjectsVisible ? "show" : "hidden"}
+          style={{
+            transitionDelay: `${index * 300}ms`,
+          }}
           key={index}
         >
           <Card
@@ -102,6 +104,7 @@ export const SectionThree: React.FC<sectionThreeProps> = ({
       );
     });
   };
+  
 
   // Função auxiliar para obter componentes do cartão
   const getCardComponents = (cardData: CardData) => {

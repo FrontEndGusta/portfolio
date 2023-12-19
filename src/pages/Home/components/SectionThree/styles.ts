@@ -2,19 +2,16 @@ import styled from "styled-components";
 
 export const SessionTreeContainer = styled.div`
 
-.hidden{
-    opacity: 0;
-    transform: translateX(-100%);
-    transition: all 1s;
-    
+.hidden {
+   opacity: 0;
+   transform: translateX(-100%);
+   
 }
 
-.show{
-    opacity: 1;
-    transition: all 1s;
-    transform: translateX(0);
-    animation: bounce-in-left 2s both;
-    
+.show {
+   opacity: 1;
+   transform: translateX(0);
+   transition: all 1s;
 }
 
 

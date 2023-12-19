@@ -8,11 +8,11 @@ interface sectionForProps {
   sectionForRef: React.RefObject<HTMLDivElement>;
 }
 const SectionFor: React.FC<sectionForProps> = ({ sectionForRef }) => {
-  const isProjectsVisible = useIntersectionObserver(sectionForRef);
+  const isFormVisible = useIntersectionObserver(sectionForRef);
   const { ToastComponent } = useToastContext();
   return (
     <ContainerSectionFor ref={sectionForRef}>
-      <section>
+      <section className={`forms ${isFormVisible ? "visible" : ""}`}>
         <div className="contact">
           <div className="card">
             <div className="card-inner">
