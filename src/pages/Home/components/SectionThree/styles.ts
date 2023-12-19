@@ -26,10 +26,10 @@ h2{
 .containerCards{
     display: flex;
     align-items:center;
+    width: 80%;
     flex-wrap: wrap;
     gap: 30px;
-    padding: 0 50px 0 50px;
-    margin: 50px 0 50px;
+    margin: 50px auto 50px;
 }
 
 

@@ -147,7 +147,7 @@ export const SessionOneContainer = styled.div`
 
   .arr {
     position: absolute;
-    bottom: 0;
+    bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
   }
