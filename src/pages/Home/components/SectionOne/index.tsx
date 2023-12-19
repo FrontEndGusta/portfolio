@@ -6,6 +6,7 @@ import TypeWriter from "components/TypeWriter";
 import image from "assets/avatar.jpeg";
 import useContactClick from "services/useEmail";
 import useDownload from "services/useDownload";
+
 interface SectionTwoProps {
   sectionOneRef: React.RefObject<HTMLDivElement>;
   sectionTwoRef: React.RefObject<HTMLDivElement>;
@@ -22,7 +23,7 @@ export const SectionOne: React.FC<SectionTwoProps> = ({
   };
 
   const { downloadFile } = useDownload();
-  const cv = "http://localhost:3000/documents/cv.pdf";
+  const cv = "../../../../documents/cv.pdf";
 
   return (
     <>
