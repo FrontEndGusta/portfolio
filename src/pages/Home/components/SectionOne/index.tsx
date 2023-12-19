@@ -5,6 +5,7 @@ import useIntersectionObserver from "utils/useIntersectionObserver";
 import TypeWriter from "components/TypeWriter";
 import image from "assets/avatar.jpeg";
 import useContactClick from "services/useEmail";
+import useDownload from "services/useDownload";
 interface SectionTwoProps {
   sectionOneRef: React.RefObject<HTMLDivElement>;
   sectionTwoRef: React.RefObject<HTMLDivElement>;
@@ -16,10 +17,12 @@ export const SectionOne: React.FC<SectionTwoProps> = ({
 }) => {
   const isBannerVisible = useIntersectionObserver(sectionOneRef);
 
-
   const scrollToSection = (ref: RefObject<HTMLElement>) => {
     if (ref.current) ref.current.scrollIntoView({ behavior: "smooth" });
   };
+
+  const { downloadFile } = useDownload();
+  const cv = "http://localhost:3000/documents/cv.pdf";
 
   return (
     <>
@@ -29,7 +32,7 @@ export const SectionOne: React.FC<SectionTwoProps> = ({
             <TypeWriter />
             <h3>Desenvolvedor Front-End</h3>
             <div className="containerBtn">
-              <button className="cv">
+              <button className="cv" onClick={() => downloadFile(cv)}>
                 Baixar CV <BiArrowToBottom />
               </button>
               <button className="contact" onClick={useContactClick}>

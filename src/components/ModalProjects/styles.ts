@@ -86,6 +86,7 @@ export const VideoContainer = styled.div`
   }
   .textDescription {
     height: 100%;
+    overflow:auto;
     width: 40%;
     display: flex;
     align-items: center;

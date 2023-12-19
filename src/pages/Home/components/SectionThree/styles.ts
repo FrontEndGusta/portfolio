@@ -26,7 +26,6 @@ h2{
 .containerCards{
     display: flex;
     align-items:center;
-    justify-content: space-between;
     flex-wrap: wrap;
     gap: 30px;
     padding: 0 50px 0 50px;
