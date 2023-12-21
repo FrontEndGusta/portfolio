@@ -1,7 +1,7 @@
 import React, { RefObject, useContext, useRef, useState } from "react";
 import { Container } from "./styles";
 import { ThemeContext } from "styled-components";
-import ThemeSwitch from "../../../../components/Switch";
+import ThemeSwitch from "../../../../../../components/Switch";
 interface Props {
   toggleTheme(): void;
   sectionOneRef: RefObject<HTMLElement>;

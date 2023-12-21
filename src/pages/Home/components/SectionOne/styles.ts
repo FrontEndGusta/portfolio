@@ -158,7 +158,7 @@ export const SessionOneContainer = styled.div`
     animation: arrowDown 1.5s ease infinite;
   }
   .arr svg:active {
-    color: blue;
+    color: #8f44fd;
   }
 
   @keyframes arrowDown {

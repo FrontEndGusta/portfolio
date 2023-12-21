@@ -4,7 +4,7 @@ import { SessionOneContainer } from "./styles";
 import useIntersectionObserver from "utils/useIntersectionObserver";
 import TypeWriter from "components/TypeWriter";
 import image from "assets/avatar.jpeg";
-import useContactClick from "services/useEmail";
+import useContactClick from "services/useContact";
 import useDownload from "services/useDownload";
 
 interface SectionTwoProps {

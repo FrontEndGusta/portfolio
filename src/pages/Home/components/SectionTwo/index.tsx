@@ -17,7 +17,7 @@ const SectionTwo: React.FC<SectionTwoProps> = ({ sectionTwoRef }) => {
     { name: "React", width: 80 },
     { name: "Javascript", width: 70 },
     { name: "Typescript", width: 80 },
-    { name: "Github", width: 70 },
+    { name: "Git", width: 70 },
     { name: "Styled-Components", width: 85 },
     // Adicione quantas tecnologias desejar
   ];

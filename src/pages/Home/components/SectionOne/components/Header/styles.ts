@@ -40,7 +40,7 @@ export const Container = styled.div`
     z-index: 2;
     transition: 0.3s;
     display: none;
-    -webkit-tap-highlight-color:transparent;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .hamburger.active .bar:first-child {
@@ -103,34 +103,35 @@ export const Container = styled.div`
     letter-spacing: 1.5px;
     cursor: pointer;
   }
+
   .menu-items li:after,
   li:after {
-    bottom: -5px;
     content: "";
-    display: block;
-    height: 2px;
-    left: 50%;
     position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
     background: #fff;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-    border-radius: 30px;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.5s;
   }
   .menu-items li:hover:after,
   li:hover:after {
-    width: 100%;
-    left: 0;
+    transform-origin: left;
+    transform: scaleX(1);
     background-color: ${(props) => props.theme.colors.secundary};
   }
 
   @media (width <= 620px) {
     justify-content: flex-end;
-    .hamburger{
-      display:inline-block;
+    .hamburger {
+      display: inline-block;
     }
     .portfolio,
-    .switch ul
-    {
+    .switch ul {
       display: none;
     }
   }
