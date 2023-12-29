@@ -3,7 +3,7 @@ import { SectionTwoPropsReturn } from "./useSectionOne.types";
 import { RefObject } from "react";
 import useDownload from "services/useDownload";
 import useContactClick from "services/useContact";
-import { useSectionContext } from "../../../../../context/contentSections/SectionContext";
+import { useSectionContext } from "context/contentSections/SectionContext";
 
 const useSectionOne = () => {
 
@@ -17,10 +17,12 @@ const useSectionOne = () => {
   const { handleContactClick } = useContactClick();
 
   const { downloadFile } = useDownload();
-  const cv = "/../../../../../documents/cv.pdf";
+  const cvPath = require('../../../../../documents/cv.pdf');
+
 
   const handleDownloadClick = () => {
-    downloadFile(cv);
+    downloadFile(cvPath);
+    
   };
 
   return {
