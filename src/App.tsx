@@ -5,6 +5,7 @@ import dark from "./styles/themes/dark";
 import usePersistedState from "./utils/usePersistedState";
 import Home from "./pages/Home";
 import { ToastProvider } from "components/Toast/useToastContext";
+import { SectionProvider } from "context/contentSections/SectionContext";
 
 const App = () => {
   const [theme, setTheme] = usePersistedState("theme", light);
@@ -15,12 +16,14 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
+      <SectionProvider>
       <ToastProvider>
       <div className="App">
         <GlobalStyle />
         <Home toggleTheme={toggleTheme} />
       </div>
       </ToastProvider>
+      </SectionProvider>
     </ThemeProvider>
   );
 };

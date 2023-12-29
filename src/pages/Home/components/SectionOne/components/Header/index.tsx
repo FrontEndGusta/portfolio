@@ -2,14 +2,10 @@ import React, { RefObject, useContext, useRef, useState } from "react";
 import { Container } from "./styles";
 import { ThemeContext } from "styled-components";
 import ThemeSwitch from "../../../../../../components/Switch";
-interface Props {
-  toggleTheme(): void;
-  sectionOneRef: RefObject<HTMLElement>;
-  sectionTwoRef: RefObject<HTMLElement>;
-  sectionThreeRef: RefObject<HTMLElement>;
-  sectionForRef: RefObject<HTMLElement>;
-}
-const Header: React.FC<Props> = ({
+import useHeader from "./hooks/useHeader";
+import { useHeaderReturn } from "./hooks/useHeader.types";
+
+const Header: React.FC<useHeaderReturn> = ({
   toggleTheme,
   sectionOneRef,
   sectionTwoRef,
@@ -18,14 +14,7 @@ const Header: React.FC<Props> = ({
 }) => {
   const theme = useContext(ThemeContext);
 
-  const [menuOpen, setMenuOpen] = useState(false);
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-  const scrollToSection = (ref: RefObject<HTMLElement>) => {
-    if (ref.current) ref.current.scrollIntoView({ behavior: "smooth" });
-    setMenuOpen(false);
-  };
+  const { menuOpen, toggleMenu, scrollToSection } = useHeader();
 
   return (
     <>

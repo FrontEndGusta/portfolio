@@ -1,7 +1,7 @@
 import React from "react";
 import { LoadingAboutContainer } from "./styles";
 
-interface LoadingCardProps {
+type LoadingCardProps = {
   cardKey: string;
 }
 

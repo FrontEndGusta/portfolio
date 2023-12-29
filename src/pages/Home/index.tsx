@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import Header from "./components/SectionOne/components/Header";
-import Popovers from "../../components/Popovers";
 import Progress from "../../components/Progress";
 import ScrollToTop from "../../components/ScrollToTop";
 import SectionFor from "./components/SectionFor";
@@ -28,7 +27,6 @@ const Home = ({ toggleTheme }: { toggleTheme: () => void }) => {
       <SectionTwo sectionTwoRef={sectionTwoRef} />
       <SectionThree sectionThreeRef={sectionThreeRef} />
       <SectionFor sectionForRef={sectionForRef}/>
-      {/* <Popovers /> */}
       <Progress />
     </>
   );

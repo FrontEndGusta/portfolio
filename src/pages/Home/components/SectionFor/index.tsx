@@ -1,15 +1,18 @@
 import React from "react";
 import { ContainerSectionFor } from "./styles";
-import IconsContact from "./components/IconsContact";
 import Contact from "components/Form";
 import { useToastContext } from "components/Toast/useToastContext";
 import useIntersectionObserver from "utils/useIntersectionObserver";
-interface sectionForProps {
+
+type sectionForProps = {
   sectionForRef: React.RefObject<HTMLDivElement>;
 }
+
 const SectionFor: React.FC<sectionForProps> = ({ sectionForRef }) => {
+
   const isFormVisible = useIntersectionObserver(sectionForRef);
   const { ToastComponent } = useToastContext();
+
   return (
     <ContainerSectionFor ref={sectionForRef}>
       <section className={`forms ${isFormVisible ? "visible" : ""}`}>

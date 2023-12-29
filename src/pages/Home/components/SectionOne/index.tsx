@@ -1,29 +1,22 @@
 import React, { RefObject } from "react";
 import { BiArrowToBottom, BiChevronsDown } from "react-icons/bi";
 import { SessionOneContainer } from "./styles";
-import useIntersectionObserver from "utils/useIntersectionObserver";
 import TypeWriter from "components/TypeWriter";
 import image from "assets/avatar.jpeg";
-import useContactClick from "services/useContact";
-import useDownload from "services/useDownload";
+import useSectionOne from "./hooks/useSectionOne";
+import { SectionTwoPropsReturn } from "./hooks/useSectionOne.types";
 
-interface SectionTwoProps {
-  sectionOneRef: React.RefObject<HTMLDivElement>;
-  sectionTwoRef: React.RefObject<HTMLDivElement>;
-}
-
-export const SectionOne: React.FC<SectionTwoProps> = ({
+export const SectionOne: React.FC<SectionTwoPropsReturn> = ({
   sectionOneRef,
   sectionTwoRef,
 }) => {
-  const isBannerVisible = useIntersectionObserver(sectionOneRef);
 
-  const scrollToSection = (ref: RefObject<HTMLElement>) => {
-    if (ref.current) ref.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const { downloadFile } = useDownload();
-  const cv = "../../../../documents/cv.pdf";
+  const {
+    isBannerVisible,
+    scrollToSection,
+    handleDownloadClick,
+    handleContactClick,
+  } = useSectionOne();
 
   return (
     <>
@@ -33,10 +26,10 @@ export const SectionOne: React.FC<SectionTwoProps> = ({
             <TypeWriter />
             <h3>Desenvolvedor Front-End</h3>
             <div className="containerBtn">
-              <button className="cv" onClick={() => downloadFile(cv)}>
+              <button className="cv" onClick={handleDownloadClick}>
                 Baixar CV <BiArrowToBottom />
               </button>
-              <button className="contact" onClick={useContactClick}>
+              <button className="contact" onClick={handleContactClick}>
                 Contato
               </button>
             </div>

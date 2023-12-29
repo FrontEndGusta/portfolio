@@ -1,35 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { SessionTwoContainer } from "./styles";
 import useIntersectionObserver from "../../../../utils/useIntersectionObserver";
 import IconSlider from "../../../../components/IconSlider";
 import ProgressBar from "../../../../components/ProgressTecnologies";
-import texts from "backup/texts";
-import useApi from "services/useApi";
 import LoadingAbout from "./components/LoadingAbout";
-interface SectionTwoProps {
-  sectionTwoRef: React.RefObject<HTMLDivElement>; // Defina a propriedade sectionTwoRef corretamente
-}
+import { SectionTwoReturn } from "./hooks/useSectionTwo.types";
+import useSectionTwo from "./hooks/useSectionTwo";
 
-const SectionTwo: React.FC<SectionTwoProps> = ({ sectionTwoRef }) => {
+const SectionTwo: React.FC<SectionTwoReturn> = ({ sectionTwoRef }) => {
+
   const isAboutVisible = useIntersectionObserver(sectionTwoRef);
-
-  const technologies = [
-    { name: "React", width: 80 },
-    { name: "Javascript", width: 70 },
-    { name: "Typescript", width: 80 },
-    { name: "Git", width: 70 },
-    { name: "Styled-Components", width: 85 },
-    // Adicione quantas tecnologias desejar
-  ];
-
-  type AboutData = {
-    about: {
-      aboutMe: string;
-      description: string;
-    };
-  };
-
-  const { data, isLoading } = useApi<AboutData>("/sectionTwo");
+  const { technologies, data, isLoading } = useSectionTwo();
 
   return (
     <>
