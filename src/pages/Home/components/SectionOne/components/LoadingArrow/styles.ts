@@ -4,7 +4,6 @@ export const ContainerLoadingArrow = styled.div`
  display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  padding: 50px 50px;
   gap: 20px;
 
   .card {
