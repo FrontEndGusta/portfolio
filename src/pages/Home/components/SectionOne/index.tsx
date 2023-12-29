@@ -5,14 +5,16 @@ import TypeWriter from "components/TypeWriter";
 import image from "assets/avatar.jpeg";
 import useSectionOne from "./hooks/useSectionOne";
 import { SectionTwoPropsReturn } from "./hooks/useSectionOne.types";
+import LoadingArrow from "./components/LoadingArrow";
 
 export const SectionOne: React.FC<SectionTwoPropsReturn> = ({
   sectionOneRef,
   sectionTwoRef,
 }) => {
-
   const {
     isBannerVisible,
+    data,
+    isLoading,
     scrollToSection,
     handleDownloadClick,
     handleContactClick,
@@ -35,8 +37,10 @@ export const SectionOne: React.FC<SectionTwoPropsReturn> = ({
             </div>
           </div>
           <img src={image} alt="Avatar" />
+
           <div className="arr" onClick={() => scrollToSection(sectionTwoRef)}>
-            <BiChevronsDown />
+            {isLoading && <LoadingArrow />}
+            {data && <BiChevronsDown />}
           </div>
         </section>
       </SessionOneContainer>

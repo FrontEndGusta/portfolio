@@ -10,11 +10,12 @@ const useHeader = () => {
     if (ref.current) ref.current.scrollIntoView({ behavior: "smooth" });
     setMenuOpen(false);
   };
-  return{
+
+  return {
     toggleMenu,
     scrollToSection,
-    menuOpen
-  }
+    menuOpen,
+  };
 };
 
 export default useHeader;
