@@ -6,6 +6,7 @@ import ProgressBar from "../../../../components/ProgressTecnologies";
 import LoadingAbout from "./components/LoadingAbout";
 import { SectionTwoReturn } from "./hooks/useSectionTwo.types";
 import useSectionTwo from "./hooks/useSectionTwo";
+import data2 from '../../../../utils/db.json'
 
 const SectionTwo: React.FC<SectionTwoReturn> = ({ sectionTwoRef }) => {
 
@@ -14,15 +15,14 @@ const SectionTwo: React.FC<SectionTwoReturn> = ({ sectionTwoRef }) => {
 
   return (
     <>
-      {isLoading && <LoadingAbout />}
+      {/* {isLoading && <LoadingAbout />} */}
       <SessionTwoContainer ref={sectionTwoRef}>
-        {data && (
           <section className={`about ${isAboutVisible ? "visible" : ""}`}>
             <div className="containerAbout">
-              <h2>{data?.about?.aboutMe}</h2>
+              <h2>{data2?.about?.aboutMe}</h2>
               <div className="tecnologies">
                 <div className="description">
-                  <p>{data?.about?.description}</p>
+                  <p>{data2?.about?.description}</p>
                 </div>
               </div>
               <div className="carrousel">
@@ -32,7 +32,6 @@ const SectionTwo: React.FC<SectionTwoReturn> = ({ sectionTwoRef }) => {
               {isAboutVisible && <ProgressBar tech={technologies} />}
             </div>
           </section>
-        )}
       </SessionTwoContainer>
     </>
   );

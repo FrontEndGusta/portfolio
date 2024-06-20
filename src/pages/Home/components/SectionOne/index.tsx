@@ -39,8 +39,8 @@ export const SectionOne: React.FC<SectionTwoPropsReturn> = ({
           <img src={image} alt="Avatar" />
 
           <div className="arr" onClick={() => scrollToSection(sectionTwoRef)}>
-            {isLoading && <LoadingArrow />}
-            {data && <BiChevronsDown />}
+             {/* <LoadingArrow /> */}
+            <BiChevronsDown />
           </div>
         </section>
       </SessionOneContainer>

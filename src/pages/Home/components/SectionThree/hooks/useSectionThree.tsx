@@ -74,16 +74,18 @@ export const useSectionThree = (
     const icons =
       typeof cardData.icons === "string"
         ? components.icons[cardData.icons]
-        : undefined;
+        : cardData.icons;
+  
     const imagesCards =
       typeof cardData.images === "string"
         ? components.imagesCards[cardData.images]
-        : undefined;
+        : cardData.images;
+  
     const customComponent =
       typeof cardData.component === "string"
         ? components.customComponent[cardData.component]
-        : undefined;
-
+        : cardData.component;
+  
     return { icons, imagesCards, customComponent };
   };
 

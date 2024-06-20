@@ -2,7 +2,8 @@ import { SessionTreeContainer } from "./styles";
 import LoadingCards from "./components/LoadingCards";
 import { useSectionThree } from "./hooks/useSectionThree";
 import { sectionThreeReturn } from "./hooks/useSectionThree.types";
-
+import texts from "utils/texts";
+import data2 from '../../../../utils/db.json'
 export const SectionThree: React.FC<sectionThreeReturn> = ({
   sectionThreeRef,
 }) => {
@@ -19,30 +20,30 @@ export const SectionThree: React.FC<sectionThreeReturn> = ({
 
   return (
     <>
-      {isLoading && <LoadingCards />}
       <SessionTreeContainer ref={sectionThreeRef}>
-        {data && (
+        {data2 && (
           <section>
-            <h2>{data.titleHighlights.title}</h2>
+            <h2>{data2?.titleHighlights.title}</h2>
             <div className="containerCards">
-              {renderCards(data.cardsHighlights, "experience")}
+              {/* {renderCards(data.cardsHighlights, "experience")} */}
+              {renderCards(data2.cardsHighlights, "experience")}
             </div>
 
-            <h2>{data.titleAllProjects.title}</h2>
+            <h2>{data2?.titleAllProjects.title}</h2>
             <div className="containerCards">
-              {renderCards(data.cardsAllProjects, "projects")}
+              {renderCards(data2.cardsAllProjects, "projects")}
             </div>
           </section>
         )}
       </SessionTreeContainer>
 
       {renderModalVideos(
-        data?.modalVideoHighlights || [],
+        data2?.modalVideoHighlights || [],
         isExperienceModalOpen,
         experienceModalIndex
       )}
       {renderModalVideos(
-        data?.modalVideoAllProjects || [],
+        data2?.modalVideoAllProjects || [],
         isProjectsModalOpen,
         projectsModalIndex
       )}

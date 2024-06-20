@@ -4,9 +4,9 @@ export type sectionThreeReturn = {
 // export type para os  =dados de um card
 export type CardData = {
   title: string;
-  images?: { icon: string }[];
+  images?: string 
   component?: React.ReactNode;
-  icons?: React.ReactNode[];
+  icons?: string | React.ReactNode[];
   viewMore?: boolean;
 }
 
