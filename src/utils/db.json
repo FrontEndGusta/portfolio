@@ -43,6 +43,11 @@
       "icons": "icons1"
     },
     {
+      "title": "Projeto em NEXT",
+      "images": "cardFive",
+      "icons": "icons4"
+    },
+    {
       "title": "Trabalhando nisso...",
       "component": "customComponentKey",
       "viewMore": false
