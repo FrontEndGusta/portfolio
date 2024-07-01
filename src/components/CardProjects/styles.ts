@@ -15,7 +15,16 @@ export const CardContainer = styled.div`
     border-radius: 20px;
     transition: all 0.1s ease-out;
     cursor: pointer;
-    clip-path: polygon(7% 0, 100% 0, 100% 0, 100% 93%, 94% 100%, 0 100%, 0 100%, 0 7%);
+    clip-path: polygon(
+      7% 0,
+      100% 0,
+      100% 0,
+      100% 93%,
+      94% 100%,
+      0 100%,
+      0 100%,
+      0 7%
+    );
     box-shadow: ${(props) => props.theme.colors.shadow};
   }
   button {
@@ -31,13 +40,13 @@ export const CardContainer = styled.div`
     transform: scale(0.9);
     transition: all 0.2s;
   }
-  .title{
+  .title {
     display: flex;
-    align-items:center;
-    justify-content:center;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 10%;
-    z-index: 1
+    z-index: 1;
   }
   .card h3 {
     z-index: 1;
@@ -58,7 +67,16 @@ export const CardContainer = styled.div`
     border-radius: 5px;
     border: 2px solid black;
     width: 80%;
-    clip-path: polygon(5% 0, 100% 0, 100% 0, 100% 93%, 96% 100%, 0 100%, 0 100%, 0 6%);
+    clip-path: polygon(
+      5% 0,
+      100% 0,
+      100% 0,
+      100% 93%,
+      96% 100%,
+      0 100%,
+      0 100%,
+      0 6%
+    );
   }
 
   .technologies {
@@ -75,12 +93,18 @@ export const CardContainer = styled.div`
     align-items: center;
     justify-content: center;
     gap: 10px;
+    overflow: auto;
+  }
+
+  .icons::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
   }
   .icons svg {
     width: 20px;
     height: 20px;
-    color: ${props => props.theme.colors.secundary};
-    border: 1px solid ${props => props.theme.colors.secundary};
+    color: ${(props) => props.theme.colors.secundary};
+    border: 1px solid ${(props) => props.theme.colors.secundary};
   }
 
   .viewMore {
@@ -89,15 +113,15 @@ export const CardContainer = styled.div`
     justify-content: center;
   }
 
+  .view-more-dots {
+    color: white;
+  }
+
   .card::before {
     content: "";
     position: absolute;
     width: 100px;
-    background-image: linear-gradient(
-      180deg,
-      #8f44fd,
-      #8f44fd
-    );
+    background-image: linear-gradient(180deg, #8f44fd, #8f44fd);
     height: 170%;
     animation: rotBGimg 3s linear infinite;
     transition: all 0.2s linear;

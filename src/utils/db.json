@@ -11,6 +11,11 @@
       "title": "Portal Minha Senha (C&A)",
       "images": "cardOne",
       "icons": "icons1"
+    },
+    {
+      "title": "Projeto em NEXT",
+      "images": "cardFive",
+      "icons": "icons4"
     }
   ],
   "titleAllProjects": {
@@ -51,6 +56,14 @@
       "projectLink": "https://minhasenha.cea.com.br",
       "repositoryLink": "",
       "LinkedInLink": "https://www.linkedin.com/in/gustavo-silva-37453a144?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    },
+    {
+      "title": "Projeto em NEXT (desenvolvendo...)",
+      "description": "Este projeto foi elaborado utilizando React, Tailwind, Typescript, NextJS, Mongoose e mongoDB. A aplicação contém front-end e backend integrados com o apoio da biblioteca Next-Auth...",
+      "images": "modalFive",
+      "projectLink": "https://projetosons.vercel.app",
+      "repositoryLink": "",
+      "LinkedInLink": "https://github.com/FrontEndGusta/projetosons"
     }
   ],
   "modalVideoAllProjects": [

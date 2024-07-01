@@ -15,7 +15,7 @@ const useDownload = () => {
 
         const blobURL = window.URL.createObjectURL(new Blob([blob]));
         const fileName = url.split("/").pop();
-        if (fileName != undefined) {
+        if (fileName !== undefined) {
           console.log("File name:", fileName);
 
           const aTag = document.createElement("a");
